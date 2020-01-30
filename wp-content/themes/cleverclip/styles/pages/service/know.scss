@@ -1,0 +1,47 @@
+.service__know {
+
+}
+
+.service__know__wrapper {
+
+}
+
+.service__know__vimeo {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    padding-top: 1080 / 1920 * 100%;
+    width: 100%;
+  }
+}
+
+.service__know__vimeo__iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.service__know__title {
+  @extend %title__medium;
+
+  margin-top: 6.5rem;
+
+  @include media('<small') {
+    margin-top: 3.5rem;
+  }
+}
+
+.service__know__description {
+  @extend %content;
+  @extend %description__medium;
+
+  margin-top: 4.5rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}

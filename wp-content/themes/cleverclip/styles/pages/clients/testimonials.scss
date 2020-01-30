@@ -1,0 +1,86 @@
+.clients__testimonials {
+  @extend %wrapper;
+
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+    width: 100%;
+  }
+}
+
+.clients__testimonials__box {
+  @extend %testimonials;
+}
+
+.clients__testimonials__wrapper {
+  @extend %testimonials__wrapper;
+}
+
+.clients__testimonial {
+  @extend %testimonial;
+}
+
+.clients__testimonial__wrapper {
+  @extend %testimonial__wrapper;
+}
+
+.clients__testimonial__media {
+  @extend %testimonial__media;
+}
+
+.clients__testimonial__media__image {
+  @extend %testimonial__media__image;
+}
+
+.clients__testimonial__content {
+  @extend %testimonial__content;
+}
+
+.clients__testimonial__description {
+  @extend %testimonial__description;
+}
+
+.clients__testimonial__author {
+  @extend %testimonial__author;
+}
+
+.clients__testimonial__author__column {
+  @extend %testimonial__author__column;
+}
+
+.clients__testimonial__author__title {
+  @extend %testimonial__author__title;
+}
+
+.clients__testimonial__author__image {
+  @extend %testimonial__author__image;
+}
+
+.clients__testimonials__pagination {
+  @extend %testimonials__pagination;
+}
+
+.clients__testimonials__pagination__button {
+  @extend %testimonials__pagination__button;
+
+  &--active {
+    @extend %testimonials__pagination__button--active;
+  }
+}
+
+.clients__testimonials__navigation {
+  @extend %testimonials__navigation;
+}
+
+.clients__testimonials__navigation__button {
+  @extend %testimonials__navigation__button;
+
+  &--next {
+    @extend %testimonials__navigation__button--next;
+  }
+
+  &--previous {
+    @extend %testimonials__navigation__button--previous;
+  }
+}

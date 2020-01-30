@@ -1,0 +1,47 @@
+@font-face {
+  font-family: $font-gt-eesti;
+  src: url('../fonts/gt-eesti-regular.woff2') format('woff2'),
+       url('../fonts/gt-eesti-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-gt-eesti;
+  src: url('../fonts/gt-eesti-bold.woff2') format('woff2'),
+       url('../fonts/gt-eesti-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: $font-gt-eesti;
+  src: url('../fonts/gt-eesti-light.woff2') format('woff2'),
+       url('../fonts/gt-eesti-light.woff') format('woff');
+  font-weight: 300;
+  font-style: 300;
+}
+
+@font-face {
+  font-family: $font-tiempos-headline;
+  src: url('../fonts/tiempos-headline-light.woff2') format('woff2'),
+       url('../fonts/tiempos-headline-light.woff') format('woff');
+  font-weight: 300;
+  font-style: 300;
+}
+
+@font-face {
+  font-family: $font-tiempos-headline;
+  src: url('../fonts/tiempos-headline-regular.woff2') format('woff2'),
+       url('../fonts/tiempos-headline-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-tiempos-headline;
+  src: url('../fonts/tiempos-headline-semibold.woff2') format('woff2'),
+       url('../fonts/tiempos-headline-semibold.woff') format('woff');
+  font-weight: bold;
+  font-style: bold;
+}

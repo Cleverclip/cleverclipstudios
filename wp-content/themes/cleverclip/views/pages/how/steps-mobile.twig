@@ -1,0 +1,21 @@
+{% if isPhone %}
+  {% for step in post.get_field('steps') %}
+    <section class="how__step how__step--{{ loop.index }}">
+      <div class="how__step__wrapper">
+        <figure class="how__step__column">
+          <img class="how__step__image"src="{{ step.image }}">
+        </figure>
+
+        <div class="how__step__column">
+          <h2 class="how__step__title">
+            {{ step.title }}
+          </h2>
+
+          <p class="how__step__description">
+            {{ step.description }}
+          </p>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endif %}

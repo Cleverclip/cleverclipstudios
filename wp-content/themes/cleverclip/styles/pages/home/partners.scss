@@ -1,0 +1,209 @@
+.home__partners {
+  padding: 15rem 0;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.home__partners__wrapper {
+  @extend %wrapper;
+
+  @include media('<small') {
+    &--testimonials {
+      width: 100%;
+    }
+  }
+}
+
+.home__partners__header {
+  text-align: center;
+}
+
+.home__partners__title {
+  @extend %title__medium;
+
+  margin: auto;
+  max-width: 35rem;
+
+  @include media('<small') {
+    max-width: 27rem;
+  }
+}
+
+.home__partners__description {
+  @extend %description__medium;
+
+  margin: 4rem auto 0;
+  max-width: 60rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.home__partners__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.home__partners__button__box {
+  @extend %button__box;
+
+  background: $color-white;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .home__partners__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.home__partners__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.home__partners__list {
+  @extend %list;
+
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+
+  @include media('<small') {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+}
+
+.home__partners__item {
+  @extend %list__item;
+}
+
+.home__partners__item__wrapper {
+  @extend %list__item__wrapper;
+}
+
+.home__partners__item__box {
+  @extend %list__item__box;
+}
+
+.home__partners__item__image {
+  @extend %list__item__image;
+}
+
+.home__partners__item__content {
+  @extend %list__item__content;
+}
+
+.home__partners__item__title {
+  @extend %list__item__title;
+}
+
+.home__partners__item__description {
+  @extend %list__item__description;
+}
+
+.home__partners__item__link {
+  @extend %list__item__link;
+}
+
+.home__partners__item__link__text {
+  @extend %list__item__link__text;
+}
+
+.home__partners__item__link__arrow {
+  @extend %list__item__link__arrow;
+}
+
+.home__partners__testimonials {
+  @extend %testimonials;
+}
+
+.home__partners__testimonials__wrapper {
+  @extend %testimonials__wrapper;
+}
+
+.home__partners__testimonial {
+  @extend %testimonial;
+}
+
+.home__partners__testimonial__wrapper {
+  @extend %testimonial__wrapper;
+}
+
+.home__partners__testimonial__media {
+  @extend %testimonial__media;
+}
+
+.home__partners__testimonial__media__image {
+  @extend %testimonial__media__image;
+}
+
+.home__partners__testimonial__content {
+  @extend %testimonial__content;
+}
+
+.home__partners__testimonial__description {
+  @extend %testimonial__description;
+}
+
+.home__partners__testimonial__author {
+  @extend %testimonial__author;
+}
+
+.home__partners__testimonial__author__column {
+  @extend %testimonial__author__column;
+}
+
+.home__partners__testimonial__author__title {
+  @extend %testimonial__author__title;
+}
+
+.home__partners__testimonial__author__description {
+  @extend %testimonial__author__description;
+}
+
+.home__partners__testimonial__author__image {
+  @extend %testimonial__author__image;
+}
+
+.home__partners__testimonials__pagination {
+  @extend %testimonials__pagination;
+}
+
+.home__partners__testimonials__pagination__button {
+  @extend %testimonials__pagination__button;
+
+  &--active {
+    @extend %testimonials__pagination__button--active;
+  }
+}
+
+.home__partners__testimonials__navigation {
+  @extend %testimonials__navigation;
+}
+
+.home__partners__testimonials__navigation__button {
+  @extend %testimonials__navigation__button;
+
+  &--next {
+    @extend %testimonials__navigation__button--next;
+  }
+
+  &--previous {
+    @extend %testimonials__navigation__button--previous;
+  }
+}

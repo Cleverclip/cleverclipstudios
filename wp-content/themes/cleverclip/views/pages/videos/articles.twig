@@ -1,0 +1,69 @@
+<section class="videos__articles">
+  <div class="videos__articles__wrapper">
+    {% for article in post.get_field('articles_list') %}
+      <article class="videos__articles__case">
+        <div class="videos__articles__case__background"></div>
+
+        <div class="videos__articles__case__media">
+          <img class="videos__articles__case__image" src="{{ article.post.thumbnail.src }}">
+        </div>
+
+        <div class="videos__articles__case__content">
+          <p class="videos__articles__case__description">
+            {{ article.post.get_field('videos_description') }}
+          </p>
+
+          <a class="videos__articles__case__link" href="{{ article.post.link }}">
+            {{ article.post.get_field('videos_link') }}
+          </a>
+        </div>
+      </article>
+
+      {% if loop.index0 == 5 %}
+        <aside class="videos__aside__video">
+          <div class="videos__aside__video__columns">
+            <div class="videos__aside__video__column">
+              <h2 class="videos__aside__video__title">
+                {{ post.get_field('aside_video_title') }}
+              </h2>
+            </div>
+
+            <div class="videos__aside__video__column">
+              <figure class="videos__aside__video__media">
+                <img class="videos__aside__video__media__image" src="{{ post.get_field('aside_video_image') }}">
+              </figure>
+            </div>
+          </div>
+
+          <a class="videos__aside__video__button" href="{{ post.get_field('aside_video_link').url }}">
+            <div class="videos__aside__video__button__background"></div>
+
+            <div class="videos__aside__video__button__box">
+              {{ post.get_field('aside_video_link').title }}
+            </div>
+          </a>
+        </aside>
+      {% endif %}
+
+      {% if loop.index0 == 10 %}
+        <aside class="videos__aside__newsletter">
+          <h2 class="videos__aside__newsletter__title">
+            {{ post.get_field('aside_newsletter_title') }}
+          </h2>
+
+          <form action="" class="videos__aside__newsletter_form">
+            <input class="videos__aside__newsletter__input" placeholder="{{ post.get_field('aside_newsletter_input') }}" type="email">
+
+            <button class="videos__aside__newsletter__button">
+              <div class="videos__aside__newsletter__button__background"></div>
+
+              <div class="videos__aside__newsletter__button__box">
+                {{ post.get_field('aside_newsletter_button') }}
+              </div>
+            </button>
+          </form>
+        </aside>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

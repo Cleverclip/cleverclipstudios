@@ -1,0 +1,100 @@
+.jobs__about {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.jobs__about__wrapper {
+  @extend %wrapper;
+
+  max-width: 58rem;
+}
+
+.jobs__about__content {
+  @extend %content;
+  @extend %description__medium;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+  }
+
+  h3 {
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+
+    &:before {
+      border: 1px solid $color-black;
+      content: '';
+      display: inline-block;
+      height: 2rem;
+      margin-right: 1rem;
+      margin-top: -0.25rem;
+      vertical-align: middle;
+      width: 2rem;
+    }
+
+    &:after {
+      border-color: $color-deep-koamaru;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      content: '';
+      display: block;
+      height: 1.25rem;
+      left: 0.6rem;
+      opacity: 0;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 0.4rem;
+      transition: opacity 0.4s ease;
+      width: 0.75rem;
+    }
+
+    &.checked:after {
+      opacity: 1;
+    }
+  }
+}
+
+.jobs__about__footer {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.jobs__about__button {
+  @extend %button;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.jobs__about__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .jobs__about__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.jobs__about__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}

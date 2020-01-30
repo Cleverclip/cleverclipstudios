@@ -1,0 +1,33 @@
+<section class="how__expectations">
+  <div class="how__expectations__wrapper">
+    <header class="how__expectations__header">
+      <h2 class="how__expectations__title">
+        {{ post.get_field('expectations_title') }}
+      </h2>
+
+      <p class="how__expectations__description">
+        {{ post.get_field('expectations_description') }}
+      </p>
+    </header>
+
+    <div class="how__expectations__list">
+      {% for item in post.get_field('expectations_list') %}
+        <article class="how__expectations__item">
+          <div class="how__expectations__item__box">
+            <img class="how__expectations__item__image" data-src="{{ item.image }}">
+
+            <div class="how__expectations__item__content">
+              <h2 class="how__expectations__item__title" data-height=".how__expectations__item__title">
+                {{ item.title }}
+              </h2>
+
+              <p class="how__expectations__item__description" data-height=".how__expectations__item__description">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

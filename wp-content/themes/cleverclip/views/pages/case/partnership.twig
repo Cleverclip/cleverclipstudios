@@ -1,0 +1,15 @@
+<aside class="case__partnership">
+  <div class="case__partnership__wrapper">
+    <h2 class="case__partnership__title">
+      {{ home.get_field('aside_partnerships_title') }}
+    </h2>
+
+    <a class="case__partnership__button" href="{{ home.get_field('aside_partnerships_link').url }}">
+      <div class="case__partnership__button__background"></div>
+
+      <div class="case__partnership__button__box">
+        {{ home.get_field('aside_partnerships_link').title }}
+      </div>
+    </a>
+  </div>
+</aside>

@@ -1,0 +1,43 @@
+.industries__list {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.industries__list__wrapper {
+  @extend %wrapper;
+}
+
+.industries__list__article {
+  @extend %article;
+}
+
+.industries__list__article__label {
+  @extend %article__label;
+}
+
+.industries__list__article__media {
+  @extend %article__media;
+}
+
+.industries__list__article__media__image {
+  @extend %article__media__image;
+}
+
+.industries__list__article__content {
+  @extend %article__content;
+}
+
+.industries__list__article__title {
+  @extend %article__title;
+}
+
+.industries__list__article__footer {
+  @extend %article__footer;
+}
+
+.industries__list__article__link {
+  @extend %article__link;
+}

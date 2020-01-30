@@ -1,0 +1,55 @@
+%topic {
+  @include media('<small') {
+    display: none;
+  }
+}
+
+%topic__wrapper {
+  @extend %wrapper;
+
+  background: $color-candlelight;
+  padding: 0 7.5rem;
+  position: relative;
+}
+
+%topic__content {
+  display: inline-block;
+  max-width: 40rem;
+  padding: 5rem 0;
+  text-align: left;
+}
+
+%topic__title {
+  @extend %title__large;
+}
+
+%topic__button {
+  @extend %button;
+
+  margin-top: 3rem;
+}
+
+%topic__button__box {
+  @extend %button__box;
+
+  background: $color-candlelight;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  %topic__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+%topic__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+}
+
+%topic__image {
+  height: 100%;
+  position: absolute;
+  right: 5rem;
+  top: 0;
+}

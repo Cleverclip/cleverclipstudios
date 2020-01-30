@@ -1,0 +1,76 @@
+.case__header {
+
+  @include media('<small') {
+    padding-top: 6rem;
+  }
+}
+
+.case__header__media {
+  height: 75.5rem;
+  position: relative;
+  width: 100%;
+
+  @include media('<small') {
+    height: 30rem;
+  }
+}
+
+.case__header__media__image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.case__header__wrapper {
+  @extend %wrapper;
+
+  background: $color-deep-koamaru;
+  color: $color-white;
+  margin-top: -18rem;
+  padding: 8rem 0;
+
+  @include media('<small') {
+    margin-top: 0;
+    padding: 5rem 4.5%;
+    width: 100%;
+  }
+}
+
+.case__header__title {
+  @extend %title__medium;
+
+  margin: auto;
+  max-width: 90rem;
+  text-align: center;
+
+  &:not(:first-child) {
+    margin-top: 5rem;
+  }
+
+  @include media('<small') {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.case__header__description {
+  @extend %content;
+  @extend %description__medium;
+
+  margin: 0 auto;
+  max-width: 60rem;
+
+  &:not(:first-child) {
+    margin-top: 5rem;
+  }
+
+  @include media('<small') {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+  }
+}

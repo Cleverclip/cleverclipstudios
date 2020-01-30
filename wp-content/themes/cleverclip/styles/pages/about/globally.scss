@@ -1,0 +1,41 @@
+.about__globally {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.about__globally__header {
+  @extend %wrapper;
+}
+
+.about__globally__title {
+  @extend %title__medium;
+}
+
+.about__globally__description {
+  @extend %description__medium;
+
+  column-count: 2;
+  column-gap: 5rem;
+  margin-top: 5rem;
+
+
+  @include media('<small') {
+    column-count: 1;
+    margin-top: 1.5rem;
+  }
+}
+
+.about__globally__media {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8rem;
+  max-width: 144rem;
+
+  @include media('<small') {
+    margin-top: 3.5rem;
+  }
+}

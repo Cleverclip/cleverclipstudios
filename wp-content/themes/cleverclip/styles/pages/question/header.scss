@@ -1,0 +1,120 @@
+.question__header {
+  padding-top: 10rem + 9.5rem;
+
+  @include media('<small') {
+    padding-top: 3.5rem + 6rem;
+  }
+}
+
+.question__header__wrapper {
+  @extend %wrapper;
+}
+
+.question__header__title {
+  @extend %title__40;
+
+  margin: auto;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.question__header__box {
+  @extend %description__medium;
+
+  background: $color-spring-wood;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  max-width: 87.5rem;
+  padding: 10rem 0;
+  position: relative;
+
+  &:before {
+    background: $color-candlelight;
+    bottom: 50%;
+    content: '';
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: -1000vh;
+    transform: translateX(-50%);
+    width: 100vw;
+    z-index: -1;
+  }
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.question__header__content {
+  @extend %content;
+
+  margin: auto;
+  max-width: 60rem;
+  width: 80%;
+}
+
+.question__header__footer {
+  font-size: 0;
+  margin-top: 4rem;
+  text-align: center;
+
+  @include media('<small') {
+    margin-top: 3.5rem;
+  }
+}
+
+.question__header__button {
+  @extend %button;
+
+  text-decoration: none !important;
+
+  &--external,
+  &--internal {
+    display: none;
+  }
+
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+
+  @include media('<small') {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.question__header__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .question__header__button--external &,
+  .question__header__button--internal & {
+    background: $color-spring-wood;
+    border-color: $color-deep-koamaru;
+    color: $color-deep-koamaru;
+  }
+
+  .question__header__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.question__header__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+
+  .question__header__button--external &,
+  .question__header__button--internal & {
+    box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+  }
+}

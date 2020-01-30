@@ -1,0 +1,39 @@
+.home__aside__product {
+  @extend %product;
+}
+
+.home__aside__product__wrapper {
+  @extend %product__wrapper;
+}
+
+.home__aside__product__column {
+  @extend %product__column;
+}
+
+.home__aside__product__box {
+  @extend %product__box;
+}
+
+.home__aside__product__title {
+  @extend %product__title;
+}
+
+.home__aside__product__button {
+  @extend %product__button;
+}
+
+.home__aside__product__button__box {
+  @extend %product__button__box;
+}
+
+.home__aside__product__button__background {
+  @extend %product__button__background;
+}
+
+.home__aside__product__media {
+  @extend %product__media;
+}
+
+.home__aside__product__media__image {
+  @extend %product__media__image;
+}

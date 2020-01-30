@@ -1,0 +1,144 @@
+%header {
+  padding-top: 10rem + 9.5rem;
+  position: relative;
+
+  @include media('<small') {
+    padding-top: 3.5rem + 6rem;
+  }
+}
+
+%header__background {
+  @extend %background;
+
+  background: $color-candlelight;
+  bottom: 24.6rem;
+
+  @include media('<small') {
+    bottom: 0;
+  }
+}
+
+%header__wrapper {
+  @extend %wrapper;
+
+  max-width: 87.2rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  @include media('<small') {
+    width: 100% !important;
+  }
+}
+
+%header__title {
+  font-family: $font-tiempos-headline;
+  font-size: 5.8rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin: auto;
+    max-width: 25rem;
+  }
+}
+
+%header__title__55 {
+  font-family: $font-tiempos-headline;
+  font-size: 5.5rem;
+  font-weight: normal;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+  }
+}
+
+%header__description {
+  @extend %description__medium;
+
+  margin: 4.5rem auto 0;
+  max-width: 60rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+    max-width: 30rem;
+    width: 91%;
+  }
+}
+
+%header__media {
+  height: 49rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5rem;
+  position: relative;
+  width: 87.2rem;
+
+  &:before {
+    background-image: url('../images/dots-black.svg');
+    background-size: 16rem;
+    content: '';
+    height: 16rem;
+    left: -8rem;
+    position: absolute;
+    top: -3rem;
+    width: 16rem;
+  }
+
+  @include media('<small') {
+    height: 21rem;
+    width: 100%;
+
+    &:before {
+      top: -1.5rem;
+    }
+  }
+}
+
+%header__media__button {
+  background: $color-ecstasy;
+  font-size: 0;
+  height: 6.5rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+
+  &:after {
+    border-style: solid;
+    border-width: 1.05rem 0 1.05rem 1.5rem;
+    border-color: transparent transparent transparent $color-white;
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    width: 0;
+  }
+
+  @include media('<small') {
+    height: 4rem;
+    width: 6.5rem;
+  }
+}
+
+%header__media__image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+%header__illustration {
+  display: block;
+  margin: 5rem auto 0;
+  max-width: 144rem;
+  width: 100%;
+}

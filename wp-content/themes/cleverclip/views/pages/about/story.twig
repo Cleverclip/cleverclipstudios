@@ -1,0 +1,21 @@
+<section class="about__story">
+  <div class="about__story__wrapper">
+    <div class="about__story__columns">
+      <div class="about__story__column">
+        <figure class="about__story__media">
+          <img class="about__story__media__image" data-src="{{ post.get_field('story_image') | resize(1366) }}">
+        </figure>
+      </div>
+
+      <div class="about__story__column">
+        <h2 class="about__story__title">
+          {{ post.get_field('story_title') }}
+        </h2>
+
+        <div class="about__story__description">
+          {{ post.get_field('story_description') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

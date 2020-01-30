@@ -1,0 +1,68 @@
+.cookies {
+  background: $color-deep-koamaru;
+  box-shadow: 0 0 1rem rgba($color-black, 0.1);
+  bottom: 0;
+  color: $color-white;
+  left: 0;
+  padding: 5rem 0;
+  position: fixed;
+  transform: translateY(100%);
+  width: 100%;
+  z-index: 10000;
+}
+
+.cookies__wrapper {
+  @extend %wrapper;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include media('<small') {
+    flex-direction: column;
+  }
+}
+
+.cookies__image {
+  height: 9.2rem;
+  width: 9.2rem;
+
+  @include media('<small') {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.cookies__description {
+  @extend %description__medium;
+
+  max-width: 71rem;
+}
+
+.cookies__button {
+  @extend %button;
+
+  white-space: nowrap;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}
+
+.cookies__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-candlelight;
+  color: $color-candlelight;
+
+  .cookies__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.cookies__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}

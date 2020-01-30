@@ -1,0 +1,15 @@
+<section class="videos__know">
+  <div class="videos__know__wrapper">
+    <figure class="videos__know__media">
+      <img class="videos__know__media__image" src="{{ post.get_field('know_image') }}">
+    </figure>
+
+    <h1 class="videos__know__title">
+      {{ post.get_field('know_title') }}
+    </h1>
+
+    <div class="videos__know__description">
+      {{ post.get_field('know_description') }}
+    </div>
+  </div>
+</section>

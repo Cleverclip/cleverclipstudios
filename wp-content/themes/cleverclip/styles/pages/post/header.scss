@@ -1,0 +1,23 @@
+.post__header {
+  background: $color-candlelight;
+  padding-bottom: 10rem;
+  padding-top: 10rem + 9.5rem;
+  text-align: center;
+
+  @include media('<small') {
+    padding-bottom: 5rem;
+    padding-top: 3.5rem + 6rem;
+  }
+}
+
+.post__header__wrapper {
+  @extend %wrapper;
+}
+
+.post__header__title {
+  @extend %title__large;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90rem;
+}

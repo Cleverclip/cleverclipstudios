@@ -1,0 +1,52 @@
+.home__aside__topic {
+  @extend %topic;
+
+  margin-top: -17rem;
+  position: relative;
+
+  &:after {
+    background-image: url('../images/dots-black.svg');
+    background-size: 16.3rem;
+    bottom: -6.5rem;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  @include media('<small') {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.home__aside__topic__wrapper {
+  @extend %topic__wrapper;
+}
+
+.home__aside__topic__content {
+  @extend %topic__content;
+}
+
+.home__aside__topic__title {
+  @extend %topic__title;
+}
+
+.home__aside__topic__button {
+  @extend %topic__button;
+}
+
+.home__aside__topic__button__box {
+  @extend %topic__button__box;
+}
+
+.home__aside__topic__button__background {
+  @extend %topic__button__background;
+}
+
+.home__aside__topic__image {
+  @extend %topic__image;
+}

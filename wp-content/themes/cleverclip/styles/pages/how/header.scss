@@ -1,0 +1,33 @@
+.how__header {
+  @extend %header;
+}
+
+.how__header__background {
+  @extend %header__background;
+}
+
+.how__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.how__header__title {
+  @extend %header__title;
+}
+
+.how__header__description {
+  @extend %header__description;
+
+  max-width: 59rem;
+}
+
+.how__header__media {
+  @extend %header__media;
+}
+
+.how__header__media__button {
+  @extend %header__media__button;
+}
+
+.how__header__media__image {
+  @extend %header__media__image;
+}

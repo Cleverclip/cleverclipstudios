@@ -1,0 +1,39 @@
+.question__archive {
+  @extend %archive;
+}
+
+.question__archive__wrapper {
+  @extend %archive__wrapper;
+}
+
+.question__archive__title {
+  @extend %archive__title;
+}
+
+.question__archive__list {
+  @extend %archive__list;
+}
+
+.question__archive__case {
+  @extend %archive__case;
+}
+
+.question__archive__case__media {
+  @extend %archive__case__media;
+}
+
+.question__archive__case__image {
+  @extend %archive__case__image;
+}
+
+.question__archive__case__content {
+  @extend %archive__case__content;
+}
+
+.question__archive__case__description {
+  @extend %archive__case__description;
+}
+
+.question__archive__case__link {
+  @extend %archive__case__link;
+}

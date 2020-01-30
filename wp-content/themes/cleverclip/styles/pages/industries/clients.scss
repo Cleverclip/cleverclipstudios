@@ -1,0 +1,68 @@
+.industries__clients {
+  @extend %clients;
+
+  padding-top: 0;
+}
+
+.industries__clients__wrapper {
+  @extend %clients__wrapper;
+}
+
+.industries__clients__header {
+  @extend %clients__header;
+}
+
+.industries__clients__title {
+  @extend %clients__title;
+}
+
+.industries__clients__description {
+  @extend %clients__description;
+}
+
+.industries__clients__filter {
+  font-size: 0;
+  margin-bottom: 10rem;
+  margin-top: -1.5rem;
+  text-align: center;
+
+  @include media('<small') {
+    margin-bottom: 3.5rem;
+    margin-top: -0.25rem;
+  }
+}
+
+.industries__clients__filter__button {
+  @extend %description__large;
+
+  display: inline-block;
+  font-weight: bold;
+  margin: 0.5rem;
+  padding: 1.6rem 2.8rem;
+  transition: background 0.4s ease, color 0.4s ease;
+
+  &:hover,
+  &--active {
+    background: $color-ecstasy;
+    color: $color-white;
+  }
+
+  @include media('<small') {
+    margin: 0.25rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.industries__clients__list {
+  @extend %clients__list;
+}
+
+.industries__clients__item {
+  @extend %clients__item;
+
+  transition: opacity 0.4s ease;
+
+  .industries__clients__list--filtered &:not(.industries__clients__item--active) {
+    opacity: 0.1;
+  }
+}

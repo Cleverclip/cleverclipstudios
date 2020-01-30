@@ -1,0 +1,34 @@
+.industry__brands {
+  @extend %brands;
+
+  background: none;
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.industry__brands__wrapper {
+  @extend %brands__wrapper;
+}
+
+.industry__brands__title {
+  @extend %brands__title;
+}
+
+.industry__brands__list {
+  @extend %brands__list;
+}
+
+.industry__brands__item {
+  @extend %brands__item;
+}
+
+.industry__brands__item__wrapper {
+  @extend %brands__item__wrapper;
+}
+
+.industry__brands__image {
+  @extend %brands__image;
+}

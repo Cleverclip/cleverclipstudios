@@ -1,0 +1,25 @@
+<section class="videos__testimonial">
+  <div class="videos__testimonial__wrapper">
+    <figure class="videos__testimonial__media">
+      <img class="videos__testimonial__media__image" src="{{ post.get_field('testimonial_image') }}">
+    </figure>
+
+    <p class="videos__testimonial__description">
+      {{ post.get_field('testimonial_description') }}
+    </p>
+
+    <div class="videos__testimonial__author">
+      <p class="videos__testimonial__author__content">
+        <strong class="videos__testimonial__author__name">
+          {{ post.get_field('testimonial_author') }}
+        </strong>
+
+        {{ post.get_field('testimonial_role') }}
+      </p>
+
+      <div class="videos__testimonial__author__company">
+        <img class="videos__testimonial__author__company__image" src="{{ post.get_field('testimonial_company') }}">
+      </div>
+    </div>
+  </div>
+</section>

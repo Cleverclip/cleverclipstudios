@@ -1,0 +1,37 @@
+%button {
+  display: inline-block;
+  position: relative;
+
+  @include media('<small') {
+    display: block;
+  }
+}
+
+%button__box {
+  border: 1px solid;
+  padding: 1.4rem 5rem;
+  font-size: 1.8rem;
+  font-family: $font-work-sans;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  transition: transform 0.4s ease;
+  z-index: 1;
+
+  @include media('<small') {
+    font-size: 1.4rem;
+    padding: 1.1rem 5rem;
+  }
+}
+
+%button__box--hover {
+  transform: translate(0.4rem, 0.4rem);
+}
+
+%button__background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

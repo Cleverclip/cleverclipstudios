@@ -1,0 +1,31 @@
+.about__header {
+  @extend %header;
+}
+
+.about__header__background {
+  @extend %header__background;
+}
+
+.about__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.about__header__title {
+  @extend %header__title;
+}
+
+.about__header__description {
+  @extend %header__description;
+}
+
+.about__header__media {
+  @extend %header__media;
+}
+
+.about__header__media__button {
+  @extend %header__media__button;
+}
+
+.about__header__media__image {
+  @extend %header__media__image;
+}

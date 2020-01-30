@@ -1,0 +1,138 @@
+.home__complexity {
+  padding: 15rem 0;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.home__complexity__wrapper {
+  @extend %wrapper;
+}
+
+.home__complexity__columns {
+  display: table;
+  width: 100%;
+
+  @include media('<small') {
+    display: block;
+  }
+}
+
+.home__complexity__column {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+
+  &:last-child {
+    position: relative;
+    text-align: right;
+  }
+
+  @include media('<small') {
+    display: block;
+    width: 100%;
+
+    &:last-child {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.home__complexity__title {
+  @extend %title__medium;
+
+  max-width: 40rem;
+}
+
+.home__complexity__description {
+  @extend %description__medium;
+
+  margin-top: 4rem;
+  max-width: 44.5rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.home__complexity__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.home__complexity__button__box {
+  @extend %button__box;
+
+  background: $color-white;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .home__complexity__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.home__complexity__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.home__complexity__case {
+  @extend %box;
+
+  width: 55rem;
+
+  &:after {
+    background-image: url('../images/dots-black.svg');
+    background-size: 20.5rem;
+    bottom: -5rem;
+    content: "";
+    height: 26.5rem;
+    position: absolute;
+    right: 33rem;
+    width: 26.5rem;
+  }
+
+  @include media('<small') {
+    width: 100%;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.home__complexity__case__media {
+  @extend %box__media;
+
+  background: $color-ecstasy;
+}
+
+.home__complexity__case__image {
+  @extend %box__image;
+}
+
+.home__complexity__case__content {
+  @extend %box__content;
+}
+
+.home__complexity__case__description {
+  @extend %box__description;
+}
+
+.home__complexity__case__link {
+  @extend %box__link;
+}

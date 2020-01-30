@@ -1,0 +1,15 @@
+<section class="post__content post__content--{{ post.get_field('size') ? post.get_field('size') : 'small' }}">
+  <div class="post__content__wrapper">
+    {% if locale == 'en' %}
+      <p class="post__content__translation">
+        <strong>This post was automatically translated for convenience purposes.</strong>
+      </p>
+    {% elseif locale == 'fr' %}
+      <p class="post__content__translation">
+        <strong>Cet article a été traduit automatiquement pour des raisons de commodité.</strong>
+      </p>
+    {% endif %}
+
+    {{ post.content }}
+  </div>
+</section>

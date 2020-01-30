@@ -1,0 +1,31 @@
+.jobs__header {
+  @extend %header;
+}
+
+.jobs__header__background {
+  @extend %header__background;
+}
+
+.jobs__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.jobs__header__title {
+  @extend %header__title;
+}
+
+.jobs__header__description {
+  @extend %header__description;
+}
+
+.jobs__header__media {
+  @extend %header__media;
+}
+
+.jobs__header__media__button {
+  @extend %header__media__button;
+}
+
+.jobs__header__media__image {
+  @extend %header__media__image;
+}

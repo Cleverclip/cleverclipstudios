@@ -1,0 +1,101 @@
+%list {
+  font-size: 0;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  max-width: 120rem;
+  text-align: center;
+  white-space: nowrap;
+
+  @include media('<small') {
+    display: inline-block;
+    margin-left: 2rem;
+    vertical-align: top;
+  }
+}
+
+%list__item {
+  @extend %description__medium;
+
+  display: inline-block;
+  padding: 0 3.5rem;
+  vertical-align: top;
+  white-space: normal;
+  width: 25%;
+
+  @include media('<small') {
+    padding: 0;
+    width: 80vw;
+  }
+}
+
+%list__item__wrapper {
+  display: block;
+
+  @include media('<small') {
+    padding: 0 1.5rem;
+  }
+}
+
+%list__item__box {
+  @include media('<small') {
+    border: 1px solid $color-deep-koamaru;
+    box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+    padding: 2rem;
+  }
+}
+
+%list__item__image {
+  height: 14.6rem;
+  object-fit: cover;
+  width: 14.6rem;
+}
+
+%list__item__content {
+  font-family: $font-work-sans;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin-top: 5.5rem;
+
+  @include media('<small') {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+  }
+}
+
+%list__item__title {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  @include media('<small') {
+    font-size: 1.8rem;
+  }
+}
+
+%list__item__description {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+
+%list__item__link {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  max-width: 20rem;
+}
+
+%list__item__link__text {
+  color: $color-deep-koamaru;
+  font-weight: bold;
+}
+
+%list__item__link__arrow {
+  height: 1.7rem;
+  width: 2.2rem;
+}

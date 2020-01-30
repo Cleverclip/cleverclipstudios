@@ -1,0 +1,33 @@
+<section class="clients__customers">
+  <div class="clients__customers__wrapper">
+    <h2 class="clients__customers__title">
+      {{ post.get_field('customers_title') }}
+    </h2>
+
+    <div class="clients__customers__list">
+      {% for customer in post.get_field('customers_list') %}
+        <article class="clients__customers__item">
+          <div class="clients__customers__item__wrapper">
+            <figure class="clients__customers__item__media">
+              <img class="clients__customers__item__image" data-src="{{ customer.image }}">
+            </figure>
+
+            <div class="clients__customers__item__content">
+              <p class="clients__customers__item__description">
+                {{ customer.description }}
+              </p>
+
+              <p class="clients__customers__item__author">
+                <strong class="clients__customers__item__author__name">
+                  {{ customer.author }}
+                </strong>
+
+                {{ customer.role }}
+              </p>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

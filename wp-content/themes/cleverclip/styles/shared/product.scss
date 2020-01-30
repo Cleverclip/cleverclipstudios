@@ -1,0 +1,117 @@
+%product {
+  background: $color-robins-egg-blue;
+  color: $color-white;
+  position: relative;
+  width: 100%;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  @include media('<small') {
+
+  }
+}
+
+%product__wrapper {
+  @extend %wrapper;
+
+  display: table;
+  max-width: 144rem;
+  width: 100%;
+
+  @include media('<small') {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100% !important;
+  }
+}
+
+%product__column {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+  &:first-child {
+    padding-bottom: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem;
+    width: calc(100% - 80rem);
+  }
+
+  &:last-child {
+    position: relative;
+    width: 80rem;
+  }
+
+  @include media('<small') {
+    margin: auto;
+
+    &:first-child {
+      padding: 3.5rem 0;
+      width: 91%;
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
+}
+
+%product__box {
+  display: inline-block;
+  text-align: left;
+}
+
+%product__title {
+  @extend %title__large;
+
+  margin: auto;
+  max-width: 36.5rem;
+}
+
+%product__button {
+  @extend %button;
+
+  margin-top: 3rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+%product__button__box {
+  @extend %button__box;
+
+  background: $color-robins-egg-blue;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  %product__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+%product__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+}
+
+%product__media {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+%product__media__image {
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}

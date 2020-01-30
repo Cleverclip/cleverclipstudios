@@ -1,0 +1,75 @@
+%brands {
+  background: $color-spring-wood;
+  padding: 10rem 0;
+  position: relative;
+  text-align: center;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+%brands__wrapper {
+  @extend %wrapper;
+
+  @include media('<small') {
+    width: 100% !important;
+  }
+}
+
+%brands__title {
+  font-family: $font-tiempos-headline;
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 2.8rem;
+  }
+}
+
+%brands__list {
+  font-size: 0;
+  margin-bottom: -3.5rem;
+  margin-top: 5.5rem - 3.5rem;
+  margin-left: -3.5rem;
+  margin-right: -3.5rem;
+  position: relative;
+
+  @include media('<small') {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 25vw;
+    margin-top: 2.5rem;
+    white-space: nowrap;
+  }
+}
+
+%brands__item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%;
+
+  @include media('<small') {
+    margin: 0;
+    text-align: center;
+    width: 50vw;
+  }
+}
+
+%brands__item__wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 3.5rem;
+  justify-content: center;
+
+  @include media('<small') {
+    padding: 0 2.5rem;
+  }
+}
+
+%brands__image {
+  display: block;
+  margin: auto;
+}

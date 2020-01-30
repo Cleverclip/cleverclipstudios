@@ -1,0 +1,95 @@
+%title__large {
+  font-family: $font-tiempos-headline;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.8rem;
+  }
+}
+
+%title__medium {
+  font-family: $font-tiempos-headline;
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+  }
+}
+
+%title__40 {
+  font-family: $font-tiempos-headline;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+  }
+}
+
+%title__32 {
+  font-family: $font-tiempos-headline;
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+  }
+}
+
+%title__small {
+  font-family: $font-tiempos-headline;
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 3.2rem;
+  }
+}
+
+%description__28 {
+  font-family: $font-work-sans;
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  @include media('<small') {
+    font-size: 1.8rem;
+  }
+}
+
+%description__large {
+  font-family: $font-work-sans;
+  font-size: 2rem;
+  line-height: 1.4;
+
+  @include media('<small') {
+    font-size: 1.6rem;
+  }
+}
+
+%description__medium {
+  font-family: $font-work-sans;
+  font-size: 1.8rem;
+  line-height: 1.4;
+
+  @include media('<small') {
+    font-size: 1.4rem;
+  }
+}
+
+%description__16 {
+  font-family: $font-work-sans;
+  font-size: 1.6rem;
+  line-height: 1.4;
+
+  @include media('<small') {
+    font-size: 1.4rem;
+  }
+}

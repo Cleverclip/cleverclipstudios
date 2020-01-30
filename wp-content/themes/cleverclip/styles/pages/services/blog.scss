@@ -1,0 +1,161 @@
+.services__blog {
+  background: $color-deep-koamaru;
+  overflow: hidden;
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 0;
+  }
+}
+
+.services__blog__wrapper {
+  @extend %wrapper;
+
+  @include media('<small') {
+    width: 100% !important;
+  }
+}
+
+.services__blog__columns {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include media('<small') {
+    flex-direction: column;
+  }
+}
+
+.services__blog__column {
+  position: relative;
+
+  &:first-child {
+    width: 43rem;
+
+    &:after {
+      background: $color-spring-wood;
+      bottom: -20rem;
+      content: '';
+      left: -1000rem;
+      position: absolute;
+      right: 0;
+      top: -20rem;
+      z-index: -1;
+    }
+  }
+
+  &:last-child {
+    color: $color-white;
+  }
+
+  @include media('<small') {
+    &:first-child {
+      background: $color-spring-wood;
+      padding: 5rem 4.5%;
+      width: 100%;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      padding: 5rem 4.5%;
+    }
+  }
+}
+
+.services__blog__media {
+
+}
+
+.services__blog__media__image {
+  width: 32.5rem;
+
+  @include media('<small') {
+    width: 100%;
+  }
+}
+
+.services__blog__title {
+  @extend %title__medium;
+
+  margin-top: 2.5rem;
+  max-width: 35rem;
+}
+
+.services__blog__description {
+  @extend %description__medium;
+
+  margin-top: 4rem;
+  max-width: 32rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.services__blog__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}
+
+.services__blog__button__box {
+  @extend %button__box;
+
+  background: $color-spring-wood;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .services__blog__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.services__blog__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.services__blog__subtitle {
+  @extend %title__32;
+}
+
+.services__blog__articles {
+  margin-top: 10rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.services__blog__article {
+  font-family: $font-work-sans;
+  font-weight: bold;
+  max-width: 60rem;
+
+  &:not(:first-child) {
+    margin-top: 5.5rem;
+  }
+}
+
+.services__blog__article__title {
+  @extend %description__28;
+
+  font-weight: 600;
+}
+
+.services__blog__article__link {
+  color: $color-candlelight;
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  text-align: right;
+}

@@ -1,0 +1,269 @@
+.clients__cases {
+  padding: 15rem 0 0;
+
+  @include media('<small') {
+    padding-top: 5rem;
+  }
+}
+
+.clients__cases__wrapper {
+  @extend %wrapper;
+}
+
+.clients__cases__header {
+  text-align: center;
+}
+
+.clients__cases__title {
+  @extend %title__medium;
+}
+
+.clients__cases__description {
+  @extend %description__medium;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  max-width: 61rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.clients__cases__highlight {
+  background: $color-deep-koamaru;
+  color: $color-white;
+  margin-top: 10rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.clients__cases__highlight__columns {
+  display: table;
+  width: 100%;
+
+  @include media('<small') {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+.clients__cases__highlight__column {
+  display: table-cell;
+  vertical-align: middle;
+
+  &:first-child {
+    padding-bottom: 10rem;
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+    padding-top: 10rem;
+    width: 54.5%;
+  }
+
+  &:last-child {
+    width: 45.5%;
+  }
+
+  @include media('<small') {
+    display: block;
+
+    &:first-child {
+      padding-bottom: 3.5rem;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 5rem;
+      width: 100%;
+    }
+
+    &:last-child {
+      padding-bottom: 5rem;
+      width: 100%;
+    }
+  }
+}
+
+.clients__cases__highlight__title {
+  @extend %title__40;
+
+  @include media('<small') {
+    [lang="de"] & {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+.clients__cases__highlight__subtitle {
+  @extend %description__medium;
+
+  font-size: 2.8rem;
+  margin-top: 2rem;
+
+  @include media('<small') {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.clients__cases__highlight__content {
+  @extend %description__medium;
+
+  margin-top: 4.5rem;
+
+  p:not(:first-child) {
+    margin-top: 2.5rem;
+  }
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.clients__cases__highlight__video {
+  margin-bottom: 5rem;
+  position: relative;
+
+  @include media('<small') {
+    margin-bottom: 0;
+  }
+}
+
+.clients__cases__highlight__video__button {
+  background: $color-ecstasy;
+  height: 5rem;
+  font-size: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.7rem;
+
+  &:after {
+    border-style: solid;
+    border-width: 1.05rem 0 1.05rem 1.5rem;
+    border-color: transparent transparent transparent $color-white;
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    width: 0;
+  }
+}
+
+.clients__cases__highlight__media {
+  height: 65rem;
+  position: relative;
+  width: 110%;
+
+  &:before {
+    background-image: url('../images/dots-white.svg');
+    background-size: 14.3rem;
+    bottom: -7rem;
+    content: '';
+    height: 27rem;
+    position: absolute;
+    left: -4.75rem;
+    width: 22rem;
+  }
+
+  @include media('<small') {
+    display: none;
+  }
+}
+
+.clients__cases__highlight__media__image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.clients__cases__section {
+  margin-top: 15rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.clients__cases__section__header {
+  align-items: center;
+  display: flex;
+
+  .clients__cases__section:nth-child(even) & {
+    flex-direction: row-reverse;
+  }
+}
+
+.clients__cases__section__header__column {
+  &:first-child {
+    width: 73rem;
+  }
+
+  &:last-child {
+    text-align: center;
+    width: calc(100% - 73rem);
+  }
+}
+
+.clients__cases__section__title {
+  @extend %title__40;
+}
+
+.clients__cases__section__description {
+  @extend %description__medium;
+
+  margin-top: 2rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.clients__cases__section__media {
+
+}
+
+.clients__cases__section__media__image {
+
+}
+
+.clients__cases__section__articles {
+  margin-top: 10rem;
+
+  @include media('<small') {
+    margin-top: 3.5rem;
+  }
+}
+
+.clients__cases__section__article {
+  @extend %article;
+}
+
+.clients__cases__section__article__media {
+  @extend %article__media;
+}
+
+.clients__cases__section__article__media__image {
+  @extend %article__media__image;
+}
+
+.clients__cases__section__article__content {
+  @extend %article__content;
+}
+
+.clients__cases__section__article__footer {
+  @extend %article__footer;
+}
+
+.clients__cases__section__article__link {
+  @extend %article__link;
+
+  width: 50%;
+}

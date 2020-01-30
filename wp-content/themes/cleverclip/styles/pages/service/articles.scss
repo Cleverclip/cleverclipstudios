@@ -1,0 +1,43 @@
+.service__articles {
+  margin-top: 15rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.service__articles__case {
+  @extend %box;
+
+  &:not(:first-child) {
+    margin-top: 5rem;
+  }
+
+  @include media('<small') {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.service__articles__case__media {
+  @extend %box__media;
+}
+
+.service__articles__case__image {
+  @extend %box__image;
+}
+
+.service__articles__case__content {
+  @extend %box__content;
+
+  background: $color-spring-wood;
+}
+
+.service__articles__case__description {
+  @extend %box__description;
+}
+
+.service__articles__case__link {
+  @extend %box__link;
+}

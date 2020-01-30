@@ -1,0 +1,123 @@
+@import 'utils/responsive';
+@import 'utils/variables';
+
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/reset';
+
+@import 'shared/alert';
+@import 'shared/archive';
+@import 'shared/article';
+@import 'shared/background';
+@import 'shared/box';
+@import 'shared/brands';
+@import 'shared/button';
+@import 'shared/clients';
+@import 'shared/content';
+@import 'shared/cookies';
+@import 'shared/embed';
+@import 'shared/header';
+@import 'shared/items';
+@import 'shared/list';
+@import 'shared/loader';
+@import 'shared/popup';
+@import 'shared/product';
+@import 'shared/testimonials';
+@import 'shared/titles';
+@import 'shared/topic';
+@import 'shared/wrapper';
+
+@import 'shared/footer';
+@import 'shared/menu';
+
+@import 'pages/home/header';
+@import 'pages/home/brands';
+@import 'pages/home/complexity';
+@import 'pages/home/industries';
+@import 'pages/home/approach';
+@import 'pages/home/topic';
+@import 'pages/home/partners';
+@import 'pages/home/product';
+@import 'pages/home/services';
+@import 'pages/home/videos';
+@import 'pages/home/cases';
+
+@import 'pages/how/header';
+@import 'pages/how/highlights';
+@import 'pages/how/secret';
+@import 'pages/how/steps';
+@import 'pages/how/topic';
+@import 'pages/how/testimonials';
+@import 'pages/how/product';
+@import 'pages/how/expectations';
+
+@import 'pages/about/header';
+@import 'pages/about/awards';
+@import 'pages/about/story';
+@import 'pages/about/complexity';
+@import 'pages/about/team';
+@import 'pages/about/essence';
+@import 'pages/about/globally';
+@import 'pages/about/know';
+@import 'pages/about/contact';
+@import 'pages/about/daily';
+
+@import 'pages/clients/header';
+@import 'pages/clients/testimonials';
+@import 'pages/clients/highlights';
+@import 'pages/clients/customers';
+@import 'pages/clients/collaboration';
+@import 'pages/clients/product';
+@import 'pages/clients/cases';
+@import 'pages/clients/clients';
+
+@import 'pages/services/header';
+@import 'pages/services/core';
+@import 'pages/services/newsletter';
+@import 'pages/services/sections';
+@import 'pages/services/blog';
+@import 'pages/services/approach';
+@import 'pages/services/clients';
+
+@import 'pages/service/header';
+@import 'pages/service/brands';
+@import 'pages/service/columns';
+@import 'pages/service/know';
+@import 'pages/service/clients';
+@import 'pages/service/questions';
+@import 'pages/service/blog';
+@import 'pages/service/testimonial';
+@import 'pages/service/articles';
+@import 'pages/service/video';
+@import 'pages/service/newsletter';
+
+@import 'pages/question/header';
+@import 'pages/question/archive';
+
+@import 'pages/case/header';
+@import 'pages/case/content';
+@import 'pages/case/partnership';
+@import 'pages/case/related';
+
+@import 'pages/industry/header';
+@import 'pages/industry/about';
+@import 'pages/industry/topics';
+@import 'pages/industry/brands';
+@import 'pages/industry/archive';
+
+@import 'pages/industries/header';
+@import 'pages/industries/list';
+@import 'pages/industries/clients';
+
+@import 'pages/jobs/header';
+@import 'pages/jobs/about';
+
+@import 'pages/press/about';
+
+@import 'pages/error/content';
+
+@import 'pages/blog/header';
+@import 'pages/blog/list';
+
+@import 'pages/post/header';
+@import 'pages/post/content';

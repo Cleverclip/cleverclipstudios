@@ -1,0 +1,39 @@
+.case__archive {
+  @extend %archive;
+}
+
+.case__archive__wrapper {
+  @extend %archive__wrapper;
+}
+
+.case__archive__title {
+  @extend %archive__title;
+}
+
+.case__archive__list {
+  @extend %archive__list;
+}
+
+.case__archive__case {
+  @extend %archive__case;
+}
+
+.case__archive__case__media {
+  @extend %archive__case__media;
+}
+
+.case__archive__case__image {
+  @extend %archive__case__image;
+}
+
+.case__archive__case__content {
+  @extend %archive__case__content;
+}
+
+.case__archive__case__description {
+  @extend %archive__case__description;
+}
+
+.case__archive__case__link {
+  @extend %archive__case__link;
+}

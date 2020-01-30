@@ -1,0 +1,37 @@
+.industry__archive {
+  @extend %archive;
+
+  padding-top: 0;
+}
+
+.industry__archive__wrapper {
+  @extend %archive__wrapper;
+}
+
+.industry__archive__list {
+  @extend %archive__list;
+}
+
+.industry__archive__case {
+  @extend %archive__case;
+}
+
+.industry__archive__case__media {
+  @extend %archive__case__media;
+}
+
+.industry__archive__case__image {
+  @extend %archive__case__image;
+}
+
+.industry__archive__case__content {
+  @extend %archive__case__content;
+}
+
+.industry__archive__case__description {
+  @extend %archive__case__description;
+}
+
+.industry__archive__case__link {
+  @extend %archive__case__link;
+}

@@ -1,0 +1,70 @@
+.how__expectations {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.how__expectations__wrapper {
+  @extend %wrapper;
+}
+
+.how__expectations__header {
+  text-align: center;
+}
+
+.how__expectations__title {
+  @extend %title__medium;
+
+  margin: auto;
+  max-width: 55rem;
+}
+
+.how__expectations__description {
+  @extend %description__medium;
+
+  margin: 3rem auto 0;
+  max-width: 60rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+    max-width: 30rem;
+  }
+}
+
+.how__expectations__list {
+  @extend %items;
+
+  margin-top: 5rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.how__expectations__item {
+  @extend %items__item;
+
+  padding: 0 5rem;
+}
+
+.how__expectations__item__box {
+  @extend %items__item__box;
+}
+
+.how__expectations__item__image {
+  @extend %items__item__image;
+}
+
+.how__expectations__item__content {
+  @extend %items__item__content;
+}
+
+.how__expectations__item__title {
+  @extend %items__item__title;
+}
+
+.how__expectations__item__description {
+  @extend %items__item__description;
+}

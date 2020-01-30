@@ -1,0 +1,35 @@
+.service__header {
+  @extend %header;
+
+  background: $color-spring-wood;
+}
+
+.service__header__background {
+  @extend %header__background;
+}
+
+.service__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.service__header__title {
+  @extend %header__title;
+}
+
+.service__header__description {
+  @extend %header__description;
+
+  max-width: 62rem;
+}
+
+.service__header__media {
+  @extend %header__media;
+}
+
+.service__header__media__button {
+  @extend %header__media__button;
+}
+
+.service__header__media__image {
+  @extend %header__media__image;
+}

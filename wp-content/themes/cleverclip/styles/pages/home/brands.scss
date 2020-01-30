@@ -1,0 +1,27 @@
+.home__brands {
+  @extend %brands;
+}
+
+.home__brands__wrapper {
+  @extend %brands__wrapper;
+}
+
+.home__brands__title {
+  @extend %brands__title;
+}
+
+.home__brands__list {
+  @extend %brands__list;
+}
+
+.home__brands__item {
+  @extend %brands__item;
+}
+
+.home__brands__item__wrapper {
+  @extend %brands__item__wrapper;
+}
+
+.home__brands__image {
+  @extend %brands__image;
+}

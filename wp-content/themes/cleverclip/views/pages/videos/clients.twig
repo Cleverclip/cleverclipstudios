@@ -1,0 +1,15 @@
+<section class="videos__clients">
+  <div class="videos__clients__wrapper">
+    <h1 class="videos__clients__title">
+      {{ post.get_field('clients_title') }}
+    </h1>
+
+    <ul class="videos__clients__list">
+      {% for client in post.get_field('clients_list') %}
+        <li class="videos__clients__item">
+          <img class="videos__clients__image" src="{{ client.image }}">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

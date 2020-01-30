@@ -1,0 +1,256 @@
+.about__contact {
+  background: $color-spring-wood;
+  padding: 10rem 0 15rem;
+
+  @include media('<small') {
+    padding: 0 0 5rem;
+  }
+}
+
+.about__contact__wrapper {
+  @extend %wrapper;
+}
+
+.about__contact__columns {
+  display: table;
+  width: 100%;
+}
+
+.about__contact__column {
+  display: table-cell;
+  vertical-align: top;
+
+  &:first-child {
+    width: 75rem;
+  }
+
+  @include media('<small') {
+    display: block;
+
+    &:first-child {
+      width: auto;
+    }
+
+    &:last-child {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.about__contact__title {
+  @extend %title__40;
+}
+
+.about__contact__description {
+  @extend %description__medium;
+
+  margin-top: 4rem;
+  max-width: 58rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.about__contact__form {
+  margin-top: 5.5rem;
+  max-width: 58rem;
+
+  @include media('<small') {
+    margin-top: 0;
+  }
+}
+
+.about__contact__form__row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+
+  &--checkbox {
+    justify-content: left;
+  }
+
+  @include media('<small') {
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+.about__contact__form__checkbox {
+  left: -99999rem;
+  position: absolute;
+}
+
+.about__contact__form__checkbox__bullet {
+  border: 1px solid;
+  display: block;
+  height: 3.6rem;
+  margin-right: 1rem;
+  position: relative;
+  width: 3.6rem;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 0.2rem 0.2rem 0;
+    content: '';
+    display: block;
+    height: 1rem;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -75%) rotate(45deg);
+    transition: opacity 0.4s ease;
+    width: 0.75rem;
+  }
+
+  .about__contact__form__checkbox:checked ~ & {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  @include media('<small') {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.about__contact__form__checkbox__text {
+  width: calc(100% - 3.6rem);
+
+  @include media('<small') {
+    font-size: 1.4rem;
+  }
+}
+
+.about__contact__form__input {
+  @extend %description__medium;
+
+  border-bottom: 1px solid;
+  height: 4rem;
+  padding: 0 1.5rem;
+  transition: border 0.4s ease, color 0.4s ease;
+  width: 28.5rem;
+
+  &--email,
+  &--select,
+  &--textarea {
+    width: 100%;
+  }
+
+  &.about__contact__form--error {
+    border-bottom-color: $color-razzmatazz;
+    color: $color-razzmatazz;
+  }
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+
+.about__contact__form__label {
+  @extend %description__medium;
+
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.about__contact__form__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}
+
+.about__contact__form__button__box {
+  @extend %button__box;
+
+  background: $color-spring-wood;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .about__contact__form__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.about__contact__form__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.about__contact__media {
+  margin-bottom: 6.5rem;
+
+  @include media('<small') {
+    display: none;
+  }
+}
+
+.about__contact__image {
+  width: 21.3rem;
+}
+
+.about__contact__section {
+  &:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  @include media('<small') {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.about__contact__section__title {
+  font-family: $font-tiempos-headline;
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 3.25rem;
+
+  @include media('<small') {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.about__contact__section__link {
+  @extend %description__large;
+
+  color: $color-deep-koamaru;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @include media('<small') {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

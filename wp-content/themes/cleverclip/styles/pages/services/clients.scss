@@ -1,0 +1,84 @@
+.services__clients {
+  @extend %clients;
+}
+
+.services__clients__wrapper {
+  @extend %clients__wrapper;
+}
+
+.services__clients__header {
+  @extend %clients__header;
+}
+
+.services__clients__title {
+  @extend %clients__title;
+}
+
+.services__clients__description {
+  @extend %clients__description;
+}
+
+.services__clients__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}
+
+.services__clients__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .services__clients__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.services__clients__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.services__clients__list {
+  @extend %clients__list;
+
+  overflow: hidden;
+}
+
+.services__clients__item {
+  @extend %clients__item;
+}
+
+.services__clients__image {
+  height: 7.35rem;
+  object-fit: contain;
+  width: 18.4rem;
+}
+
+.services__clients__more {
+  @extend %description__medium;
+
+  display: block;
+  font-weight: bold;
+  margin: 5rem auto 0;
+
+  &:after {
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 0 0.2rem 0.2rem 0;
+    content: '';
+    display: block;
+    height: 1rem;
+    margin: 0.5rem auto 0;
+    transform: rotate(45deg);
+    width: 1rem;
+  }
+}

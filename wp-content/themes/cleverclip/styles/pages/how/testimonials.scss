@@ -1,0 +1,115 @@
+.how__testimonials {
+  @extend %testimonials;
+
+  @include media('<small') {
+    margin-bottom: 3.5rem;
+    padding-top: 5rem;
+  }
+}
+
+.how__testimonials__wrapper {
+  @extend %testimonials__wrapper;
+}
+
+.how__testimonial {
+  @extend %testimonial;
+
+  display: block;
+  opacity: 1;
+  position: relative;
+  visibility: visible;
+
+  &--1 {
+    background: $color-spring-wood;
+    padding: 15rem 0;
+  }
+
+  &--2 {
+    padding: 12rem 0 15rem;
+  }
+
+  @include media('<small') {
+    display: inline-block;
+
+    &--1 {
+      background: none;
+      padding: 0;
+    }
+
+    &--2 {
+      padding: 0;
+    }
+  }
+}
+
+.how__testimonial__wrapper {
+  @extend %wrapper;
+
+  @include media('<small') {
+    width: 100%;
+  }
+}
+
+.how__testimonial__box {
+  @extend %testimonial__wrapper;
+}
+
+.how__testimonial__media {
+  @extend %testimonial__media;
+}
+
+.how__testimonial__media__image {
+  @extend %testimonial__media__image;
+}
+
+.how__testimonial__content {
+  @extend %testimonial__content;
+}
+
+.how__testimonial__description {
+  @extend %testimonial__description;
+}
+
+.how__testimonial__author {
+  @extend %testimonial__author;
+}
+
+.how__testimonial__author__column {
+  @extend %testimonial__author__column;
+}
+
+.how__testimonial__author__title {
+  @extend %testimonial__author__title;
+}
+
+.how__testimonial__author__image {
+  @extend %testimonial__author__image;
+}
+
+.how__testimonials__pagination {
+  @extend %testimonials__pagination;
+}
+
+.how__testimonials__pagination__button {
+  @extend %testimonials__pagination__button;
+
+  &--active {
+    @extend %testimonials__pagination__button--active;
+  }
+}
+
+.how__testimonials__navigation {
+  @extend %testimonials__navigation;
+}
+
+.how__testimonials__navigation__button {
+  @extend %testimonials__navigation__button;
+
+  &--next {
+    @extend %testimonials__navigation__button--next;
+  }
+
+  &--previous {
+    @extend %testimonials__navigation__button--previous;
+  }
+}

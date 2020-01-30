@@ -1,0 +1,13 @@
+<header class="blog__header">
+  <div class="blog__header__wrapper">
+    <h1 class="blog__header__title">
+      {{ post.title }}
+    </h1>
+
+    <div class="blog__header__description">
+      {{ post.content | striptags }}
+    </div>
+  </div>
+
+  <img class="blog__header__illustration"  data-src="{{ post.get_field('header_background') }}">
+</header>

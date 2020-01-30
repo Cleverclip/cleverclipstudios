@@ -1,0 +1,160 @@
+.services__section {
+  padding: 15rem 0;
+
+  &:nth-child(even) {
+    background: $color-spring-wood;
+  }
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.services__section__wrapper {
+  @extend %wrapper;
+}
+
+.services__section__columns {
+  align-items: center;
+  display: flex;
+
+  .services__section:nth-child(odd) & {
+    flex-direction: row-reverse;
+  }
+
+  @include media('<small') {
+    flex-direction: column;
+
+    .services__section:nth-child(odd) & {
+      flex-direction: column;
+    }
+  }
+}
+
+.services__section__column {
+  width: 50%;
+
+  .services__section:nth-child(odd) &:first-child {
+    text-align: right;
+  }
+
+  @include media('<small') {
+    width: 100%;
+
+    .services__section:nth-child(even) &:first-child,
+    .services__section:nth-child(odd) &:first-child {
+      text-align: center;
+    }
+  }
+}
+
+.services__section__media {
+
+}
+
+.services__section__media__image {
+  width: 80%;
+}
+
+.services__section__title {
+  @extend %title__medium;
+
+  @include media('<small') {
+    margin-top: 3.5rem;
+  }
+}
+
+.services__section__description {
+  @extend %description__medium;
+
+  margin-top: 4rem;
+
+  p:not(:first-child) {
+    margin-top: 2.5rem;
+  }
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.services__section__box {
+  text-align: center;
+
+  margin-top: 7.5rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.services__section__button {
+  @extend %button;
+
+  @include media('<small') {
+    width: 100%;
+  }
+}
+
+.services__section__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .services__section__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.services__section__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.services__section__articles {
+  margin-top: 15rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.services__section__article {
+  @extend %article;
+
+  .services__section:nth-child(even) & {
+    background: $color-white;
+  }
+}
+
+.services__section__article__media {
+  @extend %article__media;
+}
+
+.services__section__article__media__image {
+  @extend %article__media__image;
+}
+
+.services__section__article__content {
+  @extend %article__content;
+}
+
+.services__section__article__title {
+  @extend %description__large;
+
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.services__section__article__footer {
+  @extend %article__footer;
+}
+
+.services__section__article__link {
+  @extend %article__link;
+}

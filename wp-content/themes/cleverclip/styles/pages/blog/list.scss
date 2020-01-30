@@ -1,0 +1,43 @@
+.blog__list {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.blog__list__wrapper {
+  @extend %wrapper;
+}
+
+.blog__list__article {
+  @extend %article;
+}
+
+.blog__list__article__label {
+  @extend %article__label;
+}
+
+.blog__list__article__media {
+  @extend %article__media;
+}
+
+.blog__list__article__media__image {
+  @extend %article__media__image;
+}
+
+.blog__list__article__content {
+  @extend %article__content;
+}
+
+.blog__list__article__title {
+  @extend %article__title;
+}
+
+.blog__list__article__footer {
+  @extend %article__footer;
+}
+
+.blog__list__article__link {
+  @extend %article__link;
+}

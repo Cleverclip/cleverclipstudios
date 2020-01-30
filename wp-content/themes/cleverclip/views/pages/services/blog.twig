@@ -1,0 +1,47 @@
+<section class="services__blog">
+  <div class="services__blog__wrapper">
+    <div class="services__blog__columns">
+      <div class="services__blog__column">
+        <figure class="services__blog__media">
+          <img class="services__blog__media__image" data-src="{{ post.get_field('blog_image') }}">
+        </figure>
+
+        <h2 class="services__blog__title">
+          {{ post.get_field('blog_title') }}
+        </h2>
+
+        <div class="services__blog__description">
+          {{ post.get_field('blog_description') }}
+        </div>
+
+        <a class="services__blog__button" href="{{ post.get_field('blog_link').url }}">
+          <div class="services__blog__button__background"></div>
+
+          <div class="services__blog__button__box">
+            {{ post.get_field('blog_link').title }}
+          </div>
+        </a>
+      </div>
+
+      <div class="services__blog__column">
+        <h3 class="services__blog__subtitle">
+          {{ post.get_field('blog_subtitle') }}
+        </h3>
+
+        <div class="services__blog__articles">
+          {% for item in blog %}
+            <article class="services__blog__article">
+              <h4 class="services__blog__article__title">
+                {{ item.title }}
+              </h4>
+
+              <a class="services__blog__article__link" href="{{ item.link }}">
+                {{ option[locale ~ '_read_more'] }}
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

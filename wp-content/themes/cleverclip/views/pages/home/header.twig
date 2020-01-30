@@ -1,0 +1,47 @@
+<header class="home__header">
+  <div class="home__header__wrapper">
+    <div class="home__header__animation" data-animation="{{ post.get_field('header_animation') }}"></div>
+
+    <div class="home__header__columns">
+      <div class="home__header__column">
+        <h1 class="home__header__title home__header__title--hidden">
+          {% for lines in post.get_field('header_title') %}
+            {% for line in lines %}
+              {{ line[0].text }}
+            {% endfor %}
+          {% endfor %}
+        </h1>
+
+        <span class="home__header__title">
+          {% for lines in post.get_field('header_title') %}
+            {% if loop.index0 == 2 %}
+              <br>
+            {% endif %}
+
+            {% for line in lines %}
+              <span class="home__header__title__line {{ line | length > 1 ? 'home__header__title__line--multiple' : 'home__header__title__line--single' }}">
+                {% for text in line %}
+                  <span class="home__header__title__text">{{ text.text }}</span>
+                {% endfor %}
+              </span>
+            {% endfor %}
+          {% endfor %}
+        </span>
+
+        <p class="home__header__description">
+          {{ post.get_field('header_description') }}
+        </p>
+      </div>
+
+      <div class="home__header__column">
+        <div class="home__header__media">
+          <img class="home__header__media__image" data-src="{{ post.get_field('header_image') | resize(900) }}">
+
+          <button class="home__header__media__button" data-modal-video="{{ post.get_field('header_vimeo') }}">
+            Play
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

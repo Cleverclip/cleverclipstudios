@@ -1,0 +1,87 @@
+.press__about {
+  padding-bottom: 15rem;
+  padding-top: 10rem + 9.5rem;
+  text-align: center;
+
+  @include media('<small') {
+    padding-bottom: 5rem;
+    padding-top: 3.5rem + 6rem;
+  }
+}
+
+.press__about__wrapper {
+  @extend %wrapper;
+}
+
+.press__about__title {
+  @extend %header__title;
+
+  position: relative;
+  z-index: 1;
+}
+
+.press__about__media {
+  margin-top: 5rem;
+  position: relative;
+  text-align: center;
+
+  &:after {
+    background: $color-candlelight;
+    bottom: 50%;
+    content: '';
+    display: block;
+    height: 100vh;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
+}
+
+.press__about__media__image {
+  background: $color-deep-koamaru;
+  border-radius: 50%;
+  height: 28.5rem;
+  left: 0;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 28.5rem;
+  z-index: 1;
+}
+
+.press__about__description {
+  @extend %description__large;
+
+  margin-top: 5rem;
+
+  strong {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.press__about__button {
+  @extend %button;
+
+  margin-top: 5rem;
+}
+
+.press__about__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .press__about__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.press__about__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}

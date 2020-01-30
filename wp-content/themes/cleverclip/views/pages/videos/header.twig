@@ -1,0 +1,21 @@
+<header class="videos__header">
+  <div class="videos__header__background"></div>
+
+  <div class="videos__header__wrapper">
+    <h1 class="videos__header__title">
+      {{ post.title }}
+    </h1>
+
+    <p class="videos__header__description">
+      {{ post.content | striptags }}
+    </p>
+
+    <figure class="videos__header__media">
+      <img class="videos__header__media__image" src="{{ post.thumbnail.src }}">
+
+      <button class="videos__header__media__button">
+        Play
+      </button>
+    </figure>
+  </div>
+</header>

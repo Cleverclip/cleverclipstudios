@@ -1,0 +1,79 @@
+.how__step {
+  padding: 15rem 0;
+
+  &--2,
+  &--4,
+  &--6 {
+    background: $color-spring-wood;
+  }
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.how__step__wrapper {
+  @extend %wrapper;
+
+  align-items: center;
+  display: flex;
+
+  .how__step--2 &,
+  .how__step--5 & {
+    flex-direction: row-reverse;
+  }
+
+  @include media('<small') {
+    flex-direction: column;
+
+    .how__step--2 &,
+    .how__step--5 & {
+      flex-direction: column;
+    }
+  }
+}
+
+.how__step__column {
+  width: 50%;
+
+  .how__step--2 &:first-child,
+  .how__step--5 &:first-child {
+    text-align: right;
+  }
+
+  @include media('<small') {
+    width: 100%;
+
+    &:last-child {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.how__step__image {
+  width: 75%;
+
+  @include media('<small') {
+    width: 100%;
+  }
+}
+
+.how__step__title {
+  @extend %title__medium;
+}
+
+.how__step__description {
+  @extend %description__medium;
+
+  margin-top: 4.2rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}

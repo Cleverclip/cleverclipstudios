@@ -1,0 +1,39 @@
+<section class="service__highlight">
+  <div class="service__highlight__wrapper">
+    <div class="service__highlight__box">
+      <h1 class="service__highlight__header">
+        {{ post.get_field('highlight_header')}}
+      </h1>
+
+      <div class="service__highlight__columns">
+        <div class="service__highlight__column">
+          <div class="service__highlight__video">
+            <img class="service__highlight__video__image" data-src="{{ post.get_field('highlight_thumbnail') }}">
+
+            <button class="service__highlight__video__button" data-modal-video="{{ post.get_field('highlight_video') }}">
+              Play
+            </button>
+          </div>
+
+          <figure class="service__highlight__media">
+            <img class="service__highlight__media__image" data-src="{{ post.get_field('highlight_image') }}">
+          </figure>
+        </div>
+
+        <div class="service__highlight__column">
+          <h3 class="service__highlight__title">
+            {{ post.get_field('highlight_title') }}
+          </h3>
+
+          <div class="service__highlight__subtitle">
+            {{ post.get_field('highlight_subtitle') }}
+          </div>
+
+          <div class="service__highlight__content">
+            {{ post.get_field('highlight_content') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

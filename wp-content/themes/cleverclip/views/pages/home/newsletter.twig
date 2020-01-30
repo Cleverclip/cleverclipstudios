@@ -1,0 +1,23 @@
+<aside class="home__aside__newsletter">
+  <div class="home__aside__newsletter__wrapper">
+    <div class="home__aside__newsletter__column">
+      <h1 class="home__aside__newsletter__title">
+        {{ post.get_field('aside_newsletter_title') }}
+      </h1>
+    </div>
+
+    <div class="home__aside__newsletter__column">
+      <form class="home__aside__newsletter__form">
+        <input class="home__aside__newsletter__input" placeholder="Your email here">
+
+        <button class="home__aside__newsletter__button">
+          <div class="home__aside__newsletter__button__background"></div>
+
+          <div class="home__aside__newsletter__button__box">
+            {{ post.get_field('aside_newsletter_button').title }}
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,109 @@
+<section class="about__contact" id="{{ post.get_field('contact_id') }}">
+  <div class="about__contact__wrapper">
+    <div class="about__contact__columns">
+      <div class="about__contact__column">
+        <header class="about__contact__header">
+          <h2 class="about__contact__title">
+            {{ post.get_field('contact_title') }}
+          </h2>
+
+          <p class="about__contact__description">
+            {{ post.get_field('contact_description') }}
+          </p>
+        </header>
+
+        <form
+          class="about__contact__form"
+          data-id="{{ option['form_contact'] }}"
+          data-success-title="{{ option[locale ~ '_form_contact_messages'].success_title }}"
+          data-success-description="{{ option[locale ~ '_form_contact_messages'].success_description }}"
+          data-error-title="{{ option[locale ~ '_form_contact_messages'].error_title }}"
+          data-error-description="{{ option[locale ~ '_form_contact_messages'].error_description }}"
+        >
+          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') }}">
+          <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
+
+          <input name="utm_source" type="hidden" value="">
+          <input name="utm_medium" type="hidden" value="">
+          <input name="utm_campaign" type="hidden" value="">
+          <input name="utm_content" type="hidden" value="">
+          <input name="utm_term" type="hidden" value="">
+
+          <input name="referrer" type="hidden" value="">
+
+          <input name="smujarFirstVisit" type="hidden" value="">
+          <input name="smujarFirstVisitTime" type="hidden" value="">
+          <input name="smujarHistory" type="hidden" value="">
+
+          <div class="about__contact__form__row">
+            <input class="about__contact__form__input" name="first-name" placeholder="{{ post.get_field('contact_form_first-name') }}">
+
+            <input class="about__contact__form__input" name="last-name" placeholder="{{ post.get_field('contact_form_last-name') }}">
+          </div>
+
+          <div class="about__contact__form__row">
+            <input class="about__contact__form__input" name="company" placeholder="{{ post.get_field('contact_form_company') }}">
+
+            <input class="about__contact__form__input" name="phone" placeholder="{{ post.get_field('contact_form_phone') }}">
+          </div>
+
+          <div class="about__contact__form__row">
+            <input class="about__contact__form__input about__contact__form__input--email" name="email" placeholder="{{ post.get_field('contact_form_email') }}">
+          </div>
+
+          <div class="about__contact__form__row">
+            <select class="about__contact__form__input about__contact__form__input--select" name="subject">
+              <option value="">{{ post.get_field('contact_form_subject') }}</option>
+              {% for subject in post.get_field('contact_form_subjects') %}
+                <option>{{ subject.text }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="about__contact__form__row">
+            <textarea class="about__contact__form__input about__contact__form__input--textarea" name="message" placeholder="{{ post.get_field('contact_form_message') }}"></textarea>
+          </div>
+
+          <div class="about__contact__form__row">
+            <label class="about__contact__form__label">
+              <input class="about__contact__form__checkbox" name="newsletter" type="checkbox">
+              <span class="about__contact__form__checkbox__bullet"></span>
+
+              <span class="about__contact__form__checkbox__text">
+                {{ post.get_field('contact_form_newsletter') }}
+              </span>
+            </label>
+          </div>
+
+          <button class="about__contact__form__button">
+            <div class="about__contact__form__button__background"></div>
+
+            <div class="about__contact__form__button__box">
+              {{ post.get_field('contact_form_submit') }}
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <div class="about__contact__column">
+        <figure class="about__contact__media">
+          <img class="about__contact__image" data-src="{{ post.get_field('contact_image') }}">
+        </figure>
+
+        {% for item in post.get_field('contact_list') %}
+          <div class="about__contact__section">
+            <h2 class="about__contact__section__title">
+              {{ item.title }}
+            </h2>
+
+            {% for item in item.links %}
+              <a class="about__contact__section__link" href="{{ item.link.url }}">
+                {{ item.link.title }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

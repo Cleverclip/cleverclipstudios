@@ -1,0 +1,49 @@
+.case__partnership {
+  background: $color-candlelight;
+  margin: -21.5rem auto 0;
+  max-width: 87rem;
+  padding: 7.5rem 15rem;
+  position: relative;
+  text-align: center;
+  width: 91%;
+  z-index: 1;
+
+  @include media('<small') {
+    margin-top: 5rem;
+    padding: 5rem 2.5rem;
+  }
+}
+
+.case__partnership__title {
+  @extend %title__40;
+}
+
+.case__partnership__button {
+  @extend %button;
+
+  margin-top: 4rem;
+  width: 40rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}
+
+.case__partnership__button__box {
+  @extend %button__box;
+
+  background: $color-candlelight;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .case__partnership__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.case__partnership__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+}

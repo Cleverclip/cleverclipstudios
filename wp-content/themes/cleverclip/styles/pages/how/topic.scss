@@ -1,0 +1,33 @@
+.how__aside__topic {
+  @extend %topic;
+
+  background: $color-spring-wood;
+}
+
+.how__aside__topic__wrapper {
+  @extend %topic__wrapper;
+}
+
+.how__aside__topic__content {
+  @extend %topic__content;
+}
+
+.how__aside__topic__title {
+  @extend %topic__title;
+}
+
+.how__aside__topic__button {
+  @extend %topic__button;
+}
+
+.how__aside__topic__button__box {
+  @extend %topic__button__box;
+}
+
+.how__aside__topic__button__background {
+  @extend %topic__button__background;
+}
+
+.how__aside__topic__image {
+  @extend %topic__image;
+}

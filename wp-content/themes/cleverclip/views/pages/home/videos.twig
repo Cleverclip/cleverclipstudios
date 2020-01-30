@@ -1,0 +1,106 @@
+<section class="home__videos">
+  <div class="home__videos__columns">
+    <div class="home__videos__column">
+      <h2 class="home__videos__title">
+        {{ post.get_field('videos_title') }}
+      </h2>
+
+      <p class="home__videos__description">
+        {{ post.get_field('videos_description') }}
+      </p>
+
+      <a class="home__videos__button" href="{{ post.get_field('videos_link').url }}">
+        <div class="home__videos__button__background"></div>
+
+        <div class="home__videos__button__box">
+          {{ post.get_field('videos_link').title }}
+        </div>
+      </a>
+    </div>
+
+    <div class="home__videos__column">
+      <div class="home__videos__media">
+        <img class="home__videos__media__image" data-src="{{ post.get_field('videos_image') | resize(1366) }}">
+      </div>
+    </div>
+  </div>
+
+  {% if isDesktop or isTablet %}
+    <div class="home__videos__columns">
+      <div class="home__videos__column">
+        <article class="home__videos__ceo">
+          <img class="home__videos__ceo__image" data-src="{{ post.get_field('videos_ceo_image') | resize(600) }}">
+
+          <div class="home__videos__ceo__content">
+            <p class="home__videos__ceo__description">
+              {{ post.get_field('videos_ceo_description') }}
+            </p>
+
+            <p class="home__videos__ceo__title">
+              {{ post.get_field('videos_ceo_title') }}
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="home__videos__column">
+        <article class="home__videos__highlight">
+          <div class="home__videos__highlight__media">
+            <img class="home__videos__highlight__image" data-src="{{ post.get_field('videos_highlight_image') | resize(1100) }}">
+          </div>
+
+          <div class="home__videos__highlight__content">
+            <div class="home__videos__highlight__description">
+              {{ post.get_field('videos_highlight_description') }}
+            </div>
+
+            <a class="home__videos__highlight__link" href="{{ post.get_field('videos_highlight_link').url }}">
+              {{ post.get_field('videos_highlight_link').title }}
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="home__videos__columns">
+      <div class="home__videos__column">
+        <h2 class="home__videos__newsletter__title">
+          {{ post.get_field('videos_newsletter_title') }}
+        </h2>
+      </div>
+
+      <div class="home__videos__column">
+        <form
+          class="home__videos__newsletter__form"
+          data-id="{{ option['form_newsletter'] }}"
+          data-success-title="{{ option[locale ~ '_form_newsletter_messages'].success_title }}"
+          data-success-description="{{ option[locale ~ '_form_newsletter_messages'].success_description }}"
+          data-error-title="{{ option[locale ~ '_form_newsletter_messages'].error_title }}"
+          data-error-description="{{ option[locale ~ '_form_newsletter_messages'].error_description }}"
+        >
+          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') }}">
+          <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
+
+          <input name="utm_source" type="hidden" value="">
+          <input name="utm_medium" type="hidden" value="">
+          <input name="utm_campaign" type="hidden" value="">
+          <input name="utm_content" type="hidden" value="">
+          <input name="utm_term" type="hidden" value="">
+
+          <input name="referrer" type="hidden" value="">
+
+          <input name="smujarFirstVisit" type="hidden" value="">
+          <input name="smujarFirstVisitTime" type="hidden" value="">
+          <input name="smujarHistory" type="hidden" value="">
+
+          <input class="home__videos__newsletter__input" name="email" placeholder="{{ post.get_field('videos_newsletter_input') }}">
+
+          <button class="home__videos__newsletter__button">
+            <div class="home__videos__newsletter__button__background"></div>
+            <div class="home__videos__newsletter__button__box">{{ post.get_field('videos_newsletter_button') }}</div>
+          </button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+</section>

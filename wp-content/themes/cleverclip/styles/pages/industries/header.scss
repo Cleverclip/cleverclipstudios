@@ -1,0 +1,24 @@
+.industries__header {
+  @extend %header;
+
+  background: $color-candlelight;
+  padding-bottom: 5rem;
+}
+
+.industries__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.industries__header__title {
+  @extend %header__title;
+}
+
+.industries__header__description {
+  @extend %header__description;
+}
+
+.industries__header__illustration {
+  @extend %header__illustration;
+
+  max-width: 108rem;
+}

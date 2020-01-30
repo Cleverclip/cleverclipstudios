@@ -1,0 +1,27 @@
+<section class="case__archive">
+  <div class="case__archive__wrapper">
+    <h2 class="case__archive__title">
+      {{ option[locale ~ '_cases_related'] }}
+    </h2>
+
+    <div class="case__archive__list">
+      {% for article in related %}
+        <article class="case__archive__case">
+          <div class="case__archive__case__media">
+            <img class="case__archive__case__image" data-src="{{ article.thumbnail.src | resize(800) }}">
+          </div>
+
+          <div class="case__archive__case__content">
+            <p class="case__archive__case__description">
+              {{ article.title }}
+            </p>
+
+            <a class="case__archive__case__link" href="{{ article.link }}">
+              {{ option[locale ~ '_read_more'] }}
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

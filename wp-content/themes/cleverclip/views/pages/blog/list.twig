@@ -1,0 +1,25 @@
+<section class="blog__list">
+  <div class="blog__list__wrapper">
+    {% for post in posts %}
+      <article class="blog__list__article">
+        <figure class="blog__list__article__media">
+          <img class="blog__list__article__media__image" data-src="{{ post.thumbnail.src | resize(800) }}">
+        </figure>
+
+        <div class="blog__list__article__content">
+          <h2 class="blog__list__article__title">
+            {{ post.title }}
+          </h2>
+
+          {{ post.preview.read_more('') }}
+
+          <footer class="blog__list__article__footer">
+            <a class="blog__list__article__link" href="{{ post.link }}">
+              {{ option[locale ~ '_read_more'] }}
+            </a>
+          </footer>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

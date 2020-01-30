@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="case case--{{ post.get_field('type') }}">
+    {% include 'pages/case/header.twig' %}
+    {% include 'pages/case/content.twig' %}
+    {% include 'pages/case/partnership.twig' %}
+    {% include 'pages/case/related.twig' %}
+
+    {% include 'shared/footer.twig' %}
+  </div>
+{% endblock %}

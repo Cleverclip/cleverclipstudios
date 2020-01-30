@@ -1,0 +1,39 @@
+.clients__aside__product {
+  @extend %product;
+}
+
+.clients__aside__product__wrapper {
+  @extend %product__wrapper;
+}
+
+.clients__aside__product__column {
+  @extend %product__column;
+}
+
+.clients__aside__product__box {
+  @extend %product__box;
+}
+
+.clients__aside__product__title {
+  @extend %product__title;
+}
+
+.clients__aside__product__button {
+  @extend %product__button;
+}
+
+.clients__aside__product__button__box {
+  @extend %product__button__box;
+}
+
+.clients__aside__product__button__background {
+  @extend %product__button__background;
+}
+
+.clients__aside__product__media {
+  @extend %product__media;
+}
+
+.clients__aside__product__media__image {
+  @extend %product__media__image;
+}

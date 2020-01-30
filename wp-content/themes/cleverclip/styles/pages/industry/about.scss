@@ -1,0 +1,31 @@
+.industry__about {
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.industry__about__wrapper {
+  @extend %wrapper;
+}
+
+.industry__about__title {
+  @extend %title__40;
+
+  max-width: 65rem;
+}
+
+.industry__about__description {
+  @extend %content;
+  @extend %description__large;
+
+  column-count: 2;
+  column-gap: 5rem;
+  margin-top: 4rem;
+
+  @include media('<small') {
+    column-count: 1;
+    margin-top: 1.5rem;
+  }
+}

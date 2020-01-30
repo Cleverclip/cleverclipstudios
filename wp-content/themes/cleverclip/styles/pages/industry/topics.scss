@@ -1,0 +1,109 @@
+.industry__topics {
+  background: $color-spring-wood;
+  padding: 15rem 0;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.industry__topics__wrapper {
+  @extend %wrapper;
+}
+
+.industry__topics__articles {
+  font-size: 0;
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.industry__topics__article {
+  display: inline-block;
+  padding: 0 2rem;
+  text-align: left;
+  vertical-align: top;
+  width: 25%;
+
+  @include media('<small') {
+    text-align: center;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 3.5rem;
+    }
+  }
+}
+
+.industry__topics__article__number {
+  @extend %title__large;
+
+  align-items: center;
+  border: 0.2rem solid $color-robins-egg-blue;
+  border-radius: 50%;
+  color: $color-deep-koamaru;
+  display: flex;
+  height: 9.4rem;
+  justify-content: center;
+  width: 9.4rem;
+
+  @include media('<small') {
+    height: 7.5rem;;
+    margin: auto;
+    width: 7.5rem;
+  }
+}
+
+.industry__topics__article__title {
+  @extend %description__large;
+
+  font-weight: bold;
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+
+.industry__topics__article__description {
+  @extend %description__16;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+
+  @include media('<small') {
+    margin-top: 1.5rem;
+  }
+}
+
+.industry__topics__footer {
+  margin-top: 7.5rem;
+  text-align: center;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.industry__topics__button {
+  @extend %button;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.industry__topics__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-white;
+
+  .industry__topics__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.industry__topics__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}

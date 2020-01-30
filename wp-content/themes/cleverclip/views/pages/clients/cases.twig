@@ -1,0 +1,115 @@
+<section class="clients__cases">
+  <div class="clients__cases__wrapper">
+    <header class="clients__cases__header">
+      <h2 class="clients__cases__title">
+        {{ post.get_field('cases_title') }}
+      </h2>
+
+      <p class="clients__cases__description">
+        {{ post.get_field('cases_description') }}
+      </p>
+    </header>
+
+    <article class="clients__cases__highlight">
+      <div class="clients__cases__highlight__columns">
+        <div class="clients__cases__highlight__column">
+          <h3 class="clients__cases__highlight__title">
+            {{ post.get_field('cases_highlight_title') }}
+          </h3>
+
+          <div class="clients__cases__highlight__subtitle">
+            {{ post.get_field('cases_highlight_subtitle') }}
+          </div>
+
+          <div class="clients__cases__highlight__content">
+            {{ post.get_field('cases_highlight_content') }}
+          </div>
+        </div>
+
+        <div class="clients__cases__highlight__column">
+          <div class="clients__cases__highlight__video">
+            <img class="clients__cases__highlight__video__image" data-src="{{ post.get_field('cases_highlight_thumbnail') }}">
+
+            <button class="clients__cases__highlight__video__button" data-modal-video="{{ post.get_field('cases_highlight_video') }}">
+              Play
+            </button>
+          </div>
+
+          <figure class="clients__cases__highlight__media">
+            <img class="clients__cases__highlight__media__image" data-src="{{ post.get_field('cases_highlight_image') }}">
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    {% for section in post.get_field('cases_sections') %}
+      <section class="clients__cases__section">
+        <header class="clients__cases__section__header">
+          <div class="clients__cases__section__header__column">
+            <h3 class="clients__cases__section__title">
+              {{ section.title }}
+            </h3>
+
+            <p class="clients__cases__section__description">
+              {{ section.description }}
+            </p>
+          </div>
+
+          <div class="clients__cases__section__header__column">
+            <figure class="clients__cases__section__media">
+              <img class="clients__cases__section__media__image" data-src="{{ section.image }}">
+            </figure>
+          </div>
+        </header>
+
+        <div class="clients__cases__section__articles">
+          {% if section.cases == 'industries' %}
+            {% for industry in industries %}
+              <article class="clients__cases__section__article">
+                <figure class="clients__cases__section__article__media">
+                  <img class="clients__cases__section__article__media__image" data-src="{{ industry.thumbnail.src | resize(800) }}">
+                </figure>
+
+                <div class="clients__cases__section__article__content">
+                  {{ industry.post_content | truncate(50) }}
+
+                  <footer class="clients__cases__section__article__footer">
+                    <a class="clients__cases__section__article__link" href="{{ industry.link }}">
+                      {{ option[locale ~ '_read_more'] }}
+                    </a>
+
+                    <a class="clients__cases__section__article__link" href="{{ industry.terms('industry')[0].link | replace({ '/redirect' : '' }) }}">
+                      {{ option[locale ~ '_more_on'] }} {{ industry.terms('industry')[0].name }}
+                    </a>
+                  </footer>
+                </div>
+              </article>
+            {% endfor %}
+          {% elseif section.cases == 'solutions' %}
+            {% for solution in solutions %}
+              <article class="clients__cases__section__article">
+                <figure class="clients__cases__section__article__media">
+                  <img class="clients__cases__section__article__media__image" data-src="{{ solution.thumbnail.src | resize(800) }}">
+                </figure>
+
+                <div class="clients__cases__section__article__content">
+                  {{ solution.post_content | truncate(50) }}
+
+                  <footer class="clients__cases__section__article__footer">
+                    <a class="clients__cases__section__article__link" href="{{ solution.link }}">
+                      {{ option[locale ~ '_read_more'] }}
+                    </a>
+
+                    <a class="clients__cases__section__article__link" href="{{ solution.industry }}">
+                      {{ option[locale ~ '_more_on'] }} {{ solution.terms('industry')[0].name }}
+                    </a>
+                  </footer>
+                </div>
+              </article>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</section>

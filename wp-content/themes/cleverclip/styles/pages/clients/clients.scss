@@ -1,0 +1,27 @@
+.clients__clients {
+  @extend %clients;
+}
+
+.clients__clients__wrapper {
+  @extend %clients__wrapper;
+}
+
+.clients__clients__header {
+  @extend %clients__header;
+}
+
+.clients__clients__title {
+  @extend %clients__title;
+}
+
+.clients__clients__description {
+  @extend %clients__description;
+}
+
+.clients__clients__list {
+  @extend %clients__list;
+}
+
+.clients__clients__item {
+  @extend %clients__item;
+}

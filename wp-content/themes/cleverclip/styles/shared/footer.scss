@@ -1,0 +1,255 @@
+.footer {
+  background: $color-deep-koamaru;
+  color: $color-white;
+  padding: 5rem 0;
+
+  @include media('<small') {
+    padding: 3.5rem 0;
+    text-align: center;
+  }
+}
+
+.footer__wrapper {
+  @extend %wrapper;
+
+  max-width: 144rem;
+}
+
+.footer__columns {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:first-child) {
+    align-items: flex-end;
+    margin-top: 2.5rem;
+  }
+
+  @include media('<small') {
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+.footer__column {
+  display: table-cell;
+  padding: 0 2rem;
+  vertical-align: top;
+
+  &:nth-child(1) {
+    padding-left: 0;
+    width: 40rem;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  @include media('<small') {
+    padding: 0;
+    width: 100%;
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+
+    .footer__columns:first-child &:nth-child(2),
+    .footer__columns:first-child &:nth-child(3),
+    .footer__columns:first-child &:nth-child(4),
+    .footer__columns:first-child &:nth-child(5) {
+      display: none;
+    }
+  }
+}
+
+.footer__title {
+  @extend %title__32;
+
+  max-width: 40rem;
+}
+
+.footer__subtitle {
+  @extend %description__medium;
+
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.footer__button {
+  @extend %button;
+
+  margin-top: 4rem;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+  }
+}
+
+.footer__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-candlelight;
+  color: $color-candlelight;
+
+  .footer__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.footer__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}
+
+.footer__list {
+  font-family: $font-work-sans;
+  font-size: 1.5rem;
+  list-style: none;
+  margin-top: 3rem;
+}
+
+.footer__list__item {
+  &:not(:first-child) {
+    margin-top: 1.9rem;
+  }
+}
+
+.footer__social {
+  @include media('<small') {
+    margin-top: 6.5rem;
+  }
+}
+
+.footer__social__title {
+  font-family: $font-work-sans;
+  font-size: 2.2rem;
+
+  @include media('<small') {
+    font-size: 1.8rem;
+  }
+}
+
+.footer__social__list {
+  margin-top: 2.85rem;
+}
+
+.footer__social__item {
+  display: inline-block;
+  vertical-align: middle;
+
+  &:not(:first-child) {
+    margin-left: 3rem;
+  }
+}
+
+.footer__social__image {
+  width: 3.2rem;
+
+  @include media('<small') {
+    width: 3rem;
+  }
+}
+
+.footer__copyright {
+  @extend %description__medium;
+
+  text-align: right;
+
+  @include media('<small') {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}
+
+.footer__language {
+  background: $color-deep-koamaru;
+  border-top: 1px solid $color-white;
+  color: $color-white;
+  padding: 3.5rem 0;
+}
+
+.footer__language__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 80rem;
+  width: 91%;
+
+  @include media('<small') {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__language__logo {
+  @include media('<small') {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.footer__language__logo__media {
+  fill: $color-candlelight;
+  width: 13.1rem;
+
+  @include media('<small') {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.footer__menu__language__group {
+  font-size: 0;
+
+  @include media('<small') {
+    width: 50%;
+
+    &:first-of-type {
+      padding-right: 1.25rem;
+    }
+
+    &:last-of-type {
+      padding-left: 1.25rem;
+    }
+  }
+}
+
+.footer__menu__language__group__icon {
+  display: inline-block;
+  margin-right: 1rem;
+  vertical-align: middle;
+  width: 2.7rem;
+}
+
+.footer__menu__language__group__text {
+  @extend %description__medium;
+
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1.75rem;
+  vertical-align: middle;
+}
+
+.footer__menu__language__group__select {
+  background: $color-deep-koamaru;
+  border: 1px solid $color-white;
+  border-radius: 0;
+  display: inline-block;
+  font-family: $font-work-sans;
+  font-size: 1.5rem;
+  font-weight: normal;
+  height: 3.3rem;
+  padding: 0 1.5rem;
+  vertical-align: middle;
+
+  @include media('<small') {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

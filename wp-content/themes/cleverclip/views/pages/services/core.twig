@@ -1,0 +1,45 @@
+<section class="services__core">
+  <div class="services__core__wrapper">
+    <header class="services__core__header">
+      <h2 class="services__core__title">
+        {{ post.get_field('core_title') }}
+      </h2>
+
+      <p class="services__core__description">
+        {{ post.get_field('core_description') }}
+      </p>
+    </header>
+
+    <div class="services__core__list">
+      {% for item in post.get_field('core_list') %}
+        <article class="services__core__item">
+          <a class="services__core__item__wrapper" href="{{ item.link.url }}">
+            <div class="services__core__item__box">
+              <img class="services__core__item__image" data-src="{{ item.image }}">
+
+              <div class="services__core__item__content">
+                <h2 class="services__core__item__title" data-height=".services__core__item__title">
+                  {{ item.title }}
+                </h2>
+
+                <p class="services__core__item__description" data-height=".services__core__item__description">
+                  {{ item.description }}
+                </p>
+
+                <div class="services__core__item__link">
+                  <span class="services__core__item__link__text">
+                    {{ item.link.title }}
+                  </span>
+
+                  <svg class="services__core__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

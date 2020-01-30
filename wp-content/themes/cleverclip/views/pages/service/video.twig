@@ -1,0 +1,25 @@
+<aside class="home__aside__product">
+  <div class="home__aside__product__wrapper">
+    <div class="home__aside__product__column">
+      <div class="home__aside__product__box">
+        <h2 class="home__aside__product__title">
+          {{ post.get_field('aside_video_title') }}
+        </h2>
+
+        <a class="home__aside__product__button" href="{{ post.get_field('aside_video_link').url }}">
+          <div class="home__aside__product__button__background"></div>
+
+          <div class="home__aside__product__button__box">
+            {{ post.get_field('aside_video_link').title }}
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="home__aside__product__column">
+      <div class="home__aside__product__media" data-product-media>
+        <img class="home__aside__product__media__image" data-src="{{ post.get_field('aside_video_image') | resize(1366) }}">
+      </div>
+    </div>
+  </div>
+</aside>

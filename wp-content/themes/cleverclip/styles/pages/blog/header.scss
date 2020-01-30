@@ -1,0 +1,21 @@
+.blog__header {
+  @extend %header;
+
+  background: $color-candlelight;
+}
+
+.blog__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.blog__header__title {
+  @extend %header__title;
+}
+
+.blog__header__description {
+  @extend %header__description;
+}
+
+.blog__header__illustration {
+  @extend %header__illustration;
+}

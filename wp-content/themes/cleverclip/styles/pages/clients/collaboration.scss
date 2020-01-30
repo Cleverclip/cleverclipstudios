@@ -1,0 +1,73 @@
+.clients__collaboration {
+  background: $color-spring-wood;
+  padding: 15rem 0;
+  text-align: center;
+
+  @include media('<small') {
+    padding: 5rem 0;
+  }
+}
+
+.clients__collaboration__wrapper {
+  @extend %wrapper;
+}
+
+.clients__collaboration__title {
+  @extend %title__medium;
+
+  margin-bottom: 10rem;
+
+  @include media('<small') {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.clients__collaboration__list {
+  @extend %list;
+}
+
+.clients__collaboration__item {
+  @extend %list__item;
+
+  width: 33.33%;
+
+  @include media('<small') {
+    width: 80vw;
+  }
+}
+
+.clients__collaboration__item__wrapper {
+  @extend %list__item__wrapper;
+}
+
+.clients__collaboration__item__box {
+  @extend %list__item__box;
+}
+
+.clients__collaboration__item__image {
+  @extend %list__item__image;
+}
+
+.clients__collaboration__item__content {
+  @extend %list__item__content;
+}
+
+.clients__collaboration__item__title {
+  @extend %list__item__title;
+}
+
+.clients__collaboration__item__description {
+  @extend %list__item__description;
+}
+
+.clients__collaboration__item__link {
+  @extend %list__item__link;
+}
+
+.clients__collaboration__item__link__text {
+  @extend %list__item__link__text;
+}
+
+.clients__collaboration__item__link__arrow {
+  @extend %list__item__link__arrow;
+}

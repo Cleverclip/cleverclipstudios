@@ -1,0 +1,70 @@
+.service__aside__newsletter {
+  background: $color-candlelight;
+  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+  margin-top: 5rem;
+  padding: 3.5rem 0;
+
+  @include media('<small') {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.service__aside__newsletter__title {
+  @extend %title__32;
+
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  width: 85%;
+}
+
+.service__aside__newsletter__input {
+  border-bottom: 1px solid $color-deep-koamaru;
+  color: $color-deep-koamaru;
+  display: block;
+  font-family: $font-work-sans;
+  font-size: 2.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+  transition: border 0.4s ease, color 0.4s ease;
+  width: 85%;
+
+  &--error {
+    border-bottom-color: $color-razzmatazz;
+    color: $color-razzmatazz;
+  }
+
+  @include media('<small') {
+    font-size: 1.4rem;
+  }
+}
+
+.service__aside__newsletter__button {
+  @extend %button;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  width: 85%;
+}
+
+.service__aside__newsletter__button__box {
+  @extend %button__box;
+
+  background: $color-candlelight;
+  border-color: $color-deep-koamaru;
+  color: $color-deep-koamaru;
+
+  .service__aside__newsletter__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.service__aside__newsletter__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+}

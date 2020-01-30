@@ -1,0 +1,21 @@
+<header class="services__header">
+  <div class="services__header__background"></div>
+
+  <div class="services__header__wrapper">
+    <h1 class="services__header__title">
+      {{ post.title }}
+    </h1>
+
+    <p class="services__header__description">
+      {{ post.content | striptags }}
+    </p>
+
+    <figure class="services__header__media">
+      <img class="services__header__media__image" data-src="{{ post.thumbnail.src | resize(1366) }}">
+
+      <button class="services__header__media__button" data-embed-video="{{ post.get_field('header_vimeo') }}">
+        Play
+      </button>
+    </figure>
+  </div>
+</header>

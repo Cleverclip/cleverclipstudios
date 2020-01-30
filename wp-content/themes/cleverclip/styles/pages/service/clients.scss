@@ -1,0 +1,45 @@
+.service__clients {
+  margin-top: 15rem;
+
+  @include media('<small') {
+    margin-top: 5rem;
+  }
+}
+
+.service__clients__wrapper {
+
+}
+
+.service__clients__title {
+  @extend %title__40;
+}
+
+.service__clients__list {
+  font-size: 0;
+  margin-bottom: -5rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: 6rem;
+
+  @include media('<small') {
+    margin: 2rem -1.5rem -1.5rem;
+  }
+}
+
+.service__clients__item {
+  display: inline-block;
+  margin-bottom: 5rem;
+  padding: 0 2rem;
+  vertical-align: middle;
+  width: 33.33%;
+
+  @include media('<small') {
+    margin-bottom: 0;
+    padding: 1.5rem;
+    width: 25%;
+  }
+}
+
+.service__clients__image {
+  width: 100%;
+}

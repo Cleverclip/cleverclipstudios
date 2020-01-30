@@ -1,0 +1,39 @@
+.how__aside__product {
+  @extend %product;
+}
+
+.how__aside__product__wrapper {
+  @extend %product__wrapper;
+}
+
+.how__aside__product__column {
+  @extend %product__column;
+}
+
+.how__aside__product__box {
+  @extend %product__box;
+}
+
+.how__aside__product__title {
+  @extend %product__title;
+}
+
+.how__aside__product__button {
+  @extend %product__button;
+}
+
+.how__aside__product__button__box {
+  @extend %product__button__box;
+}
+
+.how__aside__product__button__background {
+  @extend %product__button__background;
+}
+
+.how__aside__product__media {
+  @extend %product__media;
+}
+
+.how__aside__product__media__image {
+  @extend %product__media__image;
+}

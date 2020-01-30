@@ -1,0 +1,27 @@
+.service__brands {
+  @extend %brands;
+}
+
+.service__brands__wrapper {
+  @extend %brands__wrapper;
+}
+
+.service__brands__title {
+  @extend %brands__title;
+}
+
+.service__brands__list {
+  @extend %brands__list;
+}
+
+.service__brands__item {
+  @extend %brands__item;
+}
+
+.service__brands__item__wrapper {
+  @extend %brands__item__wrapper;
+}
+
+.service__brands__image {
+  @extend %brands__image;
+}

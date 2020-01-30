@@ -1,0 +1,31 @@
+.services__header {
+  @extend %header;
+}
+
+.services__header__background {
+  @extend %header__background;
+}
+
+.services__header__wrapper {
+  @extend %header__wrapper;
+}
+
+.services__header__title {
+  @extend %header__title;
+}
+
+.services__header__description {
+  @extend %header__description;
+}
+
+.services__header__media {
+  @extend %header__media;
+}
+
+.services__header__media__button {
+  @extend %header__media__button;
+}
+
+.services__header__media__image {
+  @extend %header__media__image;
+}

@@ -1,0 +1,41 @@
+<section class="service__about">
+  <div class="service__about__wrapper">
+    <header class="service__about__header">
+      <h2 class="service__about__title">
+        {{ post.get_field('about_title') }}
+      </h2>
+    </header>
+
+    <div class="service__about__list">
+      {% for item in post.get_field('about_list') %}
+        <article class="service__about__item">
+          <a class="service__about__item__wrapper" href="{{ item.link.url }}">
+            <div class="service__about__item__box">
+              <img class="service__about__item__image" data-src="{{ item.image }}">
+
+              <div class="service__about__item__content">
+                <h2 class="service__about__item__title" data-height=".service__about__item__title">
+                  {{ item.title }}
+                </h2>
+
+                <p class="service__about__item__description" data-height=".service__about__item__description">
+                  {{ item.description }}
+                </p>
+
+                <div class="service__about__item__link">
+                  <span class="service__about__item__link__text">
+                    {{ item.link.title }}
+                  </span>
+
+                  <svg class="service__about__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<section class="about__essence">
+  <div class="about__essence__wrapper">
+    <header class="about__essence__header">
+      <h2 class="about__essence__title">
+        {{ post.get_field('essence_title') }}
+      </h2>
+
+      <article class="about__essence__testimonial">
+        <div class="about__essence__testimonial__wrapper">
+          <div class="about__essence__testimonial__content">
+            <p class="about__essence__testimonial__description">
+              {{ post.get_field('essence_testimonial_description') }}
+            </p>
+
+            <p class="about__essence__testimonial__author">
+              <strong class="about__essence__testimonial__author__title">
+                {{ post.get_field('essence_testimonial_author') }}
+              </strong>
+
+              <span class="about__essence__testimonial__author__description">
+                {{ post.get_field('essence_testimonial_role') }}
+              </span>
+            </p>
+          </div>
+
+          <figure class="about__essence__testimonial__media">
+            <img class="about__essence__testimonial__media__image" data-src="{{ post.get_field('essence_testimonial_image') | resize(660) }}">
+          </figure>
+        </div>
+      </article>
+    </header>
+
+    <div class="about__essence__list">
+      {% for item in post.get_field('essence_list') %}
+        <article class="about__essence__item">
+          <div class="about__essence__item__box">
+            <img class="about__essence__item__image" data-src="{{ item.image }}">
+
+            <div class="about__essence__item__content">
+              <h2 class="about__essence__item__title" data-height=".about__essence__item__title">
+                {{ item.title }}
+              </h2>
+
+              <p class="about__essence__item__description" data-height=".about__essence__item__description">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

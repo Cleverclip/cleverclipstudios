@@ -1,0 +1,105 @@
+%article {
+  background: $color-spring-wood;
+  display: flex;
+  min-height: 22.5rem;
+  position: relative;
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+
+  @include media('<small') {
+    display: block;
+    min-height: 0;
+
+    &:not(:first-child) {
+      margin-top: 3.5rem;
+    }
+  }
+}
+
+%article__label {
+  background: $color-deep-koamaru;
+  color: $color-white;
+  font-family: $font-work-sans;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 5rem;
+  padding-top: 1.5rem;
+  position: absolute;
+  left: -2rem;
+  top: 3rem;
+  z-index: 1;
+
+  @include media('<small') {
+    font-size: 1.8rem;
+    padding: 1.25rem 3rem 1.25rem 1.5rem;
+    position: absolute;
+  }
+}
+
+%article__title {
+  @extend %description__large;
+
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+%article__media {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40rem;
+
+  @include media('<small') {
+    position: static;
+    height: auto;
+    width: 100%;
+  }
+}
+
+%article__media__image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include media('<small') {
+    position: static;
+  }
+}
+
+%article__content {
+  @extend %description__medium;
+
+  margin-left: 40rem;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  padding-right: 15rem;
+  padding-top: 4rem;
+  width: 100%;
+
+  @include media('<small') {
+    margin-left: 0;
+    padding: 2.5rem;
+  }
+}
+
+%article__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+%article__link {
+  color: $color-deep-koamaru;
+  font-weight: bold;
+}

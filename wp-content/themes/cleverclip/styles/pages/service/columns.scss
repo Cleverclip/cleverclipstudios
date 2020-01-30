@@ -1,0 +1,32 @@
+.service__columns {
+  @extend %wrapper;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 15rem 0;
+
+  @include media('<small') {
+    flex-direction: column;
+    padding: 5rem 0;
+  }
+}
+
+.service__column {
+  &:first-child {
+    width: 58.8rem;
+  }
+
+  &:last-child {
+    width: 44.6rem;
+  }
+
+  @include media('<small') {
+    &:first-child {
+      width: 100%;
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
+}
