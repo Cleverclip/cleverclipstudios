@@ -326,5 +326,23 @@ function reading_time_cst() {
 	
 }
 
+// Filter hook to generate the correct hreflang tags
+add_filter( 'pll_rel_hreflang_attributes', 'filter_pll_rel_hreflang_attributes', 10, 1 ); 
 
+// Define the pll_rel_hreflang_attributes callback.
+function filter_pll_rel_hreflang_attributes( $hreflangs ) {
 
+	foreach ( $hreflangs as $lang => $url ) {
+		if ( $lang === 'en' ) {
+			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'en-CH' ) );
+    }
+    if ( $lang === 'de' ) {
+			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'de-CH' ) );
+    }
+    if ( $lang === 'fr' ) {
+			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'fr-CH' ) );
+		}
+	}
+
+    return $hreflangs; 
+};
