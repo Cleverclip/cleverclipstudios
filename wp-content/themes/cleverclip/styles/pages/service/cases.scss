@@ -1,40 +1,40 @@
-.service__articles {
+.service__cases {
   @extend %archive;
 }
 
-.service__articles__wrapper {
+.service__cases__wrapper {
   @extend %wrapper;
   @extend %archive__wrapper;
 }
 
-.service__articles__title {
+.service__cases__title {
   @extend %archive__title;
 }
 
-.service__articles__list {
+.service__cases__list {
   @extend %archive__list;
 }
 
-.service__articles__case {
+.service__cases__case {
   @extend %archive__case;
 }
 
-.service__articles__case__media {
+.service__cases__case__media {
   @extend %archive__case__media;
 }
 
-.service__articles__case__image {
+.service__cases__case__image {
   @extend %archive__case__image;
 }
 
-.service__articles__case__content {
+.service__cases__case__content {
   @extend %archive__case__content;
 }
 
-.service__articles__case__description {
+.service__cases__case__description {
   @extend %archive__case__description;
 }
 
-.service__articles__case__link {
+.service__cases__case__link {
   @extend %archive__case__link;
 }

@@ -30,17 +30,24 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    }),
-
-    new BrowserSyncPlugin({
-      proxy: "https://" + domain,
-      host: domain,
-      open: "external",
-      https: {
-        key: homedir + "/.config/valet/Certificates/" + domain + ".key",
-        cert: homedir + "/.config/valet/Certificates/" + domain + ".crt"
-      }
     })
+
+    /*
+    new BrowserSyncPlugin(
+      {
+        proxy: "https://" + domain,
+        host: domain,
+        open: "external",
+        https: {
+          key: homedir + "/.config/valet/Certificates/" + domain + ".key",
+          cert: homedir + "/.config/valet/Certificates/" + domain + ".crt"
+        }
+      },
+      {
+        reload: false
+      }
+    )
+    */
   ],
 
   module: {

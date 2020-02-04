@@ -1,54 +1,49 @@
 .service__aside__blog {
-  background: $color-deep-koamaru;
-  color: $color-white;
-  margin-left: -14rem;
-  margin-top: 6rem;
-
-  @include media('<small') {
-    margin: 5rem 0 5rem -14rem;
-  }
+  @extend %product;
+  background: $color-candlelight;
 }
 
-.service__aside__blog__media {
-  height: 13.5rem;
-  position: relative;
-  width: 100%;
+.service__aside__blog__wrapper {
+  @extend %product__wrapper;
 }
 
-.service__aside__blog__media__image {
-  height: 100%;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.service__aside__blog__column {
+  @extend %product__column;
 }
 
-.service__aside__blog__content {
-  padding-bottom: 4rem;
-  padding-left: 16rem;
-  padding-right: 4rem;
-  padding-top: 4rem;
-}
-
-.service__aside__blog__title {
-  @extend %title__32;
-
-  max-width: 45rem;
+.service__aside__blog__box {
+  @extend %product__box;
 }
 
 .service__aside__blog__description {
   @extend %description__medium;
-
-  margin-top: 2.5rem;
-  max-width: 45rem;
+  color: white;
+  margin-top: 1.5rem;
 }
 
-.service__aside__blog__link {
-  @extend %description__medium;
+.service__aside__blog__title {
+  @extend %product__title;
+  color: white;
+}
 
-  color: $color-candlelight;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 2.5rem;
+.service__aside__blog__button {
+  @extend %product__button;
+}
+
+.service__aside__blog__button__box {
+  @extend %product__button__box;
+  background: $color-candlelight;
+}
+
+.service__aside__blog__button__background {
+  @extend %product__button__background;
+  background: $color-candlelight;
+}
+
+.service__aside__blog__media {
+  @extend %product__media;
+}
+
+.service__aside__blog__media__image {
+  @extend %product__media__image;
 }

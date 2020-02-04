@@ -1,7 +1,8 @@
 .service__questions {
   margin-top: 15rem;
+  @extend %wrapper;
 
-  @include media('<small') {
+  @include media("<small") {
     margin-top: 5rem;
   }
 }
@@ -11,7 +12,7 @@
 
   margin-bottom: 9rem;
 
-  @include media('<small') {
+  @include media("<small") {
     margin-bottom: 3.5rem;
   }
 }
@@ -23,7 +24,7 @@
   list-style: none;
   margin-bottom: 10rem;
 
-  @include media('<small') {
+  @include media("<small") {
     margin-bottom: 5rem;
   }
 }
@@ -33,7 +34,7 @@
     margin-top: 4rem;
   }
 
-  @include media('<small') {
+  @include media("<small") {
     &:not(:first-child) {
       margin-top: 1.5rem;
     }
@@ -41,7 +42,6 @@
 }
 
 .service__questions__articles {
-
 }
 
 .service__questions__article {
@@ -50,7 +50,7 @@
 
   &:after {
     border-top: 1px solid $color-deep-koamaru;
-    content: '';
+    content: "";
     display: block;
     left: 0;
     position: absolute;
@@ -63,7 +63,7 @@
     margin-top: 4rem;
   }
 
-  @include media('<small') {
+  @include media("<small") {
     &:not(:first-child) {
       margin-top: 2rem;
     }
@@ -80,7 +80,7 @@
 .service__questions__article__content {
   padding-top: 5rem;
 
-  @include media('<small') {
+  @include media("<small") {
     padding-top: 1.5rem;
   }
 }
@@ -99,7 +99,7 @@
   margin-top: 2.5rem;
   pointer-events: auto;
 
-  @include media('<small') {
+  @include media("<small") {
     margin-top: 1.5rem;
   }
 }

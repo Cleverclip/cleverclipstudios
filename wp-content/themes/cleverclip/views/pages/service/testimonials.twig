@@ -1,4 +1,4 @@
-<div class="service__testimonials">
+<section class="service__testimonials">
   <div class="service__testimonials__box">
     <div class="service__testimonials__wrapper">
       {% for testimonial in post.get_field('testimonials_list') %}
@@ -32,24 +32,25 @@
           </div>
         </article>
       {% endfor %}
-    </div>
 
-    <div class="service__testimonials__navigation">
-      <button class="service__testimonials__navigation__button service__testimonials__navigation__button--previous">
-        Previous
-      </button>
-
-      <button class="service__testimonials__navigation__button service__testimonials__navigation__button--next">
-        Next
-      </button>
-    </div>
-
-    <div class="service__testimonials__pagination">
-      {% for testimonial in post.get_field('testimonials_list') %}
-        <button class="service__testimonials__pagination__button" data-index="{{ loop.index0 }}">
-          {{ loop.index0 }}
+      <div class="service__testimonials__navigation">
+        <button class="service__testimonials__navigation__button service__testimonials__navigation__button--previous">
+          Previous
         </button>
-      {% endfor %}
+
+        <button class="service__testimonials__navigation__button service__testimonials__navigation__button--next">
+          Next
+        </button>
+      </div>
+
+      <div class="service__testimonials__pagination">
+        {% for testimonial in post.get_field('testimonials_list') %}
+          <button class="service__testimonials__pagination__button" data-index="{{ loop.index0 }}">
+            {{ loop.index0 }}
+          </button>
+        {% endfor %}
+      </div>
+
     </div>
   </div>
-</div>
+</section>

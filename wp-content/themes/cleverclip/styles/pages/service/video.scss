@@ -1,63 +1,39 @@
 .service__aside__video {
-  background: $color-candlelight;
-  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
-  margin-top: 5rem;
-  padding: 3.5rem 0;
-
-  @include media('<small') {
-    margin-bottom: 2.5rem;
-  }
+  @extend %product;
 }
 
-.service__aside__video__columns {
-  display: table;
-  margin: auto;
-  width: 85%;
+.service__aside__video__wrapper {
+  @extend %product__wrapper;
 }
 
 .service__aside__video__column {
-  display: table-cell;
-  vertical-align: middle;
+  @extend %product__column;
+}
+
+.service__aside__video__box {
+  @extend %product__box;
 }
 
 .service__aside__video__title {
-  @extend %title__32;
-
-  text-transform: uppercase;
-}
-
-.service__aside__video__media {
-
-}
-
-.service__aside__video__media__image {
-  width: 25rem;
+  @extend %product__title;
 }
 
 .service__aside__video__button {
-  @extend %button;
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2.5rem;
-  width: 85%;
+  @extend %product__button;
 }
 
 .service__aside__video__button__box {
-  @extend %button__box;
-
-  background: $color-candlelight;
-  border-color: $color-deep-koamaru;
-  color: $color-deep-koamaru;
-
-  .service__aside__video__button:hover & {
-    @extend %button__box--hover;
-  }
+  @extend %product__button__box;
 }
 
 .service__aside__video__button__background {
-  @extend %button__background;
+  @extend %product__button__background;
+}
 
-  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+.service__aside__video__media {
+  @extend %product__media;
+}
+
+.service__aside__video__media__image {
+  @extend %product__media__image;
 }

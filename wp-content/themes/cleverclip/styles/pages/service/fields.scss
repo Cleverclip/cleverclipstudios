@@ -1,0 +1,81 @@
+.service__fields {
+  padding: 15rem 0;
+
+  @include media("<small") {
+    padding: 5rem 0;
+  }
+}
+
+.service__fields__wrapper {
+  @extend %wrapper;
+}
+
+.service__fields__header {
+  margin: auto;
+  max-width: 76rem;
+  text-align: center;
+}
+
+.service__fields__title {
+  @extend %title__medium;
+}
+
+.service__fields__description {
+  @extend %description__medium;
+
+  margin-top: 4rem;
+
+  @include media("<small") {
+    margin-top: 1.5rem;
+  }
+}
+
+.service__fields__list {
+  @extend %list;
+
+  margin-top: 10rem;
+
+  @include media("<small") {
+    margin-top: 3.5rem;
+  }
+}
+
+.service__fields__item {
+  @extend %list__item;
+}
+
+.service__fields__item__wrapper {
+  @extend %list__item__wrapper;
+}
+
+.service__fields__item__box {
+  @extend %list__item__box;
+}
+
+.service__fields__item__image {
+  @extend %list__item__image;
+}
+
+.service__fields__item__content {
+  @extend %list__item__content;
+}
+
+.service__fields__item__title {
+  @extend %list__item__title;
+}
+
+.service__fields__item__description {
+  @extend %list__item__description;
+}
+
+.service__fields__item__link {
+  @extend %list__item__link;
+}
+
+.service__fields__item__link__text {
+  @extend %list__item__link__text;
+}
+
+.service__fields__item__link__arrow {
+  @extend %list__item__link__arrow;
+}

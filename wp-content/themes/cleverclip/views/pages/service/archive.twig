@@ -1,23 +1,23 @@
-<section class="service__archive">
-  <div class="service__archive__wrapper">
-    <h2 class="service__archive__title">
+<section class="service__articles">
+  <div class="service__articles__wrapper">
+    <h2 class="service__articles__title">
       {{ option[locale ~ '_services_related'] | replace({ '{service}': post.title }) }}
     </h2>
 
-    <div class="service__archive__list">
+    <div class="service__articles__list">
       {% for case in cases %}
         {% if loop.index != 1 and loop.index != 2 %}
-          <article class="service__archive__case">
-            <div class="service__archive__case__media">
-              <img class="service__archive__case__image" data-src="{{ case.thumbnail.src | resize(800) }}">
+          <article class="service__articles__case">
+            <div class="service__articles__case__media">
+              <img class="service__articles__case__image" data-src="{{ case.thumbnail.src | resize(800) }}">
             </div>
 
-            <div class="service__archive__case__content">
-              <p class="service__archive__case__description">
+            <div class="service__articles__case__content">
+              <p class="service__articles__case__description">
                 {{ case.title }}
               </p>
 
-              <a class="service__archive__case__link" href="{{ case.link }}">
+              <a class="service__articles__case__link" href="{{ case.link }}">
                 {{ option[locale ~ '_read_more'] }}
               </a>
             </div>

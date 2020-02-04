@@ -1,15 +1,18 @@
 <aside class="service__aside__newsletter">
   <div class="service__aside__newsletter__wrapper">
     <div class="service__aside__newsletter__columns">
+      <!--
       <div class="service__aside__newsletter__column">
         <img data-src="{{ post.get_field('aside_newsletter_image') }}" class="service__aside__newsletter__media">
       </div>
-
-      <div class="service__aside__newsletter__column">
+      -->
+     <div class="service__aside__newsletter__column">
         <h2 class="service__aside__newsletter__title">
           {{ post.get_field('aside_newsletter_title') }}
         </h2>
+      </div>
 
+      <div class="service__aside__newsletter__column">
         <form
           class="service__aside__newsletter__form"
           data-id="{{ option['form_newsletter'] }}"
