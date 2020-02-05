@@ -42,13 +42,13 @@
 
 .service__aside__blog__description {
   @extend %description__medium;
-  color: white;
+  color: black;
   margin-top: 1.5rem;
 }
 
 .service__aside__blog__title {
   @extend %product__title;
-  color: white;
+  color: black;
   max-width: 100%;
 }
 

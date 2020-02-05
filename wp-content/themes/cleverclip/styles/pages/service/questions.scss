@@ -14,7 +14,6 @@
 
   @include media("<small") {
     margin-bottom: 3.5rem;
-    margin-bottom: 1rem;
   }
 }
 
@@ -81,7 +80,8 @@
   cursor: pointer;
 
   @include media("<small") {
-    padding-right: 2rem;
+    padding-right: 3rem;
+    margin-bottom: 1rem;
   }
 }
 
