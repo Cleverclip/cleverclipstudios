@@ -75,6 +75,11 @@ export default class extends Page {
       ),
       testimonialsPaginations: document.querySelectorAll(
         ".service__testimonials__pagination__button"
+      ),
+
+      questionItems: document.querySelectorAll(".service__questions__article"),
+      questionItemsTrigger: document.querySelectorAll(
+        ".service__questions__article__title"
       )
     };
 
@@ -197,6 +202,19 @@ export default class extends Page {
     });
   }
 
+  onItemOpen({ target }) {
+    each(this.elements.questionItemsTrigger, item => {
+      if (item !== target) {
+        item.classList.remove("service__questions__article--active");
+      }
+    });
+    if (!target.classList.contains("service__questions__article--active")) {
+      target.classList.add("service__questions__article--active");
+    } else {
+      target.classList.remove("service__questions__article--active");
+    }
+  }
+
   show() {
     this.create();
 
@@ -225,12 +243,17 @@ export default class extends Page {
 
   addEventListeners() {
     super.addEventListeners();
-
     this.onBlurEvent = this.onBlur.bind(this);
     this.onFocusEvent = this.onFocus.bind(this);
 
     window.addEventListener("blur", this.onBlurEvent);
     window.addEventListener("focus", this.onFocusEvent);
+
+    this.onItemOpenEvent = this.onItemOpen.bind(this);
+
+    each(this.elements.questionItemsTrigger, item => {
+      item.addEventListener("click", this.onItemOpenEvent);
+    });
   }
 
   removeEventListeners() {
@@ -238,5 +261,9 @@ export default class extends Page {
 
     window.removeEventListener("blur", this.onBlurEvent);
     window.removeEventListener("focus", this.onFocusEvent);
+
+    each(this.elements.questionItems, item => {
+      item.removeEventListener("click", this.onItemOpenEvent);
+    });
   }
 }

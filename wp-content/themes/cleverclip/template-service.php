@@ -14,7 +14,7 @@ $context['cases'] = Timber::get_posts(array(
   'order' => 'DESC',
   'orderby' => 'meta_value',
   'post_type' => 'case',
-  'posts_per_page' => -1,
+  'posts_per_page' => 6,
   'tax_query' => array(
     array(
       'taxonomy' => 'service',
