@@ -1,4 +1,5 @@
-import { TimelineMax } from "gsap";
+import { TimelineMax, TweenMax, Power4 } from "gsap";
+import { each } from "lodash";
 import Player from "@vimeo/player";
 
 import Brands from "classes/Brands";
@@ -8,6 +9,8 @@ import Slider from "classes/Slider";
 import Testimonials from "classes/Testimonials";
 
 import { Detection } from "classes/Detection";
+
+import { split } from "utils/text";
 
 export default class extends Page {
   constructor() {
@@ -22,6 +25,12 @@ export default class extends Page {
       brandsItems: document.querySelectorAll(".service__brands__item"),
       brandsButtons: document.querySelectorAll(
         ".service__brands__item__wrapper"
+      ),
+
+      fieldsList: document.querySelector(".service__fields__list"),
+      fieldsItems: document.querySelectorAll(".service__fields__item"),
+      fieldsButtons: document.querySelectorAll(
+        ".service__fields__item__wrapper"
       ),
 
       newsletter: document.querySelector(".service__aside__newsletter__form"),
@@ -70,6 +79,7 @@ export default class extends Page {
 
     this.createBrands();
     this.createPlayer();
+    this.createFields();
     this.createNewsletter();
     this.createTestimonials();
   }
@@ -131,11 +141,20 @@ export default class extends Page {
       });
 
       this.brandsSlider.enable();
-    } else {
-      this.brands = new Brands({
-        items: this.elements.brandsItems,
-        list: this.elements.brandsList
+    }
+  }
+
+  createFields() {
+    if (Detection.isPhone) {
+      this.fieldsSlider = new Slider({
+        element: this.elements.fieldsList,
+        elements: {
+          items: this.elements.fieldsItems,
+          buttons: this.elements.fieldsButtons
+        }
       });
+
+      this.fieldsSlider.enable();
     }
   }
 

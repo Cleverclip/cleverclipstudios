@@ -34,6 +34,11 @@
   @extend %list;
 
   margin-top: 10rem;
+  @include media(">small") {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   @include media("<small") {
     margin-top: 3.5rem;
@@ -42,6 +47,11 @@
 
 .service__fields__item {
   @extend %list__item;
+  padding: 0px;
+  margin: 0 3.5rem 0 7rem;
+  @include media("<small") {
+    margin: 0px;
+  }
 }
 
 .service__fields__item__wrapper {
