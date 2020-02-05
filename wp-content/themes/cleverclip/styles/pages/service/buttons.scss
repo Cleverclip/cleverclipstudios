@@ -1,0 +1,31 @@
+.service__buttons__wrapper {
+  @extend %product__wrapper;
+  text-align: center;
+}
+.service__buttons__button {
+  @extend %product__button;
+  margin: 2.5rem;
+
+  @include media("<small") {
+    margin: 2rem 0;
+    width: calc(100% - 3rem);
+    margin-left: 1.5rem;
+  }
+}
+
+.service__buttons__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-deep-koamaru;
+  color: $color-candlelight;
+
+  .service__buttons__button:hover & {
+    @extend %button__box--hover;
+  }
+}
+
+.service__buttons__button__background {
+  @extend %button__background;
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
+}

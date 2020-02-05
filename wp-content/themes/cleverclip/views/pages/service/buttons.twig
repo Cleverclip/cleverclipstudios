@@ -1,0 +1,12 @@
+<section class="service__buttons">
+  <div class="service__buttons__wrapper">
+    {% for cta in post.get_field('cta') %}
+        <a class="service__buttons__button" href="{{cta.button.link}}">
+          <div class="service__buttons__button__background"></div>
+          <div class="service__buttons__button__box">
+            {{cta.button.title}}
+          </div>
+        </a>
+    {% endfor %}
+  </div>
+</section>
