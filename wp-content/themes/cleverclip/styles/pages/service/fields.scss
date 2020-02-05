@@ -48,7 +48,7 @@
 .service__fields__item {
   @extend %list__item;
   padding: 0px;
-  margin: 0 3.5rem 0 7rem;
+  margin: 0 3.5rem 7rem 3.5rem;
   @include media("<small") {
     margin: 0px;
   }

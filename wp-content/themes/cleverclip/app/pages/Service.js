@@ -33,6 +33,10 @@ export default class extends Page {
         ".service__fields__item__wrapper"
       ),
 
+      aboutList: document.querySelector(".service__about__list"),
+      aboutItems: document.querySelectorAll(".service__about__item"),
+      aboutButtons: document.querySelectorAll(".service__about__item__wrapper"),
+
       newsletter: document.querySelector(".service__aside__newsletter__form"),
       newsletterButton: document.querySelector(
         ".service__aside__newsletter__button"
@@ -80,6 +84,7 @@ export default class extends Page {
     this.createBrands();
     this.createPlayer();
     this.createFields();
+    this.createAbout();
     this.createNewsletter();
     this.createTestimonials();
   }
@@ -155,6 +160,20 @@ export default class extends Page {
       });
 
       this.fieldsSlider.enable();
+    }
+  }
+
+  createAbout() {
+    if (Detection.isPhone) {
+      this.aboutSlider = new Slider({
+        element: this.elements.aboutList,
+        elements: {
+          items: this.elements.aboutItems,
+          buttons: this.elements.aboutButtons
+        }
+      });
+
+      this.aboutSlider.enable();
     }
   }
 

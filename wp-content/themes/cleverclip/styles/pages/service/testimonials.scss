@@ -1,135 +1,15 @@
 .service__testimonials {
-  padding: 15rem 0;
+  @extend %wrapper;
 
-  span {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
-  }
+  padding: 15rem 0;
 
   @include media("<small") {
     padding: 5rem 0;
+    width: 100%;
   }
 }
 
-.service__testimonials__wrapper {
-  @extend %wrapper;
-  height: 50.6rem;
-
-  @include media("<small") {
-    &--testimonials {
-      width: 100%;
-    }
-  }
-}
-
-.service__testimonials__header {
-  text-align: center;
-}
-
-.service__testimonials__title {
-  @extend %title__medium;
-
-  margin: auto;
-  max-width: 35rem;
-
-  @include media("<small") {
-    max-width: 27rem;
-  }
-}
-
-.service__testimonials__description {
-  @extend %description__medium;
-
-  margin: 4rem auto 0;
-  max-width: 60rem;
-
-  @include media("<small") {
-    margin-top: 1.5rem;
-  }
-}
-
-.service__testimonials__button {
-  @extend %button;
-
-  margin-top: 4rem;
-
-  @include media("<small") {
-    margin-top: 2.5rem;
-  }
-}
-
-.service__testimonials__button__box {
-  @extend %button__box;
-
-  background: $color-white;
-  border-color: $color-deep-koamaru;
-  color: $color-deep-koamaru;
-
-  .service__testimonials__button:hover & {
-    @extend %button__box--hover;
-  }
-}
-
-.service__testimonials__button__background {
-  @extend %button__background;
-
-  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
-}
-
-.service__testimonials__list {
-  @extend %list;
-
-  margin-bottom: 10rem;
-  margin-top: 10rem;
-
-  @include media("<small") {
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-  }
-}
-
-.service__testimonials__item {
-  @extend %list__item;
-}
-
-.service__testimonials__item__wrapper {
-  @extend %list__item__wrapper;
-}
-
-.service__testimonials__item__box {
-  @extend %list__item__box;
-}
-
-.service__testimonials__item__image {
-  @extend %list__item__image;
-}
-
-.service__testimonials__item__content {
-  @extend %list__item__content;
-}
-
-.service__testimonials__item__title {
-  @extend %list__item__title;
-}
-
-.service__testimonials__item__description {
-  @extend %list__item__description;
-}
-
-.service__testimonials__item__link {
-  @extend %list__item__link;
-}
-
-.service__testimonials__item__link__text {
-  @extend %list__item__link__text;
-}
-
-.service__testimonials__item__link__arrow {
-  @extend %list__item__link__arrow;
-}
-
-.service__testimonials {
+.service__testimonials__box {
   @extend %testimonials;
 }
 
@@ -171,10 +51,6 @@
 
 .service__testimonial__author__title {
   @extend %testimonial__author__title;
-}
-
-.service__testimonial__author__description {
-  @extend %testimonial__author__description;
 }
 
 .service__testimonial__author__image {
