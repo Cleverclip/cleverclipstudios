@@ -69,7 +69,12 @@
   &:not(:first-child) {
     margin-top: 4rem;
   }
-
+  .about__contact__form__input:not(:first-child){
+    margin-left:2rem;
+    @include media('<small') {
+      margin-left: 0;
+    }
+  }
   &--checkbox {
     justify-content: left;
   }

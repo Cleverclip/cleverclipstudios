@@ -12,7 +12,11 @@ export default class extends EventEmitter {
       desktop: {
         items: document.querySelectorAll('.menu__item'),
         links: document.querySelectorAll('.menu__link'),
-        linksDropdowns: document.querySelectorAll('.menu__link__dropdown')
+        linksDropdowns: document.querySelectorAll('.menu__link__dropdown'),
+        form_button : document.getElementById('menu__form__button'),
+        form_overlay : document.getElementById('menu__form__overlay'),
+        form_container : document.getElementById('menu__form__container'),
+        form_close : document.getElementById('menu__form__close')
       },
 
       mobile: {
@@ -28,7 +32,8 @@ export default class extends EventEmitter {
         content: document.querySelector('.menu__mobile__content'),
         lists: document.querySelectorAll('.menu__mobile__list__secondary'),
 
-        locales: document.querySelector('.menu__mobile__select--locales')
+        locales: document.querySelector('.menu__mobile__select--locales'),
+        form_button : document.getElementById('menu__mobile__form__button'),
       }
     }
 
@@ -138,6 +143,25 @@ export default class extends EventEmitter {
 
     each(this.elements.desktop.linksDropdowns, button => {
       button.addEventListener('click', this.onDesktopDropdownClickEvent)
+    })
+
+    this.elements.desktop.form_container.addEventListener('click',(e)=>{
+      e.stopPropagation()
+    })
+
+    this.elements.desktop.form_button.addEventListener('click',()=>{
+      this.elements.desktop.form_overlay.classList.add('active')
+    })
+    this.elements.mobile.form_button.addEventListener('click',()=>{
+      this.elements.desktop.form_overlay.classList.add('active')
+    })
+
+    
+    this.elements.desktop.form_close.addEventListener('click',()=>{
+      this.elements.desktop.form_overlay.classList.remove('active')
+    })
+    this.elements.desktop.form_overlay.addEventListener('click',()=>{
+      this.elements.desktop.form_overlay.classList.remove('active')
     })
 
     this.onMobileOpenEvent = this.onMobileOpen.bind(this)
