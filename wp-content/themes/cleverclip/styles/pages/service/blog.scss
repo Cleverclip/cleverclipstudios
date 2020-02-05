@@ -5,14 +5,39 @@
 
 .service__aside__blog__wrapper {
   @extend %product__wrapper;
+  padding: 5rem 0;
+  @include media("<small") {
+    padding: 5rem;
+  }
 }
 
 .service__aside__blog__column {
   @extend %product__column;
+  display: inline-block;
+
+  &:first-child {
+    width: 80rem;
+    padding-right: 20rem;
+    @include media("<small") {
+      width: 100%;
+      padding-right: 0px;
+      padding-bottom: 0px;
+    }
+  }
+
+  &:nth-child(2) {
+    width: calc(100% - 80rem);
+    @include media("<small") {
+      width: 100%;
+    }
+  }
 }
 
 .service__aside__blog__box {
   @extend %product__box;
+  @include media("<small") {
+    text-align: center;
+  }
 }
 
 .service__aside__blog__description {
@@ -24,6 +49,7 @@
 .service__aside__blog__title {
   @extend %product__title;
   color: white;
+  max-width: 100%;
 }
 
 .service__aside__blog__button {
@@ -41,9 +67,21 @@
 }
 
 .service__aside__blog__media {
-  @extend %product__media;
+  width: 100% !important;
 }
 
 .service__aside__blog__media__image {
-  @extend %product__media__image;
+  border-radius: 50%;
+  height: 31.4rem;
+  margin-left: 2.2rem;
+  position: relative;
+  width: 31.4rem;
+  z-index: 1;
+
+  @include media("<small") {
+    height: 19rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19rem;
+  }
 }
