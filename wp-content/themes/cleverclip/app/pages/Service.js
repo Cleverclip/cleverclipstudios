@@ -2,15 +2,12 @@ import { TimelineMax, TweenMax, Power4 } from "gsap";
 import { each } from "lodash";
 import Player from "@vimeo/player";
 
-import Brands from "classes/Brands";
 import Newsletter from "classes/Newsletter";
 import Page from "classes/Page";
 import Slider from "classes/Slider";
 import Testimonials from "classes/Testimonials";
 
 import { Detection } from "classes/Detection";
-
-import { split } from "utils/text";
 
 export default class extends Page {
   constructor() {

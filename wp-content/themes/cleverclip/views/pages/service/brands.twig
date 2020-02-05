@@ -1,16 +1,18 @@
 <section class="service__brands">
   <div class="service__brands__wrapper">
     <h2 class="service__brands__title">
-      {{ home.get_field('brands_title') }}
+      {{ service.get_field('brands_title') }}
     </h2>
 
     <ul class="service__brands__list">
       {% for client in option['logos'] %}
-        <li class="service__brands__item">
-          <div class="service__brands__item__wrapper">
-            <img class="service__brands__image" data-src="{{ client.image }}">
-          </div>
-        </li>
+        {% if client.featured %}
+          <li class="service__brands__item">
+            <div class="service__brands__item__wrapper">
+              <img class="service__brands__image" data-src="{{ client.image }}">
+            </div>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>
