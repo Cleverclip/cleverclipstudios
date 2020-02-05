@@ -32,6 +32,12 @@
   @extend %archive__case__content;
 }
 
+.service__cases__case__title {
+  @extend %archive__case__description;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .service__cases__case__description {
   @extend %archive__case__description;
 }

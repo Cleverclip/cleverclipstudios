@@ -33,3 +33,24 @@
 .service__header__media__image {
   @extend %header__media__image;
 }
+
+.service__header__button {
+  @extend %product__button;
+  margin-bottom: 3rem;
+
+  @include media("<small") {
+    margin: 2rem 0 4rem 0;
+    width: calc(100% - 3rem);
+    margin-left: 1.5rem;
+  }
+}
+
+.service__header__button__box {
+  @extend %product__button__box;
+  background: $color-candlelight;
+}
+
+.service__header__button__background {
+  @extend %product__button__background;
+  background: $color-candlelight;
+}

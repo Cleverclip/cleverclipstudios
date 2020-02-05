@@ -10,6 +10,15 @@
       {{ post.content | striptags }}
     </p>
 
+    {% if post.get_field('intro_button') %}
+        <a class="service__header__button" href="{{ post.get_field('intro_button').link }}">
+          <div class="service__header__button__background"></div>
+          <div class="service__header__button__box">
+            {{post.get_field('intro_button').title}}
+          </div>
+        </a>
+    {% endif %}
+
     <figure class="service__header__media">
       <img class="service__header__media__image" data-src="{{ post.thumbnail.src | resize(1366) }}">
 
