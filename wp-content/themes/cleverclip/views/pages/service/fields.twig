@@ -10,7 +10,11 @@
     <div class="service__fields__list">
       {% for item in post.get_field('fields_list') %}
         <article class="service__fields__item">
-          <a class="service__fields__item__wrapper" href="{{ item.link.url }}">
+          {% if not (item.link.url == '#') %}
+            <a class="service__fields__item__wrapper" href="{{ item.link.url }}">
+          {% else %}
+            <div class="service__fields__item__wrapper">
+          {% endif %}
             <div class="service__fields__item__box">
               <img class="service__fields__item__image" data-src="{{ item.image }}">
 
@@ -28,13 +32,20 @@
                     {{ item.link.title }}
                   </span>
 
-                  <svg class="service__fields__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
-                  </svg>
+                  {% if not (item.link.url == '#') %}
+                    <svg class="service__fields__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
+                    </svg>
+                  {% endif %}
+
                 </div>
               </div>
             </div>
-          </a>
+          {% if not (item.link.url == '#') %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
         </article>
       {% endfor %}
     </div>
