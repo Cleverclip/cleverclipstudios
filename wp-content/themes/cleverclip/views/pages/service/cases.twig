@@ -1,5 +1,13 @@
 <section class="service__cases">
   <div class="service__cases__wrapper">
+
+    <h2 class="service__cases__title">
+      {{ post.get_field('cases_title') }}
+    </h2>
+    <div class="service__cases__description">
+      {{ post.get_field('cases_description') }}
+    </div>
+
     <div class="service__cases__list">
       {% for article in cases | slice(0, 2) %}
         <article class="service__cases__case">

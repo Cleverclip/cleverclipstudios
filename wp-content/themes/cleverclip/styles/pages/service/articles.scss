@@ -8,7 +8,13 @@
 }
 
 .service__articles__title {
-  @extend %archive__title;
+  @extend %title__medium;
+  text-align: center;
+  margin-top: 6.5rem;
+
+  @include media("<small") {
+    margin-top: 3.5rem;
+  }
 }
 
 .service__articles__list {

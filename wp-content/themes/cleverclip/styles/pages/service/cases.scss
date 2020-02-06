@@ -9,7 +9,28 @@
 }
 
 .service__cases__title {
-  @extend %archive__title;
+  @extend %title__medium;
+
+  margin-top: 6.5rem;
+
+  @include media("<small") {
+    margin-top: 3.5rem;
+  }
+}
+
+.service__cases__description {
+  @extend %content;
+  @extend %description__medium;
+
+  column-count: 2;
+  column-gap: 5rem;
+  margin-top: 4.5rem;
+
+  @include media("<small") {
+    margin-top: 1.5rem;
+    column-count: unset;
+    column-gap: unset;
+  }
 }
 
 .service__cases__list {
