@@ -34,6 +34,8 @@
   @extend %list;
 
   margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
 
   @include media("<small") {
     margin-top: 3.5rem;
