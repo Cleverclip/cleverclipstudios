@@ -7,10 +7,19 @@
   }
 }
 
+.service__questions__wrapper {
+  @include media(">small") {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .service__questions__title {
   @extend %title__40;
 
   margin-bottom: 9rem;
+  text-align: center;
 
   @include media("<small") {
     margin-bottom: 3.5rem;
