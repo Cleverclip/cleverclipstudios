@@ -5,7 +5,13 @@
 
   &.service__header__banner {
     padding-top: 30rem;
-    height: 65vh;
+    @include media(">small") {
+      min-height: 600px;
+    }
+    @media (min-width: 1025px) {
+      height: 65vh;
+      min-height: 800px;
+    }
     @include media("<small") {
       height: 100vh;
       padding-top: 18rem;
