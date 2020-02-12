@@ -1,9 +1,27 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <div class="custompostarchive">
-    {% include 'pages/customPostArchive/header.twig' %}
-   {{ abcd }}
-    {% include 'shared/footer.twig' %}
-  </div>
+	{% if function('is_archive') and function('is_category')  %}
+	
+	<div class="custompostarchive">
+        {% include 'pages/customPostArchive/header.twig' %}
+        
+        {% set translated_temp_id = function('pll_get_post', 9323) %}
+        
+        {# Load Elementor archive template #}
+        {{ function('do_shortcode', '[elementor-template id="' ~ translated_temp_id ~ '"]') }}
+        
+        {% include 'shared/footer.twig' %}
+    </div>
+	
+	{% else %}
+
+    <div class="custompostarchive">
+        {% include 'pages/customPostArchive/header.twig' %}
+        {{ abcd }}
+        {% include 'shared/footer.twig' %}
+    </div>
+	
+	{% endif %}
+
 {% endblock %}

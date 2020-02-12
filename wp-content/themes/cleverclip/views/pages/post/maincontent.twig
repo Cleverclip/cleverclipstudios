@@ -1,27 +1,38 @@
-{{ function('do_shortcode', '[elementor-template id="8105"]') }}
+{% if locale == 'en' %}
+    {{ function('do_shortcode', '[elementor-template id="8231"]') }}
+{% elseif locale == 'fr' %}
+	{{ function('do_shortcode', '[elementor-template id="8431"]') }}
+{% elseif locale == 'de' %}
+  	{{ function('do_shortcode', '[elementor-template id="8433"]') }}
+{% endif %}
 
 
-  <div class="post__content__wrapper" id="cst_post_content" >
-  
-  <div class="cst_post_content_social" >
-       {{ function('do_shortcode', '[elementor-template id="8140"]') }}
-</div>
+      <div class="post__content__wrapper" id="cst_post_content" >
 
-    {% if locale == 'en' %}
-      <p class="post__content__translation">
-        <strong>This post was automatically translated for convenience purposes.</strong>
-      </p>
-    {% elseif locale == 'fr' %}
-      <p class="post__content__translation">
-        <strong>Cet article a été traduit automatiquement pour des raisons de commodité.</strong>
-      </p>
-    {% endif %}
+      <div class="cst_post_content_social" >
+           {{ function('do_shortcode', '[elementor-template id="8238"]') }}
+    </div>
 
-    {{ post.content }}
-    <br>
+        {% if locale == 'en' %}
+          <p class="post__content__translation">
+            <strong>This post was automatically translated for convenience purposes.</strong>
+          </p>
+        {% elseif locale == 'fr' %}
+          <p class="post__content__translation">
+            <strong>Cet article a été traduit automatiquement pour des raisons de commodité.</strong>
+          </p>
+        {% endif %}
+
+        {{ post.content }}
+        <br>
+
     
-<h3 style="text-align: center;">Download PDF {{ function('do_shortcode', '[print_posts pdf="yes" word="no" print="no"]') }} </h3>
-  </div>
-    
+      </div>
 
-  {{ function('do_shortcode', '[elementor-template id="8134"]') }}
+{% if locale == 'en' %}
+      {{ function('do_shortcode', '[elementor-template id="8235"]') }}
+{% elseif locale == 'fr' %}
+	  {{ function('do_shortcode', '[elementor-template id="8415"]') }}
+{% elseif locale == 'de' %}
+	  {{ function('do_shortcode', '[elementor-template id="8417"]') }}
+{% endif %}
