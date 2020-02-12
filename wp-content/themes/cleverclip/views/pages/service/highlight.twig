@@ -10,9 +10,11 @@
           <div class="service__highlight__video">
             <img class="service__highlight__video__image" data-src="{{ post.get_field('highlight_thumbnail') }}">
 
-            <button class="service__highlight__video__button" data-modal-video="{{ post.get_field('highlight_video') }}">
-              Play
-            </button>
+            {% if post.get_field('highlight_video') %}
+              <button class="service__highlight__video__button" data-modal-video="{{ post.get_field('highlight_video') }}">
+                Play
+              </button>
+            {% endif %}
           </div>
 
           <figure class="service__highlight__media">
