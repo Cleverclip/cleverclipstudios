@@ -59,6 +59,7 @@
 
 .service__testimonials__pagination {
   @extend %testimonials__pagination;
+  transform: translateY(50%);
 }
 
 .service__testimonials__pagination__button {
@@ -71,6 +72,7 @@
 
 .service__testimonials__navigation {
   @extend %testimonials__navigation;
+  transform: translateY(50%);
 }
 
 .service__testimonials__navigation__button {

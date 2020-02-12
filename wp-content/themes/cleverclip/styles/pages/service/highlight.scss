@@ -27,16 +27,18 @@
   vertical-align: top;
 
   &:first-child {
-    padding-bottom: 10rem;
+    padding-bottom: 0rem;
     padding-left: 0px;
     padding-right: 12.5rem;
-    padding-top: 10rem;
+    padding-top: 0rem;
     width: 54.5%;
   }
 
   &:last-child {
     width: 45.5%;
     padding-right: 6rem;
+    padding-top: 4.5rem;
+    padding-bottom: 6rem;
   }
 
   @include media("<small") {
@@ -60,8 +62,10 @@
 
 .service__highlight__header {
   @extend %title__medium;
-  padding: 6rem;
+  text-align: center;
+  padding: 8rem 6rem;
   @include media("<small") {
+    padding: 6rem;
     padding-bottom: 0px;
   }
 }
@@ -147,9 +151,11 @@
 }
 
 .service__highlight__media {
-  height: 65rem;
+  //height: 65rem;
+  height: auto;
   position: relative;
   width: 115%;
+  margin-bottom: -7rem;
   margin-left: -7rem;
 
   &:before {
@@ -161,6 +167,7 @@
     position: absolute;
     right: -4.75rem;
     width: 22rem;
+    z-index: -1;
   }
 
   @include media("<small") {
@@ -175,5 +182,4 @@
   //position: absolute;
   //top: 0;
   //width: 100%;
-  transform: translateY(12rem);
 }

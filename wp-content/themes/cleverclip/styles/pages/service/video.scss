@@ -1,13 +1,28 @@
 .service__aside__video {
   @extend %product;
+  @include media(">small") {
+    padding-left: 10%;
+  }
 }
 
 .service__aside__video__wrapper {
   @extend %product__wrapper;
+  max-width: 100%;
+  width: 100%;
 }
 
 .service__aside__video__column {
   @extend %product__column;
+  &:first-child {
+    @include media(">small") {
+      width: 40%;
+    }
+  }
+  &:nth-child(2) {
+    @include media(">small") {
+      width: 60%;
+    }
+  }
 }
 
 .service__aside__video__box {
