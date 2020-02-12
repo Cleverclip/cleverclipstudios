@@ -1,0 +1,15 @@
+<section class="service__clients">
+  <div class="service__clients__wrapper">
+    <h2 class="service__clients__title">
+      {{ post.get_field('clients_title') }}
+    </h2>
+
+    <ul class="service__clients__list">
+      {% for client in post.get_field('clients_list') %}
+        <li class="service__clients__item">
+          <img class="service__clients__image" data-src="{{ client.image }}">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="services__clients">
+  <div class="services__clients__wrapper">
+    <header class="services__clients__header">
+      <h2 class="services__clients__title">
+        {{ post.get_field('clients_title') }}
+      </h2>
+
+      <p class="services__clients__description">
+        {{ post.get_field('clients_description') }}
+      </p>
+
+      <a class="services__clients__button" href="{{ post.get_field('clients_button').url }}">
+        <div class="services__clients__button__background"></div>
+
+        <div class="services__clients__button__box">
+          {{ post.get_field('clients_button').title }}
+        </div>
+      </a>
+    </header>
+
+    <ul class="services__clients__list">
+      {% for client in option['logos'] %}
+        <li class="services__clients__item">
+          <img class="services__clients__image" data-src="{{ client.image }}">
+        </li>
+      {% endfor %}
+    </ul>
+
+    <button class="services__clients__more">
+      {{ post.get_field('clients_more') }}
+    </button>
+  </div>
+</section>

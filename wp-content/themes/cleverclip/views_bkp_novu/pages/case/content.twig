@@ -1,0 +1,51 @@
+{% for section in post.get_field('content') %}
+  {% if section.type in 'content' %}
+    <section class="case__content case__content--{{ section.content.type }}">
+      <div class="case__content__box">
+        <h2 class="case__content__title">
+          {{ section.content.title }}
+        </h2>
+
+        <div class="case__content__description">
+          {{ section.content.description }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if section.type in 'testimonial' %}
+    <section class="case__testimonial">
+      <h2 class="case__testimonial__title">
+        {{ section.testimonial.title }}
+      </h2>
+
+      <p class="case__testimonial__description">
+        <strong class="case__testimonial__author">
+          {{ section.testimonial.author }}
+        </strong>
+
+        {{ section.testimonial.role }}
+      </p>
+    </section>
+  {% endif %}
+
+  {% if section.type in 'media' %}
+    <figure class="case__media case__media--{{ section.media.size }}">
+      <img class="case__media__image" data-src="{{ section.media.image | resize(1920) }}">
+    </figure>
+  {% endif %}
+
+  {% if section.type in 'video' %}
+    <section class="case__video">
+      <div class="case__video__wrapper">
+        <iframe class="case__video__iframe" src="https://player.vimeo.com/video/{{ section.video.id }}?&color=F3D300&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+        <button class="case__video__button">
+          <div class="case__video__button__play">
+            Play
+          </div>
+        </button>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

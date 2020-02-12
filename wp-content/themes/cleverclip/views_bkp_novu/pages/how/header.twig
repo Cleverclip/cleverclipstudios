@@ -1,0 +1,22 @@
+<header class="how__header">
+  <div class="how__header__background"></div>
+
+  <div class="how__header__wrapper">
+    <h1 class="how__header__title">
+      {{ post.title }}
+    </h1>
+
+    <p class="how__header__description">
+      {{ post.content | striptags }}
+    </p>
+
+    <div class="how__header__media">
+      <img class="how__header__media__image" data-src="{{ post.thumbnail.src | resize(1366) }}">
+
+      <button class="how__header__media__button" data-embed-video="{{ post.get_field('header_vimeo') }}">
+        Play
+      </button>
+    </div>
+
+  </div>
+</header>

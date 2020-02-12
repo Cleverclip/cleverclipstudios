@@ -1,0 +1,13 @@
+<section class="clients__header">
+  <div class="clients__header__wrapper">
+    <h1 class="clients__header__title">
+      {{ post.title }}
+    </h1>
+
+    <p class="clients__header__description">
+      {{ post.content | striptags }}
+    </p>
+  </div>
+
+  <img class="clients__header__illustration" data-src="{{ post.get_field('header_background') }}">
+</section>

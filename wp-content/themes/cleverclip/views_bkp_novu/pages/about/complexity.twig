@@ -1,0 +1,43 @@
+<section class="about__complexity">
+  <div class="about__complexity__wrapper">
+    <div class="about__complexity__columns">
+      <div class="about__complexity__column">
+        <figure class="about__complexity__media">
+          <img class="about__complexity__image" data-src="{{ post.get_field('complexity_image') }}">
+        </figure>
+
+        <h2 class="about__complexity__title">
+          {{ post.get_field('complexity_title') }}
+        </h2>
+
+        <p class="about__complexity__description">
+          {{ post.get_field('complexity_description') }}
+        </p>
+
+        <a class="about__complexity__button" href="{{ post.get_field('complexity_link').url }}">
+          <div class="about__complexity__button__background"></div>
+
+          <div class="about__complexity__button__box">
+            {{ post.get_field('complexity_link').title }}
+          </div>
+        </a>
+      </div>
+
+      <div class="about__complexity__column">
+        <ul class="about__complexity__list">
+          {% for item in post.get_field('complexity_list') %}
+            <li class="about__complexity__item">
+              <strong class="about__complexity__item__number">
+                {{ item.number }}
+              </strong>
+
+              <span class="about__complexity__item__description">
+                {{ item.description }}
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

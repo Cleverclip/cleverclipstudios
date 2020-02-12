@@ -1,0 +1,37 @@
+{% if isDesktop or isTablet %}
+  {% for testimonial in post.get_field('testimonials') %}
+    {% if loop.index == 1 %}
+      <article class="how__testimonial how__testimonial--1">
+        <div class="how__testimonial__wrapper">
+          <div class="how__testimonial__box">
+            <div class="how__testimonial__content">
+              <p class="how__testimonial__description">
+                {{ testimonial.description }}
+              </p>
+
+              <div class="how__testimonial__author">
+                <p class="how__testimonial__author__column">
+                  <strong class="how__testimonial__author__title">
+                    {{ testimonial.author }}
+                  </strong>
+
+                  <span class="how__testimonial__author__description">
+                    {{ testimonial.role }}
+                  </span>
+                </p>
+
+                <div class="how__testimonial__author__column">
+                  <img class="how__testimonial__author__image" data-src="{{ testimonial.company }}">
+                </div>
+              </div>
+            </div>
+
+            <figure class="how__testimonial__media">
+              <img class="how__testimonial__media__image" data-src="{{ testimonial.image | resize(660) }}">
+            </figure>
+          </div>
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+{% endif %}

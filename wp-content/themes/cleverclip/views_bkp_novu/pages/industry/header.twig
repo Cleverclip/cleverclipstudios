@@ -1,0 +1,29 @@
+<header class="industry__header">
+  <div class="industry__header__wrapper">
+    <div class="industry__header__columns">
+      <div class="industry__header__column">
+        <h1 class="industry__header__title">
+          {{ post.get_field('header_title') }}
+        </h1>
+
+        <p class="industry__header__description">
+          {{ post.get_field('header_description') }}
+        </p>
+
+        <button class="industry__header__button">
+          <div class="industry__header__button__background"></div>
+
+          <div class="industry__header__button__box">
+            {{ post.get_field('header_button') }}
+          </div>
+        </button>
+      </div>
+
+      <div class="industry__header__column">
+        <figure class="industry__header__media">
+          <img class="industry__header__media__image" data-src="{{ post.get_field('header_image') }}">
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>

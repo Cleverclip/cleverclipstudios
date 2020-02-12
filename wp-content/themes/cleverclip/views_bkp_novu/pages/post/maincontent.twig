@@ -1,0 +1,38 @@
+{% if locale == 'en' %}
+    {{ function('do_shortcode', '[elementor-template id="8231"]') }}
+{% elseif locale == 'fr' %}
+	{{ function('do_shortcode', '[elementor-template id="8431"]') }}
+{% elseif locale == 'de' %}
+  	{{ function('do_shortcode', '[elementor-template id="8433"]') }}
+{% endif %}
+
+
+      <div class="post__content__wrapper" id="cst_post_content" >
+
+      <div class="cst_post_content_social" >
+           {{ function('do_shortcode', '[elementor-template id="8238"]') }}
+    </div>
+
+        {% if locale == 'en' %}
+          <p class="post__content__translation">
+            <strong>This post was automatically translated for convenience purposes.</strong>
+          </p>
+        {% elseif locale == 'fr' %}
+          <p class="post__content__translation">
+            <strong>Cet article a été traduit automatiquement pour des raisons de commodité.</strong>
+          </p>
+        {% endif %}
+
+        {{ post.content }}
+        <br>
+
+    
+      </div>
+
+{% if locale == 'en' %}
+      {{ function('do_shortcode', '[elementor-template id="8235"]') }}
+{% elseif locale == 'fr' %}
+	  {{ function('do_shortcode', '[elementor-template id="8415"]') }}
+{% elseif locale == 'de' %}
+	  {{ function('do_shortcode', '[elementor-template id="8417"]') }}
+{% endif %}

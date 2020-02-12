@@ -1,0 +1,39 @@
+<section class="clients__collaboration">
+  <div class="clients__collaboration__wrapper">
+    <h2 class="clients__collaboration__title">
+      {{ post.get_field('collaboration_title') }}
+    </h2>
+
+    <div class="clients__collaboration__list">
+      {% for item in post.get_field('collaboration_list') %}
+        <article class="clients__collaboration__item">
+          <a class="clients__collaboration__item__wrapper" href="{{ item.link.url }}">
+            <div class="clients__collaboration__item__box">
+              <img class="clients__collaboration__item__image" data-src="{{ item.image }}">
+
+              <div class="clients__collaboration__item__content">
+                <h2 class="clients__collaboration__item__title" data-height=".clients__collaboration__item__title">
+                  {{ item.title }}
+                </h2>
+
+                <p class="clients__collaboration__item__description" data-height=".clients__collaboration__item__description">
+                  {{ item.description }}
+                </p>
+
+                <div class="clients__collaboration__item__link">
+                  <span class="clients__collaboration__item__link__text">
+                    {{ item.link.title }}
+                  </span>
+
+                  <svg class="clients__collaboration__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

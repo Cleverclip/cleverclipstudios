@@ -1,0 +1,36 @@
+<section class="industries__clients">
+  <div class="industries__clients__wrapper">
+    <header class="industries__clients__header">
+      <h2 class="industries__clients__title">
+        {{ post.get_field('clients_title') }}
+      </h2>
+
+      <p class="industries__clients__description">
+        {{ post.get_field('clients_description') }}
+      </p>
+    </header>
+
+    <div class="industries__clients__filter">
+      {% for industry in industries %}
+        <button class="industries__clients__filter__button" data-filter="{{ industry.term_id }}">
+          {{ industry.name }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <ul class="industries__clients__list">
+      {% for client in option['logos'] %}
+        {% set terms = [] %}
+
+        {% for industry in client.industries %}
+          {% set term = function('get_term_by', 'slug', industry, 'industry').term_id %}
+          {% set terms = terms | merge([term]) %}
+        {% endfor %}
+
+        <li class="industries__clients__item" data-filter='{{ terms | json_encode }}'>
+          <img class="industries__clients__image" data-src="{{ client.image }}">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

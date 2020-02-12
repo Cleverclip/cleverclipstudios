@@ -1,0 +1,51 @@
+<section class="home__cases">
+  <div class="home__cases__wrapper">
+    <div class="home__cases__list">
+      {% for item in post.get_field('cases_list') %}
+        <article class="home__cases__item">
+          <a class="home__cases__item__wrapper" href="{{ item.link.url }}">
+            <div class="home__cases__item__box">
+              <img class="home__cases__item__image" data-src="{{ item.image }}">
+
+              <div class="home__cases__item__content">
+                <h3 class="home__cases__item__title" data-height=".home__cases__item__title">
+                  {{ item.title }}
+                </h3>
+
+                <p class="home__cases__item__description" data-height=".home__cases__item__description">
+                  {{ item.description }}
+                </p>
+
+                <div class="home__cases__item__link">
+                  <span class="home__cases__item__link__text">
+                    {{ item.link.title }}
+                  </span>
+
+                  <svg class="home__cases__item__link__arrow" viewBox="0 0 22 15" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.5H20.5M20.5 7.5L14 1M20.5 7.5L14 14" stroke="#17238F"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <a class="home__cases__button home__cases__button--services" href="{{ post.get_field('cases_button_services').url }}">
+      <div class="home__cases__button__background"></div>
+
+      <div class="home__cases__button__box">
+        {{ post.get_field('cases_button_services').title }}
+      </div>
+    </a>
+
+    <a class="home__cases__button home__cases__button--pricing" href="{{ post.get_field('cases_button_pricing').url }}">
+      <div class="home__cases__button__background"></div>
+
+      <div class="home__cases__button__box">
+        {{ post.get_field('cases_button_pricing').title }}
+      </div>
+    </a>
+  </div>
+</section>

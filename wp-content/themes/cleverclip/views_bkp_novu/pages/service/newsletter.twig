@@ -1,0 +1,49 @@
+<aside class="service__aside__newsletter">
+  <div class="service__aside__newsletter__wrapper">
+    <div class="service__aside__newsletter__columns">
+      <div class="service__aside__newsletter__column">
+        <img data-src="{{ post.get_field('aside_newsletter_image') }}" class="service__aside__newsletter__media">
+      </div>
+
+      <div class="service__aside__newsletter__column">
+        <h2 class="service__aside__newsletter__title">
+          {{ post.get_field('aside_newsletter_title') }}
+        </h2>
+
+        <form
+          class="service__aside__newsletter__form"
+          data-id="{{ option['form_newsletter'] }}"
+          data-success-title="{{ option[locale ~ '_form_newsletter_messages'].success_title }}"
+          data-success-description="{{ option[locale ~ '_form_newsletter_messages'].success_description }}"
+          data-error-title="{{ option[locale ~ '_form_newsletter_messages'].error_title }}"
+          data-error-description="{{ option[locale ~ '_form_newsletter_messages'].error_description }}"
+        >
+          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') }}">
+          <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
+
+          <input name="utm_source" type="hidden" value="">
+          <input name="utm_medium" type="hidden" value="">
+          <input name="utm_campaign" type="hidden" value="">
+          <input name="utm_content" type="hidden" value="">
+          <input name="utm_term" type="hidden" value="">
+
+          <input name="referrer" type="hidden" value="">
+
+          <input name="smujarFirstVisit" type="hidden" value="">
+          <input name="smujarFirstVisitTime" type="hidden" value="">
+          <input name="smujarHistory" type="hidden" value="">
+
+          <input class="service__aside__newsletter__input" name="email" placeholder="{{ post.get_field('aside_newsletter_input') }}" type="email">
+
+          <button class="service__aside__newsletter__button">
+            <div class="service__aside__newsletter__button__background"></div>
+
+            <div class="service__aside__newsletter__button__box">
+              {{ post.get_field('aside_newsletter_button') }}
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</aside>

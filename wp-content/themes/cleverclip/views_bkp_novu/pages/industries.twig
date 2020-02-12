@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="industries">
+    {% include 'pages/industries/header.twig' %}
+    {% include 'pages/industries/list.twig' %}
+    {% include 'pages/industries/clients.twig' %}
+
+    {% include 'shared/footer.twig' %}
+  </div>
+{% endblock %}

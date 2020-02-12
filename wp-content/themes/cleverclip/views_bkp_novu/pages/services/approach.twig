@@ -1,0 +1,33 @@
+<section class="services__approach">
+  <div class="services__approach__wrapper">
+    <div class="services__approach__columns">
+      <div class="services__approach__column">
+        <figure class="services__approach__media">
+          <img class="services__approach__media__image" data-src="{{ post.get_field('approach_image') }}">
+        </figure>
+      </div>
+
+      <div class="services__approach__column">
+        <h2 class="services__approach__title">
+          {{ post.get_field('approach_title') }}
+        </h2>
+
+        <div class="services__approach__description">
+          {{ post.get_field('approach_description') }}
+        </div>
+
+        <div class="services__approach__buttons">
+          {% for button in post.get_field('approach_buttons') %}
+            <a class="services__approach__button services__approach__button--{{ loop.index }}" href="{{ button.button.url }}">
+              <div class="services__approach__button__background"></div>
+
+              <div class="services__approach__button__box">
+                {{ button.button.title }}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

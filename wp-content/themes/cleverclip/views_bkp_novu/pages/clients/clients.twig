@@ -1,0 +1,21 @@
+<section class="clients__clients">
+  <div class="clients__clients__wrapper">
+    <header class="clients__clients__header">
+      <h2 class="clients__clients__title">
+        {{ post.get_field('clients_title') }}
+      </h2>
+
+      <p class="clients__clients__description">
+        {{ post.get_field('clients_description') }}
+      </p>
+    </header>
+
+    <ul class="clients__clients__list">
+      {% for client in option['logos'] %}
+        <li class="clients__clients__item">
+          <img class="clients__clients__image" data-src="{{ client.image }}">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

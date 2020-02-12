@@ -1,0 +1,37 @@
+<section class="home__services">
+  <div class="home__services__wrapper">
+    <header class="home__services__header">
+      <h2 class="home__services__title">
+        {{ post.get_field('services_title') }}
+      </h2>
+
+      <p class="home__services__description">
+        {{ post.get_field('services_description') }}
+      </p>
+    </header>
+
+    <div class="home__services__list">
+      {% for service in post.get_field('services_list') %}
+        <article class="home__services__item">
+          <div class="home__services__item__wrapper">
+            <div class="home__services__item__box">
+              <div class="home__services__item__media">
+                <img class="home__services__item__media__image" data-src="{{ service.image | resize(700) }}">
+              </div>
+
+              <div class="home__services__item__content">
+                <h2 class="home__services__item__title" data-height=".home__services__item__title">
+                  {{ service.title }}
+                </h2>
+
+                <p class="home__services__item__description" data-height=".home__services__item__description">
+                  {{ service.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

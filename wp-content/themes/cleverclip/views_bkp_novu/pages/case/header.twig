@@ -1,0 +1,25 @@
+<header class="case__header">
+  <figure class="case__header__media">
+    <img class="case__header__media__image" data-src="{{ post.thumbnail.src | resize(1920) }}">
+  </figure>
+
+  <div class="case__header__wrapper">
+    {% if locale == 'en' %}
+      <p class="case__header__description">
+        <strong>This case was automatically translated for convenience purposes.</strong>
+      </p>
+    {% elseif locale == 'fr' %}
+      <p class="case__header__description">
+        <strong>Cet article a été traduit automatiquement pour des raisons de commodité.</strong>
+      </p>
+    {% endif %}
+
+    <h1 class="case__header__title">
+      {{ post.post_title }}
+    </h1>
+
+    <div class="case__header__description">
+      {{ post.post_content | wpautop }}
+    </div>
+  </div>
+</header>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+  <head>
+    {% include 'shared/header.twig' %}
+    
+    {{ wp_head }}
+  </head>
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54T9TPB" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+    {% include 'shared/menu.twig' %}
+
+    {% set slug = function('get_page_template_slug') | replace({ 'template-': '' }) | replace({ '.php': '' }) %}
+
+    <div
+      class="content"
+      data-slug="{{
+        post.post_type == 'post' ? 'post' :
+        post.post_type == 'case' ? 'case' :
+        slug ? slug : 'home'
+      }}"
+    >
+      {% block content %}{% endblock %}
+    </div>
+
+    {% include 'shared/cookies.twig' %}
+    {% include 'shared/scripts.twig' %}
+
+    {{ wp_footer }}
+  </body>
+</html>
