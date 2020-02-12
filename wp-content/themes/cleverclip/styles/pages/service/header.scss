@@ -2,6 +2,47 @@
   @extend %header;
 
   background: $color-spring-wood;
+
+  &.service__header__banner {
+    padding-top: 30rem;
+    height: 65vh;
+    @include media("<small") {
+      height: 100vh;
+      padding-top: 18rem;
+    }
+    .service__header__background {
+      bottom: 0px;
+    }
+  }
+}
+
+.service__header__media__background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  iframe {
+    width: 100vw;
+    height: 56.25vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include media("<small") {
+      display: none;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: $color-candlelight;
+    opacity: 0.92;
+    display: block;
+  }
 }
 
 .service__header__background {
@@ -24,6 +65,14 @@
 
 .service__header__media {
   @extend %header__media;
+}
+
+.service__header__media__background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .service__header__media__button {
