@@ -12,9 +12,13 @@
       height: 65vh;
       min-height: 800px;
     }
+    @media (max-width: 1024px) {
+      padding-bottom: 15rem;
+    }
     @include media("<small") {
-      height: 100vh;
-      padding-top: 18rem;
+      height: auto;
+      padding-bottom: 5rem;
+      padding-top: 10rem;
     }
     .service__header__background {
       bottom: 0px;
