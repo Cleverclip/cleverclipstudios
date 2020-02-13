@@ -13,9 +13,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: cd wp-content/themes/cleverclip
     - run: yarn
+      working-directory: ./wp-content/themes/cleverclip
     - run: yarn build
+      working-directory: ./wp-content/themes/cleverclip
       
       
   deploy:
