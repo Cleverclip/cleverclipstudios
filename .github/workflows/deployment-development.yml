@@ -6,6 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    env:
+      working-directory: ./wp-content/themes/cleverclip
 
     steps:
     - uses: actions/checkout@v2
