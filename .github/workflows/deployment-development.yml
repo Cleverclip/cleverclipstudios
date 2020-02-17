@@ -54,6 +54,7 @@ jobs:
           "client_secret": "${{ secrets.STACKPATH_CLIENT_SECRET }}",
           "grant_type": "client_credentials"
         }' | jq -r '.access_token')
+        echo $STACKPATH_ACCESS_TOKEN
     - run: echo $STACKPATH_ACCESS_TOKEN
     - run: echo test
     
