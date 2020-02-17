@@ -55,4 +55,5 @@ jobs:
           "grant_type": "client_credentials"
         }' | jq -r '.access_token')
     - run: echo $STACKPATH_ACCESS_TOKEN
+    - run: echo test
     
