@@ -54,7 +54,10 @@ jobs:
           "client_secret": "${{ secrets.STACKPATH_CLIENT_SECRET }}",
           "grant_type": "client_credentials"
         }' | jq -r '.access_token')
-        echo $STACKPATH_ACCESS_TOKEN
-    - run: echo $STACKPATH_ACCESS_TOKEN
-    - run: echo test
+        curl --request POST \
+        --url https://gateway.stackpath.com/cdn/v1/stacks/${{ secrets.STACKPATH_STACK_ID }}/purge \
+        --header "accept: application/json" \
+        --header "authorization: Bearer ${STACKPATH_ACCESS_TOKEN}" \
+        --header "content-type: application/json" \
+        --data '{"items":[{"url":"//cleverclipstudios.com/wp-content", "recursive":true}]}'
     
