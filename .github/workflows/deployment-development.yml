@@ -29,8 +29,8 @@ jobs:
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
-        host: ${{ secrets.DEPLOYMENT_HOST }}
-        username: ${{ secrets.DEPLOYMENT_USERNAME }}
-        key: ${{ secrets.DEPLOYMENT_KEY }}
+        host: ${{ secrets.DEVELOPMENT_HOST }}
+        username: ${{ secrets.DEVELOPMENT_USERNAME }}
+        key: ${{ secrets.DEVELOPMENT_KEY }}
         source: "."
         target: "/var/www/deployment-test"
