@@ -6,6 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    if: false == true
 
     steps:
     - uses: actions/checkout@v2
@@ -23,6 +24,7 @@ jobs:
     needs: build
 
     runs-on: ubuntu-latest
+    if: false == true
 
     steps:
     - uses: actions/checkout@v2
@@ -37,14 +39,14 @@ jobs:
       
       
   purge-cdn:
-    needs: [build, deploy]
+    # needs: [build, deploy]
 
     runs-on: ubuntu-latest
 
     steps:
     - name: purge cdn cache
       run: |
-        $(curl --request POST \
+        STACKPATH_ACCESS_TOKEN=$(curl --request POST \
         --url https://gateway.stackpath.com/identity/v1/oauth2/token \
         --header 'content-type: application/json' \
         --data '{
