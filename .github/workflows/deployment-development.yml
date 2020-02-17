@@ -6,7 +6,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    if: false == true
+
+    if: contains(github.event.head_commit.message, '[production]')
 
     steps:
     - uses: actions/checkout@v2
@@ -18,13 +19,12 @@ jobs:
       working-directory: ./wp-content/themes/cleverclip
     - run: yarn build
       working-directory: ./wp-content/themes/cleverclip
-      
-      
+
+
   deploy:
     needs: build
 
     runs-on: ubuntu-latest
-    if: false == true
 
     steps:
     - uses: actions/checkout@v2
@@ -36,10 +36,10 @@ jobs:
         key: ${{ secrets.DEVELOPMENT_KEY }}
         source: "."
         target: "/var/www/deployment-test"
-      
-      
+
+
   purge-cdn:
-    # needs: [build, deploy]
+    needs: [build, deploy]
 
     runs-on: ubuntu-latest
 
@@ -60,4 +60,3 @@ jobs:
         --header "authorization: Bearer ${STACKPATH_ACCESS_TOKEN}" \
         --header "content-type: application/json" \
         --data '{"items":[{"url":"//cleverclipstudios.com/wp-content", "recursive":true}]}'
-    
