@@ -27,4 +27,4 @@ jobs:
         username: ${{ secrets.DEVELOPMENT_USERNAME }}
         key: ${{ secrets.DEVELOPMENT_KEY }}
         source: "."
-        target: "/var/www/deployment-test"
+        target: "/var/www/html"
