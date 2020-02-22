@@ -333,15 +333,16 @@ add_filter( 'pll_rel_hreflang_attributes', 'filter_pll_rel_hreflang_attributes',
 function filter_pll_rel_hreflang_attributes( $hreflangs ) {
 
 	foreach ( $hreflangs as $lang => $url ) {
-		if ( $lang === 'en' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'en-CH' ) );
-    }
-    if ( $lang === 'de' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'de-CH' ) );
-    }
-    if ( $lang === 'fr' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'fr-CH' ) );
-		}
+	    if ( $lang === 'en' ) {
+	        $hreflangs['en-CH'] = $url;
+	    }
+	    if ( $lang === 'de' ) {
+	        $hreflangs['de-CH'] = $url;
+	    }
+	    if ( $lang === 'fr' ) {
+	        $hreflangs['fr-CH'] = $url;
+	    }
+	    unset($hreflangs[$lang]);
 	}
 
     return $hreflangs; 
