@@ -921,24 +921,4 @@ if(in_array('accelerated-mobile-pages/accelerated-moblie-pages.php', apply_filte
     	</div>
     <?php }
     
-    /**
-     * Remove meta_query 'ampforwp-amp-on-off' on related post args
-     * 
-     * @param $args
-     * 
-     * @author Umad Javed
-     */
-    function cp_ampforwp_component_related_post_args($args) {
-        
-        if (isset($args['meta_query']) && is_array($args['meta_query'])) {
-            foreach ($args['meta_query'] as $key => $value ) {
-                if (isset($value['key']) && $value['key'] == 'ampforwp-amp-on-off') {
-                    unset($args['meta_query'][$key]);
-                }
-            }
-        }
-        
-        return $args;
-    }
-    add_filter('ampforwp_component_related_post_args', 'cp_ampforwp_component_related_post_args');
 }
