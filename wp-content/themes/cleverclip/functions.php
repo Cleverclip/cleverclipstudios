@@ -995,4 +995,17 @@ add_filter('uael_posts_tax_filter', function ($terms) {
         
         return $terms;
 });
-        
+
+/**
+ * Shortcode to get the current page url for elementor field or can be use elsewhere.
+ *
+ * @author Umad Javed
+ */
+add_shortcode ('web_url', 'get_current_web_page_url');
+
+if (! function_exists('get_current_web_page_url')) {
+    function get_current_web_page_url() {
+        global $wp;
+        return home_url( add_query_arg( array(), $wp->request ) );
+    }
+}
