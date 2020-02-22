@@ -943,3 +943,56 @@ if(in_array('accelerated-mobile-pages/accelerated-moblie-pages.php', apply_filte
     }
     add_filter('ampforwp_component_related_post_args', 'cp_ampforwp_component_related_post_args');
 }
+
+/**
+ * For the category archive pages, add the current archive page into the query of Posts widget of Ultimate Elementor
+ * It will check if the page is category archive and query type is 'custom' with filters turned off.
+ *
+ * For correct working category filter must be empty in Posts widget of Ultimate Elementor
+ *
+ * @author Umad Javed
+ *
+ */
+add_filter('uael_posts_query_args', function ($query_args, $settings) {
+    
+    if (is_archive()
+        && is_category()
+        && $query_args['post_type'] == 'post'
+        && $settings['query_type'] == 'custom'
+        && ($settings['classic_show_filters'] == 'no' || $settings['classic_show_filters'] == '')) {
+            
+            $category = get_queried_object();
+            
+            $query_args['tax_query'][] = array(
+                'taxonomy' => 'category',
+                'field'    => 'term_id',
+                'terms'    => array($category->term_id),
+                'operator' => 'IN',
+            );
+        }
+        
+        return $query_args;
+}, 10, 2);
+    
+/**
+ * On individual category page, each post must have that category to display.
+ *
+ * @author Umad Javed
+ */
+add_filter('uael_posts_tax_filter', function ($terms) {
+    
+    if (is_archive()
+        && is_category()
+        && count($terms) == 1) {
+            
+            $category = get_queried_object();
+            
+            if ($terms[0]->term_id != $category->term_id) {
+                $terms[0] = $category;
+                
+            }
+        }
+        
+        return $terms;
+});
+        
