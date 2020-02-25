@@ -870,8 +870,6 @@ if(in_array('accelerated-mobile-pages/accelerated-moblie-pages.php', apply_filte
     }
     
     function cp_amp_rt_reading_time() {
-        
-        
         echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min read" ]') ;
     }
     
