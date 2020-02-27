@@ -4,7 +4,9 @@
       <div class="home__approach__column">
         <article class="home__approach__case">
           <div class="home__approach__case__media">
-            <img class="home__approach__case__image" data-src="{{ post.get_field('approach_case_image') | resize(1100) }}">
+            <video data-plyr-config='{"controls": ["play-large", "play", "progress", "pip", "fullscreen"]}' poster="{{ post.get_field('approach_case_image') | resize(1100) }}" class="js-player home__approach__case__image" playsinline>
+             <source src="{{ post.get_field('approach_case_html5_video') }}" type="video/mp4" />
+            </video>
           </div>
 
           <div class="home__approach__case__content">

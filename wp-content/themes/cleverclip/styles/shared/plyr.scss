@@ -1,0 +1,56 @@
+// Plyr Design Overrides
+.plyr__control--overlaid,
+.plyr__control--overlaid:hover,
+.plyr__control--overlaid:focus {
+  border-radius: 0px !important;
+  background: $color-ecstasy !important;
+  height: 5rem !important;
+  font-size: 0 !important;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.7rem !important;
+
+  svg {
+    display: none !important;
+  }
+
+  &:after {
+    border-style: solid;
+    border-width: 1.05rem 0 1.05rem 1.5rem;
+    border-color: transparent transparent transparent $color-white;
+    content: "";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    width: 0;
+  }
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded="true"] {
+  border-radius: 0px;
+}
+
+.plyr__control.plyr__tab-focus {
+  box-shadow: none !important;
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded="true"] {
+  background: $color-ecstasy !important;
+}
+
+.plyr--full-ui input[type="range"] {
+  color: $color-ecstasy !important;
+}
+
+// Hide controls until playback started
+.plyr.plyr--stopped .plyr__controls {
+  display: none;
+}

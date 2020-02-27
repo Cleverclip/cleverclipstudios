@@ -35,11 +35,11 @@
 
       <div class="home__header__column">
         <div class="home__header__media">
-          <img class="home__header__media__image" data-src="{{ post.get_field('header_image') | resize(900) }}">
 
-          <button class="home__header__media__button" data-modal-video="{{ post.get_field('header_vimeo') }}">
-            Play
-          </button>
+          <video data-plyr-config='{"controls": ["play-large", "play", "progress", "pip", "fullscreen"]}' poster="{{ post.get_field('header_image') | resize(900) }}" class="js-player home__header__media__image" playsinline>
+            <source src="{{ post.get_field('header_html5_video') }}" type="video/mp4" />
+          </video>
+
         </div>
       </div>
     </div>

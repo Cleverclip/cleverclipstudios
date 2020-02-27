@@ -1,179 +1,231 @@
-import { TimelineMax, TweenMax, Power4 } from 'gsap'
-import { each } from 'lodash'
-import Lottie from 'lottie-web'
+import { TimelineMax, TweenMax, Power4 } from "gsap";
+import { each } from "lodash";
+import Lottie from "lottie-web";
+import Plyr from "plyr";
+import "plyr/dist/plyr.css";
 
-import Newsletter from 'classes/Newsletter'
-import Page from 'classes/Page'
-import Slider from 'classes/Slider'
-import Testimonials from 'classes/Testimonials'
+import Newsletter from "classes/Newsletter";
+import Page from "classes/Page";
+import Slider from "classes/Slider";
+import Testimonials from "classes/Testimonials";
 
-import { Detection } from 'classes/Detection'
+import { Detection } from "classes/Detection";
 
-import { split } from 'utils/text'
+import { split } from "utils/text";
 
 export default class extends Page {
-  constructor () {
-    super({ selector: '.home' })
+  constructor() {
+    super({ selector: ".home" });
   }
 
-  create () {
-    super.create()
+  create() {
+    super.create();
 
     this.elements = {
-      header: document.querySelector('.home__header'),
-      headerAnimation: document.querySelector('.home__header__animation'),
-      headerTitle: document.querySelector('span.home__header__title'),
-      headerLines: document.querySelectorAll('.home__header__title__line'),
-      headerLinesMultiple: document.querySelectorAll('.home__header__title__line--multiple'),
+      header: document.querySelector(".home__header"),
+      headerAnimation: document.querySelector(".home__header__animation"),
+      headerTitle: document.querySelector("span.home__header__title"),
+      headerLines: document.querySelectorAll(".home__header__title__line"),
+      headerLinesMultiple: document.querySelectorAll(
+        ".home__header__title__line--multiple"
+      ),
 
-      brandsList: document.querySelector('.home__brands__list'),
-      brandsItems: document.querySelectorAll('.home__brands__item'),
-      brandsButtons: document.querySelectorAll('.home__brands__item__wrapper'),
+      brandsList: document.querySelector(".home__brands__list"),
+      brandsItems: document.querySelectorAll(".home__brands__item"),
+      brandsButtons: document.querySelectorAll(".home__brands__item__wrapper"),
 
-      partnersList: document.querySelector('.home__partners__list'),
-      partnersItems: document.querySelectorAll('.home__partners__item'),
-      partnersButtons: document.querySelectorAll('.home__partners__item__wrapper'),
+      partnersList: document.querySelector(".home__partners__list"),
+      partnersItems: document.querySelectorAll(".home__partners__item"),
+      partnersButtons: document.querySelectorAll(
+        ".home__partners__item__wrapper"
+      ),
 
-      testimonials: document.querySelector('.home__partners__testimonials'),
-      testimonialsWrapper: document.querySelector('.home__partners__testimonials__wrapper'),
-      testimonialsItems: document.querySelectorAll('.home__partners__testimonial'),
-      testimonialsItemsWrappers: document.querySelectorAll('.home__partners__testimonial__wrapper'),
-      testimonialsMedias: document.querySelectorAll('.home__partners__testimonial__media'),
-      testimonialsDescriptions: document.querySelectorAll('.home__partners__testimonial__description'),
-      testimonialsAuthorTitles: document.querySelectorAll('.home__partners__testimonial__author__title'),
-      testimonialsAuthorDescriptions: document.querySelectorAll('.home__partners__testimonial__author__description'),
-      testimonialsAuthorImages: document.querySelectorAll('.home__partners__testimonial__author__image'),
-      testimonialsButtonNext: document.querySelector('.home__partners__testimonials__navigation__button--next'),
-      testimonialsButtonPrevious: document.querySelector('.home__partners__testimonials__navigation__button--previous'),
-      testimonialsPaginations: document.querySelectorAll('.home__partners__testimonials__pagination__button'),
+      testimonials: document.querySelector(".home__partners__testimonials"),
+      testimonialsWrapper: document.querySelector(
+        ".home__partners__testimonials__wrapper"
+      ),
+      testimonialsItems: document.querySelectorAll(
+        ".home__partners__testimonial"
+      ),
+      testimonialsItemsWrappers: document.querySelectorAll(
+        ".home__partners__testimonial__wrapper"
+      ),
+      testimonialsMedias: document.querySelectorAll(
+        ".home__partners__testimonial__media"
+      ),
+      testimonialsDescriptions: document.querySelectorAll(
+        ".home__partners__testimonial__description"
+      ),
+      testimonialsAuthorTitles: document.querySelectorAll(
+        ".home__partners__testimonial__author__title"
+      ),
+      testimonialsAuthorDescriptions: document.querySelectorAll(
+        ".home__partners__testimonial__author__description"
+      ),
+      testimonialsAuthorImages: document.querySelectorAll(
+        ".home__partners__testimonial__author__image"
+      ),
+      testimonialsButtonNext: document.querySelector(
+        ".home__partners__testimonials__navigation__button--next"
+      ),
+      testimonialsButtonPrevious: document.querySelector(
+        ".home__partners__testimonials__navigation__button--previous"
+      ),
+      testimonialsPaginations: document.querySelectorAll(
+        ".home__partners__testimonials__pagination__button"
+      ),
 
-      servicesList: document.querySelector('.home__services__list'),
-      servicesItems: document.querySelectorAll('.home__services__item'),
-      servicesButtons: document.querySelectorAll('.home__services__item__wrapper'),
+      servicesList: document.querySelector(".home__services__list"),
+      servicesItems: document.querySelectorAll(".home__services__item"),
+      servicesButtons: document.querySelectorAll(
+        ".home__services__item__wrapper"
+      ),
 
-      casesList: document.querySelector('.home__cases__list'),
-      casesItems: document.querySelectorAll('.home__cases__item'),
-      casesButtons: document.querySelectorAll('.home__cases__item__wrapper'),
+      casesList: document.querySelector(".home__cases__list"),
+      casesItems: document.querySelectorAll(".home__cases__item"),
+      casesButtons: document.querySelectorAll(".home__cases__item__wrapper"),
 
-      newsletter: document.querySelector('.home__videos__newsletter__form'),
-      newsletterButton: document.querySelector('.home__videos__newsletter__button'),
-      newsletterInput: document.querySelector('.home__videos__newsletter__input')
-    }
+      newsletter: document.querySelector(".home__videos__newsletter__form"),
+      newsletterButton: document.querySelector(
+        ".home__videos__newsletter__button"
+      ),
+      newsletterInput: document.querySelector(
+        ".home__videos__newsletter__input"
+      )
+    };
 
-    this.createHeader()
-    this.createHeaderAnimation()
-    this.createBrands()
-    this.createPartners()
-    this.createServices()
-    this.createCases()
-    this.createTestimonials()
-    this.createNewsletter()
+    this.createHeader();
+    this.createHeaderAnimation();
+    this.createBrands();
+    this.createPartners();
+    this.createServices();
+    this.createCases();
+    this.createTestimonials();
+    this.createNewsletter();
+    this.initializeInlineVideos();
   }
 
-  createHeader () {
-    this.elements.headerTitle.classList.add('home__header__title--active')
+  createHeader() {
+    this.elements.headerTitle.classList.add("home__header__title--active");
 
     each(this.elements.headerLines, line => {
-      const texts = line.querySelectorAll('span')
+      const texts = line.querySelectorAll("span");
 
-      let width = 0
+      let width = 0;
 
       each(texts, text => {
-        const { clientWidth } = text
+        const { clientWidth } = text;
 
         split({
           append: false,
           element: text,
-          expression: ''
-        })
+          expression: ""
+        });
 
         if (width < clientWidth) {
-          width = clientWidth
+          width = clientWidth;
         }
-      })
+      });
 
-      TweenMax.set(line, { width })
-    })
+      TweenMax.set(line, { width });
+    });
 
     each(this.elements.headerLinesMultiple, line => {
-      const text = line.querySelector('.home__header__title__text')
+      const text = line.querySelector(".home__header__title__text");
 
       TweenMax.set(text, {
         autoAlpha: 1
-      })
+      });
 
-      TweenMax.staggerFromTo(text.querySelectorAll('span'), 1, {
-        autoAlpha: 0,
-        display: 'inline-block',
-        x: 25
-      }, {
-        autoAlpha: 1,
-        ease: Power4.easeOut,
-        onComplete: () => {
-          text.classList.add('home__header__title__text--active')
+      TweenMax.staggerFromTo(
+        text.querySelectorAll("span"),
+        1,
+        {
+          autoAlpha: 0,
+          display: "inline-block",
+          x: 25
         },
-        x: 0
-      }, 0.05)
-    })
+        {
+          autoAlpha: 1,
+          ease: Power4.easeOut,
+          onComplete: () => {
+            text.classList.add("home__header__title__text--active");
+          },
+          x: 0
+        },
+        0.05
+      );
+    });
 
-    this.line = this.elements.headerLinesMultiple[0]
+    this.line = this.elements.headerLinesMultiple[0];
 
     setTimeout(() => {
-      this.animateNextLine()
-    }, 2000)
+      this.animateNextLine();
+    }, 2000);
   }
 
-  animateNextLine () {
-    const text = this.line.querySelector('.home__header__title__text--active')
-    const textNext = text.nextElementSibling ? text.nextElementSibling : this.line.querySelector('.home__header__title__text')
+  animateNextLine() {
+    const text = this.line.querySelector(".home__header__title__text--active");
+    const textNext = text.nextElementSibling
+      ? text.nextElementSibling
+      : this.line.querySelector(".home__header__title__text");
 
-    const timeline = new TimelineMax()
+    const timeline = new TimelineMax();
 
     timeline.to(text, 0.5, {
       autoAlpha: 0
-    })
+    });
 
     timeline.call(() => {
-      text.classList.remove('home__header__title__text--active')
-      textNext.classList.add('home__header__title__text--active')
-    })
+      text.classList.remove("home__header__title__text--active");
+      textNext.classList.add("home__header__title__text--active");
+    });
 
     timeline.set(textNext, {
       autoAlpha: 1
-    })
+    });
 
-    timeline.staggerFromTo(textNext.querySelectorAll('span'), 1, {
-      autoAlpha: 0,
-      display: 'inline-block',
-      x: 25
-    }, {
-      autoAlpha: 1,
-      ease: Power4.easeOut,
-      x: 0
-    }, 0.025)
+    timeline.staggerFromTo(
+      textNext.querySelectorAll("span"),
+      1,
+      {
+        autoAlpha: 0,
+        display: "inline-block",
+        x: 25
+      },
+      {
+        autoAlpha: 1,
+        ease: Power4.easeOut,
+        x: 0
+      },
+      0.025
+    );
 
     timeline.call(() => {
-      this.line = this.line === this.elements.headerLinesMultiple[0] ? this.elements.headerLinesMultiple[1] : this.elements.headerLinesMultiple[0]
-    })
+      this.line =
+        this.line === this.elements.headerLinesMultiple[0]
+          ? this.elements.headerLinesMultiple[1]
+          : this.elements.headerLinesMultiple[0];
+    });
 
     timeline.call(() => {
-      this.animateNextLine()
-    })
+      this.animateNextLine();
+    });
   }
 
-  createHeaderAnimation () {
+  createHeaderAnimation() {
     if (!Detection.isPhone) {
       this.headerAnimation = Lottie.loadAnimation({
         container: this.elements.headerAnimation,
-        renderer: 'svg',
+        renderer: "svg",
         loop: true,
         autoplay: true,
         path: this.elements.headerAnimation.dataset.animation
-      })
+      });
     }
   }
 
-  createBrands () {
+  createBrands() {
     if (Detection.isPhone) {
       this.brandsSlider = new Slider({
         element: this.elements.brandsList,
@@ -181,13 +233,13 @@ export default class extends Page {
           items: this.elements.brandsItems,
           buttons: this.elements.brandsButtons
         }
-      })
+      });
 
-      this.brandsSlider.enable()
+      this.brandsSlider.enable();
     }
   }
 
-  createPartners () {
+  createPartners() {
     if (Detection.isPhone) {
       this.partnersSlider = new Slider({
         element: this.elements.partnersList,
@@ -195,13 +247,13 @@ export default class extends Page {
           items: this.elements.partnersItems,
           buttons: this.elements.partnersButtons
         }
-      })
+      });
 
-      this.partnersSlider.enable()
+      this.partnersSlider.enable();
     }
   }
 
-  createServices () {
+  createServices() {
     if (Detection.isPhone) {
       this.servicesSlider = new Slider({
         element: this.elements.servicesList,
@@ -209,13 +261,13 @@ export default class extends Page {
           items: this.elements.servicesItems,
           buttons: this.elements.servicesButtons
         }
-      })
+      });
 
-      this.servicesSlider.enable()
+      this.servicesSlider.enable();
     }
   }
 
-  createCases () {
+  createCases() {
     if (Detection.isPhone) {
       this.casesSlider = new Slider({
         element: this.elements.casesList,
@@ -223,13 +275,13 @@ export default class extends Page {
           items: this.elements.casesItems,
           buttons: this.elements.casesButtons
         }
-      })
+      });
 
-      this.casesSlider.enable()
+      this.casesSlider.enable();
     }
   }
 
-  createTestimonials () {
+  createTestimonials() {
     if (Detection.isPhone) {
       this.testimonialsSlider = new Slider({
         element: this.elements.testimonialsWrapper,
@@ -237,23 +289,28 @@ export default class extends Page {
           items: this.elements.testimonialsItems,
           buttons: this.elements.testimonialsItemsWrappers
         }
-      })
+      });
 
-      this.testimonialsSlider.enable()
+      this.testimonialsSlider.enable();
 
-      this.testimonialsSlider.on('change', index => {
+      this.testimonialsSlider.on("change", index => {
         each(this.elements.testimonialsPaginations, (button, buttonIndex) => {
           if (buttonIndex === index) {
-            button.classList.add('home__partners__testimonials__pagination__button--active')
+            button.classList.add(
+              "home__partners__testimonials__pagination__button--active"
+            );
           } else {
-            button.classList.remove('home__partners__testimonials__pagination__button--active')
+            button.classList.remove(
+              "home__partners__testimonials__pagination__button--active"
+            );
           }
-        })
-      })
+        });
+      });
     } else {
       this.testimonials = new Testimonials({
         classes: {
-          paginationsActive: 'home__partners__testimonials__pagination__button--active'
+          paginationsActive:
+            "home__partners__testimonials__pagination__button--active"
         },
         element: this.elements.testimonials,
         elements: {
@@ -267,42 +324,54 @@ export default class extends Page {
           buttonPrevious: this.elements.testimonialsButtonPrevious,
           paginations: this.elements.testimonialsPaginations
         }
-      })
+      });
     }
   }
 
-  createNewsletter () {
+  createNewsletter() {
     if (!this.elements.newsletter) {
-      return
+      return;
     }
 
     this.newsletter = new Newsletter({
       button: this.elements.newsletterButton,
       classes: {
-        input: 'home__videos__newsletter__input--error',
+        input: "home__videos__newsletter__input--error"
       },
       form: this.elements.newsletter,
       input: this.elements.newsletterInput
-    })
+    });
   }
 
-  show () {
-    this.create()
-
-    this.timelineIn = new TimelineMax()
-
-    super.show(this.timelineIn)
+  initializeInlineVideos() {
+    const players = Plyr.setup(".js-player");
+    players.forEach((player, index) => {
+      if (index == 0) {
+        player.on("play", event => {
+          const instance = event.detail.plyr;
+          instance.currentTime < 1 && player.fullscreen.enter();
+        });
+      }
+    });
   }
 
-  hide () {
-    this.timelineOut = new TimelineMax()
+  show() {
+    this.create();
 
-    super.hide(this.timelineOut)
+    this.timelineIn = new TimelineMax();
+
+    super.show(this.timelineIn);
   }
 
-  destroy () {
+  hide() {
+    this.timelineOut = new TimelineMax();
+
+    super.hide(this.timelineOut);
+  }
+
+  destroy() {
     if (this.testimonials) {
-      this.testimonials.destroy()
+      this.testimonials.destroy();
     }
   }
 }

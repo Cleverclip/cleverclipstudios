@@ -46,7 +46,9 @@
       <div class="home__videos__column">
         <article class="home__videos__highlight">
           <div class="home__videos__highlight__media">
-            <img class="home__videos__highlight__image" data-src="{{ post.get_field('videos_highlight_image') | resize(1100) }}">
+            <video data-plyr-config='{"controls": ["play-large", "play", "progress", "pip", "fullscreen"]}' poster="{{ post.get_field('videos_highlight_image') | resize(1100) }}" class="js-player home__videos__highlight__image" playsinline>
+             <source src="{{ post.get_field('videos_highlight_html5_video') }}" type="video/mp4" />
+            </video>
           </div>
 
           <div class="home__videos__highlight__content">
