@@ -125,6 +125,7 @@
   position: relative;
   width: 44.5rem;
   z-index: 1;
+  vertical-align: bottom;
 
   @include media('<small') {
     width: 100%;

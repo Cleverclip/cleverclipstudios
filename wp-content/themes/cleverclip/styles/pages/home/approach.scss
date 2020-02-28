@@ -76,6 +76,7 @@
 
 .home__approach__case__content {
   @extend %box__content;
+  margin-top: -1px;
 }
 
 .home__approach__case__description {
@@ -199,6 +200,7 @@
 
 .home__approach__internal__content {
   @extend %box__content;
+  margin-top: -1px;
 }
 
 .home__approach__internal__description {

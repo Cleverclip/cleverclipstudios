@@ -127,6 +127,7 @@
 
 .home__complexity__case__content {
   @extend %box__content;
+  margin-top: -1px;
 }
 
 .home__complexity__case__description {

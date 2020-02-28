@@ -236,6 +236,7 @@
 
 .home__videos__highlight__content {
   @extend %box__content;
+  margin-top: -1px;
 }
 
 .home__videos__highlight__description {
