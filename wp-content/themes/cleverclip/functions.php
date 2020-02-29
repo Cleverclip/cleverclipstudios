@@ -1014,3 +1014,25 @@ if (! function_exists('get_current_web_page_url')) {
         return home_url( add_query_arg( array(), $wp->request ) );
     }
 }
+/**
+ * Add feature image to RSS feed.
+ * 
+ * @author Umad Javed
+ * @param string $content
+ * @return string
+ */
+function add_featured_image_to_feed($content) {
+    global $post;
+    
+    if (has_post_thumbnail($post->ID)) { 
+        $post_thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+        $post_thumbnail = "<figure><img src='$post_thumbnail_url' ></figure>";
+        
+        $content = $post_thumbnail . $content;
+    }
+    
+    return $content;
+}
+
+add_filter( 'the_excerpt_rss', 'add_featured_image_to_feed', 1000, 1 );
+add_filter( 'the_content_feed', 'add_featured_image_to_feed', 1000, 1 );
