@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+	<div>
+      {% if (option.blog_template) %}
+      
+        {% set translated_temp_id = function('pll_get_post', option.blog_template) %}
+        {# Load Elementor archive template #}
+        {{ function('do_shortcode', '[elementor-template id="' ~ translated_temp_id ~ '"]') }}
+        
+      {% else %}
+      
+          {{ post.content }} 
+          
+      {% endif %}
+    </div>
+
+    {% include 'shared/footer.twig' %}
+
+{% endblock %}

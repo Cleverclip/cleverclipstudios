@@ -256,6 +256,13 @@ if( function_exists('acf_add_options_page') ) {
     'menu_title'    => 'Other',
     'menu_slug'     => 'other',
   ));
+  
+  acf_add_options_sub_page(array(
+      'parent_slug'   => 'global',
+      'page_title'    => 'Templates',
+      'menu_title'    => 'Templates',
+      'menu_slug'     => 'templates',
+  ));
 
   add_filter('timber_context', 'acf_global');
 
