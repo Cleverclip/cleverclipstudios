@@ -1014,6 +1014,7 @@ if (! function_exists('get_current_web_page_url')) {
         return home_url( add_query_arg( array(), $wp->request ) );
     }
 }
+
 /**
  * Add feature image to RSS feed.
  * 
@@ -1036,3 +1037,16 @@ function add_featured_image_to_feed($content) {
 
 add_filter( 'the_excerpt_rss', 'add_featured_image_to_feed', 1000, 1 );
 add_filter( 'the_content_feed', 'add_featured_image_to_feed', 1000, 1 );
+
+/**
+ * Trickly override the main query for blog feed to show blog item on languaged blog page
+ * 
+ * @author Umad Javed
+ */
+function override_main_query_for_blog_page($query_obj){
+    if ($query_obj->is_feed && $query_obj->is_home && $query_obj->is_posts_page) {
+        $query_obj->is_comment_feed = false;
+    }
+}
+
+add_action('parse_query', 'override_main_query_for_blog_page');
