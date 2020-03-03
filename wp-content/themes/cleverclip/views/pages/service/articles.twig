@@ -6,21 +6,23 @@
 
     <div class="service__articles__list">
       {% for case in cases %}
-        <article class="service__articles__case">
-          <div class="service__articles__case__media">
-            <img class="service__articles__case__image" data-src="{{ case.thumbnail.src | resize(800) }}">
-          </div>
+        {% if loop.index != 1 and loop.index != 2 %}
+          <article class="service__articles__case">
+            <div class="service__articles__case__media">
+              <img class="service__articles__case__image" data-src="{{ case.thumbnail.src | resize(800) }}">
+            </div>
 
-          <div class="service__articles__case__content">
-            <p class="service__articles__case__description">
-              {{ case.title }}
-            </p>
+            <div class="service__articles__case__content">
+              <p class="service__articles__case__description">
+                {{ case.title }}
+              </p>
 
-            <a class="service__articles__case__link" href="{{ case.link }}">
-              {{ option[locale ~ '_read_more'] }}
-            </a>
-          </div>
-        </article>
+              <a class="service__articles__case__link" href="{{ case.link }}">
+                {{ option[locale ~ '_read_more'] }}
+              </a>
+            </div>
+          </article>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
