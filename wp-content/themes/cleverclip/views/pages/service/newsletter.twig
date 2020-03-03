@@ -36,7 +36,38 @@
           <input name="smujarFirstVisitTime" type="hidden" value="">
           <input name="smujarHistory" type="hidden" value="">
 
-          <input class="service__aside__newsletter__input" name="email" placeholder="{{ post.get_field('aside_newsletter_input') }}" type="email">
+          <input class="service__aside__newsletter__input" name="first-name" placeholder="{{ post.get_field('aside_newsletter_first-name') }}">
+          <input class="service__aside__newsletter__input" name="last-name" placeholder="{{ post.get_field('aside_newsletter_last-name') }}">
+          <input class="service__aside__newsletter__input" name="email" placeholder="{{ post.get_field('aside_newsletter_email') }}" type="email">
+
+          <div class="service__aside__newsletter__row">
+            <label class="service__aside__newsletter__label">
+              <input class="service__aside__newsletter__radio" name="gender" type="radio">
+              <span class="service__aside__newsletter__radio__bullet"></span>
+              <span class="service__aside__newsletter__radio__text">
+                {% if locale == 'en' %}
+                    Mr
+                {% elseif locale == 'fr' %}
+                    M
+                {% elseif locale == 'de' %}
+                    Herr
+                {% endif %}
+              </span>
+            </label>
+            <label class="service__aside__newsletter__label">
+              <input class="service__aside__newsletter__radio" name="gender" type="radio">
+              <span class="service__aside__newsletter__radio__bullet"></span>
+              <span class="service__aside__newsletter__radio__text">
+                {% if locale == 'en' %}
+                    Mrs
+                {% elseif locale == 'fr' %}
+                    Mme
+                {% elseif locale == 'de' %}
+                    Frau
+                {% endif %}
+              </span>
+            </label>
+          </div>
 
           <button class="service__aside__newsletter__button">
             <div class="service__aside__newsletter__button__background"></div>
