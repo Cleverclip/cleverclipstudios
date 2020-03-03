@@ -21,7 +21,7 @@
     </p>
 
     {% if post.get_field('intro_button') %}
-        <a class="service__header__button" href="{{ post.get_field('intro_button').link }}">
+        <a class="service__header__button" href="{{ post.get_field('intro_button').url }}">
           <div class="service__header__button__background"></div>
           <div class="service__header__button__box">
             {{post.get_field('intro_button').title}}
