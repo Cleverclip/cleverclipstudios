@@ -9,6 +9,9 @@
   @extend %product__wrapper;
   max-width: 100%;
   width: 100%;
+  @include media(">small") {
+    min-height: 400px;
+  }
 }
 
 .service__aside__video__column {
