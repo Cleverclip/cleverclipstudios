@@ -15,6 +15,7 @@
 
 .service__testimonials__wrapper {
   @extend %testimonials__wrapper;
+  height: 50rem;
 }
 
 .service__testimonial {
