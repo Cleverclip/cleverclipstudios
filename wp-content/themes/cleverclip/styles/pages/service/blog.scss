@@ -1,10 +1,11 @@
 .service__aside__blog {
   @extend %product;
-  background: $color-candlelight;
+  background: none;
 }
 
 .service__aside__blog__wrapper {
   @extend %product__wrapper;
+  background: $color-candlelight;
   padding: 5rem 0;
   @include media("<small") {
     padding: 5rem;
