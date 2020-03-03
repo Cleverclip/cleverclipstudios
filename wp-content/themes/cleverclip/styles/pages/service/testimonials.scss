@@ -23,10 +23,14 @@
 
 .service__testimonial__wrapper {
   @extend %testimonial__wrapper;
+  height: 50rem;
 }
 
 .service__testimonial__media {
   @extend %testimonial__media;
+  &::after {
+    bottom: 2rem;
+  }
 }
 
 .service__testimonial__media__image {
