@@ -1016,27 +1016,34 @@ if (! function_exists('get_current_web_page_url')) {
 }
 
 /**
+ * Add Media XMLNS
+ */
+function add_feed_media_ns() {
+    echo 'xmlns:media="http://search.yahoo.com/mrss/"';
+}
+add_action('rss2_ns', 'add_feed_media_ns');
+
+/**
  * Add feature image to RSS feed.
- * 
+ *
  * @author Umad Javed
  * @param string $content
  * @return string
  */
-function add_featured_image_to_feed($content) {
+function add_image_media_to_feed() {
     global $post;
-    
-    if (has_post_thumbnail($post->ID)) { 
-        $post_thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
-        $post_thumbnail = "<figure><img src='$post_thumbnail_url' ></figure>";
         
-        $content = $post_thumbnail . $content;
+    if (has_post_thumbnail($post->ID)) {
+        
+        $post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID));
+        
+        if ($post_thumbnail && is_array($post_thumbnail)) {
+            $thumbnail = '<media:content medium="image" url="'.$post_thumbnail[0].'" width="'.$post_thumbnail[1].'" height="'.$post_thumbnail[2].'" />';
+            echo $thumbnail;
+        }
     }
-    
-    return $content;
 }
-
-add_filter( 'the_excerpt_rss', 'add_featured_image_to_feed', 1000, 1 );
-add_filter( 'the_content_feed', 'add_featured_image_to_feed', 1000, 1 );
+add_action('rss2_item', 'add_image_media_to_feed');
 
 /**
  * Trickly override the main query for blog feed to show blog item on languaged blog page
