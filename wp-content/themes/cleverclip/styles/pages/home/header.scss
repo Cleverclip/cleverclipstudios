@@ -114,10 +114,16 @@
 }
 
 .home__header__description {
-  @extend %description__large;
+  
 
   margin-top: 2.5rem;
   max-width: 52rem;
+  p{
+    @extend %description__large;
+    a{
+      text-decoration: underline;
+    }
+  }
 }
 
 .home__header__media {

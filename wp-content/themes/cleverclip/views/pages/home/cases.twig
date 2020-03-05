@@ -1,5 +1,8 @@
 <section class="home__cases">
   <div class="home__cases__wrapper">
+    <h2 class="home__cases__title" data-height=".home__cases__title">
+        {{ post.get_field('cases__title') }}
+    </h2>
     <div class="home__cases__list">
       {% for item in post.get_field('cases_list') %}
         <article class="home__cases__item">
