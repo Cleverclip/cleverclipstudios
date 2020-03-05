@@ -5,7 +5,12 @@
     padding: 5rem 0;
   }
 }
-
+.home__cases__title {
+  @extend %title__medium;
+  text-align: center;
+  margin: auto;
+  max-width: 35rem;
+}
 .home__cases__wrapper {
   @extend %wrapper;
 }
@@ -35,6 +40,7 @@
 }
 
 .home__cases__list {
+  margin: 4rem auto 0;
   @extend %list;
 
   margin-bottom: 10rem;
