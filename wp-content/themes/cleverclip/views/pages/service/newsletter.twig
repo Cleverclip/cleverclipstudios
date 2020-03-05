@@ -15,13 +15,13 @@
       <div class="service__aside__newsletter__column">
         <form
           class="service__aside__newsletter__form"
-          data-id="{{ option['form_newsletter'] }}"
+          data-id="11081"
           data-success-title="{{ option[locale ~ '_form_newsletter_messages'].success_title }}"
           data-success-description="{{ option[locale ~ '_form_newsletter_messages'].success_description }}"
           data-error-title="{{ option[locale ~ '_form_newsletter_messages'].error_title }}"
           data-error-description="{{ option[locale ~ '_form_newsletter_messages'].error_description }}"
         >
-          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') }}">
+          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') == 'Deutsch' ? 'German' : function('pll_current_language', 'name') }}">
           <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
 
           <input name="utm_source" type="hidden" value="">
