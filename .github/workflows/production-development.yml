@@ -33,6 +33,13 @@ jobs:
         key: ${{ secrets.PRODUCTION_KEY }}
         source: "."
         target: "/var/www/html"
+    - name: set file permissions
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.PRODUCTION_USERNAME }}
+        key: ${{ secrets.PRODUCTION_KEY }}
+        script: chown -R www-data:www-data /var/www/html
 
   purge-cdn:
     name: Purge CDN cache
