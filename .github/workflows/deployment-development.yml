@@ -31,3 +31,10 @@ jobs:
         key: ${{ secrets.DEVELOPMENT_KEY }}
         source: "."
         target: "/var/www/html"
+    - name: set file permissions
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEVELOPMENT_HOST }}
+        username: ${{ secrets.DEVELOPMENT_USERNAME }}
+        key: ${{ secrets.DEVELOPMENT_KEY }}
+        script: chown -R www-data:www-data /var/www/html
