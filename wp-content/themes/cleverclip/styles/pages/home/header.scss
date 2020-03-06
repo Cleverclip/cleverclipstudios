@@ -120,9 +120,7 @@
   max-width: 52rem;
   p{
     @extend %description__large;
-    a{
-      text-decoration: underline;
-    }
+   
   }
 }
 
@@ -138,9 +136,6 @@
   }
 }
 
-.home__header__media__image {
-
-}
 
 .home__header__media__button {
   background: $color-ecstasy;
