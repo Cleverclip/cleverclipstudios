@@ -16,9 +16,9 @@
       {{ post.title }}
     </h1>
 
-    <p class="service__header__description">
+    <div class="service__header__description">
       {{ post.content }}
-    </p>
+    </div>
 
     {% if post.get_field('intro_button') %}
         <a class="service__header__button" href="{{ post.get_field('intro_button').url }}">
