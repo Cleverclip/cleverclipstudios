@@ -10,7 +10,10 @@
 .service__articles__title {
   @extend %title__medium;
   text-align: center;
+  max-width: 76rem;
   margin-bottom: 10rem;
+  margin-left: auto;
+  margin-right: auto;
 
   @include media("<small") {
     margin-bottom: 3.5rem;
