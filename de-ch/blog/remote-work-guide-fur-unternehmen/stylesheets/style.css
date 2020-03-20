@@ -1,0 +1,506 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: #394EFF;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #394EFF;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+a:visited {
+  color: #394EFF;
+}
+
+.grey {
+  color: #BDBDBD;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.guide__header {
+  padding: 5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.guide__faq {
+  padding: 0 5rem;
+  display: flex;
+}
+.guide__faq .guide__faq__nav {
+  flex: 0.3;
+  margin-right: 2rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title {
+  transition: 400ms ease-out;
+  opacity: 1;
+  pointer-events: initial;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  transition: 200ms ease-out 100ms;
+  margin-bottom: 2rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title.hidden {
+  opacity: 0;
+  max-height: 0px;
+  margin-bottom: 0rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container {
+  margin-right: -2rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie {
+  max-height: 1000px;
+  opacity: 1;
+  transition: 200ms ease-out 100ms;
+  position: relative;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title {
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+  transition: 200ms ease-out;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title:after {
+  content: '';
+  background-image: url("../img/chevron_left.svg");
+  background-position: center;
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title:not(:first-child) {
+  margin-top: 0.5rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i {
+  position: absolute;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+  margin-left: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.hidden {
+  transition: 200ms ease-out 0ms;
+  max-height: 0px;
+  opacity: 0;
+  pointer-events: none;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active {
+  transition: 200ms ease-out 0ms;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__questions__container {
+  max-height: 1000px;
+  transition: 100ms ease-out 220ms;
+  overflow-y: hidden;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
+  transform: translate(1rem, 0);
+  margin-right: 1rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title:after {
+  opacity: 1;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 100ms ease-out 0ms;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container h2 {
+  margin-left: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #828282;
+  pointer-events: none;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul {
+  counter-reset: l;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li {
+  position: relative;
+  line-height: 120%;
+  padding: 1rem;
+  padding-left: 3rem;
+  cursor: pointer;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:hover {
+  background: rgba(57, 78, 255, 0.25);
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:before {
+  counter-increment: l;
+  content: "0" counter(l) ".";
+  position: absolute;
+  left: 1rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li.active {
+  background: #394EFF;
+  color: white;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li.active:before {
+  background: #394EFF;
+  color: white;
+}
+.guide__faq .guide__faq__content {
+  flex: 1;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  border-left: 1px solid #394EFF;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline {
+  padding-left: 5rem;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0px;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline.active {
+  opacity: 1;
+  pointer-events: initial;
+  max-height: 200px;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1, .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline i {
+  font-size: 3.2rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1 {
+  margin-top: 1rem;
+  line-height: 110%;
+  position: relative;
+}
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1:after {
+  margin-top: 2rem;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 210px;
+  height: 10px;
+  background: #394EFF;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer {
+  pointer-events: none;
+  opacity: 0;
+  overflow-y: hidden;
+  transition: transform 400ms ease-in-out,  opacity 400ms ease-out, overflow-y 400ms step-end;
+  max-height: 600px;
+  position: absolute;
+  padding-left: 5rem;
+  transform-origin: top;
+  max-width: 650px;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer * {
+  pointer-events: none;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer p, .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer li {
+  color: #3D3D3D;
+  line-height: 1.4rem;
+  margin-bottom: 4rem;
+  font-size: 1.11rem;
+  letter-spacing: 0.03rem;
+  hyphens: auto;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul {
+  list-style-type: circle;
+  margin-top: 1rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul li {
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer h1 {
+  color: #394EFF;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.03rem;
+  padding: 1rem 0rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer.active {
+  overflow-y: auto;
+  pointer-events: initial;
+  opacity: 1;
+  padding-right: 5rem;
+  transform: translate(0%, 0%) scale(1, 1);
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer.active * {
+  pointer-events: initial;
+}
+
+@media screen and (min-width: 801px) {
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .guide__faq__nav__categorie__title:hover {
+    background: rgba(57, 78, 255, 0.25);
+  }
+
+  .guide__faq__content__button__container {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    touch-action: none;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .guide__header {
+    padding: 0.5rem;
+  }
+  .guide__header .guide__header__title h1 {
+    font-size: 1.8rem;
+  }
+  .guide__header .guide__header__title h3 {
+    font-size: 0.8rem;
+  }
+
+  .guide__faq {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .guide__faq .guide__faq__nav {
+    flex: initial;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    padding: 0rem 0.5rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title p {
+    margin-left: 1.2rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie:nth-child(odd) .guide__faq__nav__categorie__title {
+    background: rgba(57, 78, 255, 0.075);
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__questions__container {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    background: rgba(57, 78, 255, 0.25);
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
+    margin-left: 3.5rem;
+    margin-right: 2.5rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title i {
+    font-size: 2rem;
+    margin: 0rem 0rem 0rem 0.75rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title:after {
+    width: 2rem;
+    height: 2rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title {
+    padding: 1rem 0.5rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i {
+    margin-top: 0.2rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+    font-size: 1rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li {
+    font-size: 0.8rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:before {
+    font-size: 0.8rem;
+  }
+  .guide__faq .guide__faq__content {
+    height: 100%;
+    width: 100%;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container {
+    height: 100%;
+    border: none;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie {
+    pointer-events: none;
+    padding: 1rem 0rem 3rem 0rem;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline {
+    display: none;
+    padding-left: 0.5rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container {
+    height: 100%;
+    position: relative;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer {
+    height: 100%;
+    padding: 0rem 0.5rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer h1 {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+    padding: 0rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer h2 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul {
+    margin-top: 0.5rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer p, .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer li {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .guide__faq .guide__faq__content .guide__faq__content__button__container {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .guide__faq .guide__faq__content .guide__faq__content__button__container.active {
+    opacity: 1;
+    pointer-events: initial;
+    display: flex;
+  }
+  .guide__faq .guide__faq__content .guide__faq__content__button__container.active div {
+    transform: translate(0%, 0%);
+  }
+  .guide__faq .guide__faq__content .guide__faq__content__button__container div {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    transform: translate(0%, 100%);
+    transition: 200ms ease-out;
+  }
+}

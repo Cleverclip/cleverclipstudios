@@ -2,6 +2,7 @@
 /*
 !wp-content/
 !en-ch/
+!de-ch/
 
 # ignore everything in the "wp-content" directory, except:
 # mu-plugins, and themes directories
