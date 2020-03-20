@@ -15,7 +15,17 @@ const buttonContainer = document.querySelector('.guide__faq__content__button__co
 const buttonBack = document.querySelector('.guide__faq__content__back')
 const buttonNext = document.querySelector('.guide__faq__content__next')
 
-const limits = [0,5,8,11,17,20,25]
+const containers = document.querySelectorAll('.guide__faq__categorie__answer__container')
+let l = 0
+let limits = []
+for(let i = 0; i < containers.length; i++){
+    l += containers[i].children.length
+    limits.push(l-1)
+}
+
+
+
+
 window.addEventListener('resize',() =>{
     if(mobile){
         for(let i = 0; i < content__categories__title.length; i++){
@@ -113,7 +123,7 @@ for(let i = 0; i < nav__categories.length; i ++){
                             answers[i].classList.remove('active')
                         }
                     }
-                    const questionToload = categorie.getAttribute('loadQuestion')
+                    const questionToload = limits[i]-containers[i].children.length + 1
                     answers[questionToload].classList.add('active')
                     questionIndex = parseInt(questionToload)
                     limitIndex = i

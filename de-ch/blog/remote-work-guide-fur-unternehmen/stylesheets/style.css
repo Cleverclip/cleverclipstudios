@@ -142,7 +142,10 @@ a:visited {
   padding: 1rem;
   display: flex;
 }
-.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+  font-size: 1.1rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
   transition: 200ms ease-out;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title:after {
@@ -162,7 +165,7 @@ a:visited {
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i {
   position: absolute;
 }
-.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
   margin-left: 2rem;
   font-weight: bold;
   line-height: 1.2;
@@ -181,7 +184,7 @@ a:visited {
   transition: 100ms ease-out 220ms;
   overflow-y: hidden;
 }
-.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
   transform: translate(1rem, 0);
   margin-right: 1rem;
 }
@@ -206,10 +209,13 @@ a:visited {
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li {
   position: relative;
-  line-height: 120%;
   padding: 1rem;
   padding-left: 3rem;
   cursor: pointer;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li h3 {
+  line-height: 120%;
+  font-weight: normal;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:hover {
   background: rgba(57, 78, 255, 0.25);
@@ -406,7 +412,7 @@ a:visited {
     height: 3rem;
     background: rgba(57, 78, 255, 0.25);
   }
-  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
     margin-left: 3.5rem;
     margin-right: 2.5rem;
   }
@@ -424,11 +430,12 @@ a:visited {
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i {
     margin-top: 0.2rem;
   }
-  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
     font-size: 1rem;
   }
-  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li {
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li h3 {
     font-size: 0.8rem;
+    font-weight: normal;
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:before {
     font-size: 0.8rem;
