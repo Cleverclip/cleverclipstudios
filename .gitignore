@@ -1,8 +1,8 @@
 # ignore everything in the root except the "wp-content" directory.
 /*
 !wp-content/
-!en-ch/
-!de-ch/
+!remote-work-guide-for-companies/
+!remote-work-guide-fur-unternehmen/
 
 # ignore everything in the "wp-content" directory, except:
 # mu-plugins, and themes directories
