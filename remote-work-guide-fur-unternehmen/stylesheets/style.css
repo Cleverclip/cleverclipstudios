@@ -66,6 +66,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #394EFF;
+  position: fixed;
 }
 
 h1 {
@@ -115,7 +116,7 @@ a:visited {
 }
 .guide__faq .guide__faq__nav {
   flex: 0.3;
-  margin-right: 2rem;
+  padding-right: 2rem;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper {
   height: 100%;
