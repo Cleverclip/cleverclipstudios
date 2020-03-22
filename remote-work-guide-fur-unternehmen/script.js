@@ -18,6 +18,9 @@ const buttonNext = document.querySelector('.guide__faq__content__next')
 const containers = document.querySelectorAll('.guide__faq__categorie__answer__container')
 let l = 0
 let limits = []
+
+
+
 for(let i = 0; i < containers.length; i++){
     l += containers[i].children.length
     limits.push(l-1)

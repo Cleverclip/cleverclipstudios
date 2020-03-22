@@ -107,10 +107,20 @@ a:visited {
 .guide__faq {
   padding: 0 5rem;
   display: flex;
+  flex: 1;
+  padding-bottom: 5rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 .guide__faq .guide__faq__nav {
   flex: 0.3;
   margin-right: 2rem;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title {
   transition: 400ms ease-out;
@@ -129,9 +139,13 @@ a:visited {
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container {
   margin-right: -2rem;
+  height: 100%;
+  flex: 1;
+  position: relative;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie {
-  max-height: 1000px;
+  max-height: 500px;
+  overflow-y: hidden;
   opacity: 1;
   transition: 200ms ease-out 100ms;
   position: relative;
@@ -141,6 +155,7 @@ a:visited {
   position: relative;
   padding: 1rem;
   display: flex;
+  z-index: 9;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
   font-size: 1.1rem;
@@ -177,12 +192,25 @@ a:visited {
   pointer-events: none;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active {
+  max-height: 1000px;
+  height: 100%;
   transition: 200ms ease-out 0ms;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__questions__container {
   max-height: 1000px;
   transition: 100ms ease-out 220ms;
   overflow-y: hidden;
+  height: 100%;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__questions__container ul {
+  position: absolute;
+  height: 90%;
+  overflow-y: auto;
+}
+.guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title {
+  background: white;
+  position: sticky;
+  top: 0px;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie.active .guide__faq__nav__categorie__title p {
   transform: translate(1rem, 0);
@@ -193,6 +221,7 @@ a:visited {
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container {
   max-height: 0px;
+  height: 100%;
   overflow: hidden;
   transition: 100ms ease-out 0ms;
 }
@@ -222,7 +251,7 @@ a:visited {
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li:before {
   counter-increment: l;
-  content: "0" counter(l) ".";
+  content: counter(l) ".";
   position: absolute;
   left: 1rem;
   font-weight: 300;
@@ -432,6 +461,9 @@ a:visited {
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title i, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title h2, .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__title p {
     font-size: 1rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container {
+    display: none;
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie .guide__faq__nav__categorie__questions__container ul li h3 {
     font-size: 0.8rem;
