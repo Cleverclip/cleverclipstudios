@@ -67,6 +67,9 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #394EFF;
 }
+body .preload * {
+  transition: none !important;
+}
 
 h1 {
   font-size: 1.8rem;

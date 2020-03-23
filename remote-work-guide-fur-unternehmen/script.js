@@ -26,6 +26,11 @@ for(let i = 0; i < containers.length; i++){
     limits.push(l-1)
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove('preload')
+});
+
+
 window.addEventListener('resize',() =>{
     if(mobile){
         for(let i = 0; i < content__categories__title.length; i++){
