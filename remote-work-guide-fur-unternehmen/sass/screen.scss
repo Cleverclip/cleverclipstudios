@@ -21,7 +21,7 @@ $spacing-ui: 5rem;
 body{
     font-family: 'IBM Plex Sans', sans-serif;
     color:$color-blue;
-    .preload{
+    &.preload{
         *{
             transition: none !important;
         }
