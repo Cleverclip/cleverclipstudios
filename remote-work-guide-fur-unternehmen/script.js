@@ -26,7 +26,9 @@ for(let i = 0; i < containers.length; i++){
     limits.push(l-1)
 }
 
-
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove('unloaded')
+});
 
 
 window.addEventListener('resize',() =>{
