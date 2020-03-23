@@ -266,10 +266,11 @@ a:visited{
                         pointer-events: initial;
                         max-height: 200px;
                     }
-                    h1,i{
+                    .guide__faq__categorie__tagline__caption,i{
                         font-size: 3.2rem;
+                        font-weight: bold;
                     }
-                    h1{
+                    .guide__faq__categorie__tagline__caption{
                         margin-top: 1rem;
                         line-height: 110%;
                         position: relative;
@@ -320,13 +321,14 @@ a:visited{
                     }
                 }
                 
-                h1{
+                div{
                     color:$color-blue;
                     font-size: 2rem;
                     margin-bottom:2rem;
                     line-height: 2.6rem;
                     letter-spacing: 0.03rem;
                     padding:1rem 0rem;
+                    font-weight: bold;
                 }
                 h2{
                     font-size: 1.35rem;
@@ -535,7 +537,7 @@ a:visited{
                         .guide__faq__categorie__answer{
                             height: 100%;
                             padding:0rem 0.5rem;
-                            h1{
+                            div{
                                 font-size: 1.1rem;
                                 line-height: 1.4rem;
                                 margin-bottom: 1rem;

@@ -312,15 +312,16 @@ a:visited {
   pointer-events: initial;
   max-height: 200px;
 }
-.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1, .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline i {
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline .guide__faq__categorie__tagline__caption, .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline i {
   font-size: 3.2rem;
+  font-weight: bold;
 }
-.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1 {
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline .guide__faq__categorie__tagline__caption {
   margin-top: 1rem;
   line-height: 110%;
   position: relative;
 }
-.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline h1:after {
+.guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline .guide__faq__categorie__tagline__caption:after {
   margin-top: 2rem;
   content: '';
   display: block;
@@ -363,13 +364,14 @@ a:visited {
   margin-bottom: 1rem;
   margin-left: 2rem;
 }
-.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer h1 {
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer div {
   color: #394EFF;
   font-size: 2rem;
   margin-bottom: 2rem;
   line-height: 2.6rem;
   letter-spacing: 0.03rem;
   padding: 1rem 0rem;
+  font-weight: bold;
 }
 .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer h2 {
   font-size: 1.35rem;
@@ -554,7 +556,7 @@ a:visited {
     height: 100%;
     padding: 0rem 0.5rem;
   }
-  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer h1 {
+  .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer div {
     font-size: 1.1rem;
     line-height: 1.4rem;
     margin-bottom: 1rem;
