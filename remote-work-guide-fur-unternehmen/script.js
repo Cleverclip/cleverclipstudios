@@ -27,7 +27,9 @@ for(let i = 0; i < containers.length; i++){
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.remove('unloaded')
+    setTimeout(() => {
+        document.body.classList.remove('unloaded')
+    }, 500);
 });
 
 
