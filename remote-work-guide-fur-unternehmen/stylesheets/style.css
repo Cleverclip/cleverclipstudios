@@ -291,12 +291,15 @@ a:visited {
   box-sizing: border-box;
   position: relative;
   border-left: 1px solid #394EFF;
+  height: 100%;
 }
 .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie {
   position: absolute;
   top: 0px;
   left: 0px;
+  height: 100%;
   width: 100%;
+  pointer-events: none;
 }
 .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline {
   padding-left: 5rem;
@@ -326,6 +329,9 @@ a:visited {
   height: 10px;
   background: #394EFF;
 }
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container {
+  height: 100%;
+}
 .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer {
   pointer-events: none;
   opacity: 0;
@@ -336,6 +342,7 @@ a:visited {
   padding-left: 5rem;
   transform-origin: top;
   max-width: 650px;
+  height: 100%;
 }
 .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer * {
   pointer-events: none;
