@@ -157,7 +157,8 @@ a:visited {
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title.hidden {
   opacity: 0;
   max-height: 0px;
-  margin-bottom: 0rem;
+  margin: 0rem;
+  padding: 0rem;
 }
 .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container {
   margin-right: -2rem;
@@ -460,6 +461,7 @@ a:visited {
   .guide__header .guide__header__title h1 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
+    margin-right: 1rem;
   }
   .guide__header .guide__header__title h3 {
     font-size: 0.8rem;
