@@ -19,7 +19,7 @@ const containers = document.querySelectorAll('.guide__faq__categorie__answer__co
 let l = 0
 let limits = []
 const guideNav = document.querySelector('.guide__faq__nav')
-
+const guideContent = document.querySelector('.guide__faq__content')
 
 for(let i = 0; i < containers.length; i++){
     l += containers[i].children.length
@@ -99,6 +99,7 @@ for(let i = 0; i < nav__categories.length; i ++){
         if(mobile){
             if(categorie.classList.contains('active')){
                 guideNav.style.height = '100%'
+                
                 if(e.target.classList.contains('guide__faq__nav__categorie__questions__container'))return
                 for(let i = 0; i < nav__categories.length; i ++){
                     nav__categories[i].classList.remove('active','hidden')
@@ -111,7 +112,8 @@ for(let i = 0; i < nav__categories.length; i ++){
                 categorie.classList.remove('active')
             }else{
                 guideNav.style.height = 'initial'
-
+                guideContent.style.height = guideContent.style.height - guideNav.clientHeight
+                
                 for(let i = 0; i < nav__questions.length; i ++){
                     nav__questions[i].classList.remove('active')
                 }

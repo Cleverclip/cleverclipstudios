@@ -103,7 +103,8 @@ a:visited{
                 &.hidden{
                     opacity: 0;
                     max-height: 0px;
-                    margin-bottom: 0rem;
+                    margin: 0rem;
+                    padding:0rem;
                 }
             }
             .guide__faq__nav__categories__container{
