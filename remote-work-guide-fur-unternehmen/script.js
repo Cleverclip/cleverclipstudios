@@ -114,7 +114,7 @@ for(let i = 0; i < nav__categories.length; i ++){
                 guideNav.style.height = 'initial'
                 console.log(guideContent.clientHeight,guide.clientHeight)
                 if(guideNav.clientHeight == guide.clientHeight){
-                    guideContent.style.height = paresInt(guideContent.clientHeight) - parseInt(guideNav.clientHeight)+'px'
+                    guideContent.style.height = parseInt(guideContent.clientHeight) - parseInt(guideNav.clientHeight)+'px'
                 }
                 for(let i = 0; i < nav__questions.length; i ++){
                     nav__questions[i].classList.remove('active')
