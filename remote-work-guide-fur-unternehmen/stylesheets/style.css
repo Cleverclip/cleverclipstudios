@@ -455,10 +455,11 @@ a:visited {
   }
 
   .guide__header {
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
   .guide__header .guide__header__title h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
   }
   .guide__header .guide__header__title h3 {
     font-size: 0.8rem;
@@ -474,15 +475,19 @@ a:visited {
   }
   .guide__faq .guide__faq__nav {
     flex: initial;
+    height: 100%;
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title {
     font-size: 0.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-    padding: 0rem 0.5rem;
+    padding: 0rem 0.25rem;
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__title p {
     margin-left: 1.2rem;
+  }
+  .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container {
+    overflow-y: auto;
   }
   .guide__faq .guide__faq__nav .guide__faq__nav__categories__wrapper .guide__faq__nav__categories__container .guide__faq__nav__categorie:nth-child(odd) .guide__faq__nav__categorie__title {
     background: rgba(57, 78, 255, 0.075);
@@ -538,7 +543,7 @@ a:visited {
   }
   .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie {
     pointer-events: none;
-    padding: 1rem 0rem 3rem 0rem;
+    padding: 0.5rem 0rem 56px 0rem;
     height: 100%;
     max-height: 100%;
     overflow-y: auto;
@@ -546,7 +551,7 @@ a:visited {
   }
   .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__tagline {
     display: none;
-    padding-left: 0.5rem;
+    padding-left: 0.25rem;
   }
   .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container {
     height: 100%;
@@ -559,7 +564,7 @@ a:visited {
   .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer div {
     font-size: 1.1rem;
     line-height: 1.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     padding: 0rem;
   }
   .guide__faq .guide__faq__content .guide__faq__categories__container .guide__faq__categorie .guide__faq__categorie__answer__container .guide__faq__categorie__answer h2 {
@@ -581,6 +586,7 @@ a:visited {
     bottom: 0px;
     justify-content: space-between;
     width: 100%;
+    box-shadow: -3px -1px 11px 6px rgba(57, 78, 255, 0.1);
   }
   .guide__faq .guide__faq__content .guide__faq__content__button__container.active {
     opacity: 1;
