@@ -107,7 +107,10 @@
   vertical-align: middle;
 
   &:not(:first-child) {
-    margin-left: 6rem;
+    margin-left: 4rem;
+  }
+  &:last-child{
+    margin-left: 3rem;
   }
 
   &:hover {
@@ -224,7 +227,7 @@
 
   display: inline-block;
   vertical-align: middle;
-  width: 16.6666%;
+  width: 20%;
   &:hover {
     .menu__subdropdown {
       opacity: 1;
