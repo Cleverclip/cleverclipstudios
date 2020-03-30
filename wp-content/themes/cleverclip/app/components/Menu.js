@@ -65,7 +65,6 @@ export default class extends EventEmitter {
 
   onDesktopDropdownClick({ target }) {
     const { parentNode } = target;
-
     if (parentNode.classList.contains("menu__item--active")) {
       parentNode.classList.remove("menu__item--active");
     } else {
@@ -97,15 +96,17 @@ export default class extends EventEmitter {
 
   onMobileListOpen({ target }) {
     const { index } = target.dataset;
-
+    
+    const offset = ((parseInt(index) + 1) * -100)+"%"
+    
+    console.log(offset)
     TweenMax.to(this.elements.mobile.content, 1, {
       ease: Power4.easeInOut,
-      x: "-100%"
+      x: offset
     });
 
     each(this.elements.mobile.lists, list => {
       const listIndex = parseInt(list.dataset.index, 10);
-
       if (parseInt(index, 10) === listIndex) {
         list.classList.add("menu__mobile__list__secondary--active");
       } else {

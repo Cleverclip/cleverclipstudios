@@ -156,15 +156,43 @@
       {% if item.links %}
         <ul class="menu__mobile__list menu__mobile__list__secondary" data-index="{{ loop.index0 }}">
           {% for link in item.links %}
+
             <li class="menu__mobile__item">
-              <a class="menu__mobile__link" href="{{ link.link.url }}">
-                {{ link.link.title }}
-              </a>
+              {% if link.sublinks %}
+                <button class="menu__mobile__link menu__mobile__link__dropdown" data-index="{{ 1 }}">
+                    {{ link.link.title }}
+                </button>
+              {% else %}
+                <a class="menu__mobile__link" href="{{ link.link.url }}">
+                  {{ link.link.title }}
+                </a>
+              {% endif %}
             </li>
+
           {% endfor %}
         </ul>
       {% endif %}
     {% endfor %}
+
+    {% for item in option[locale ~ '_menu_list'] %}
+      {% if item.links %}
+          {% for link in item.links %}
+              {% if link.sublinks %}
+                <ul class="menu__mobile__list menu__mobile__list__secondary" data-index="{{ 1 }}">
+                  {% for sublink in link.sublinks %}
+                  <li class="menu__mobile__item">
+                    <a class="menu__mobile__link" href="{{ sublink.link.url }}">
+                      {{ sublink.link.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+          {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    
 
     <div class="menu__mobile__list menu__mobile__list__secondary" data-index="100">
       <div class="menu__mobile__group">
