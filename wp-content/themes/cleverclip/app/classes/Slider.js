@@ -98,11 +98,11 @@ export default class extends EventEmitter {
     const itemIndex = Math.floor(Math.abs(this.scroll.target) / this.width)
     const item = this.width * itemIndex
 
-    // if (this.scroll.target < 0) {
-    //   this.scroll.target = -item
-    // } else {
-    //   this.scroll.target = item
-    // }
+    if (this.scroll.target < 0) {
+      this.scroll.target = -item
+    } else {
+      this.scroll.target = item
+    }
   }
 
   onSet () {
