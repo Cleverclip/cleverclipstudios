@@ -132,7 +132,7 @@ export default class extends EventEmitter {
 
       this.emit('change', index)
     }
-    console.log(dist)
+    
     if(dist > 10){
       if(!this.scroll.started){
         this.scroll.started = true
