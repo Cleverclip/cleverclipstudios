@@ -21,7 +21,8 @@ export default class extends EventEmitter {
       position: 0,
       current: 0,
       target: 0,
-      last: 0
+      last: 0,
+      started : false,
     }
 
     each(this.elements.buttons, button => {
@@ -61,7 +62,7 @@ export default class extends EventEmitter {
 
   onDown (event) {
     this.isDown = true
-
+    this.scroll.started = false
     this.scroll.position = this.scroll.current
     this.start = event.touches ? event.touches[0].clientX : event.clientX
   }
@@ -73,7 +74,7 @@ export default class extends EventEmitter {
 
     const x = event.touches ? event.touches[0].clientX : event.clientX
     const distance = (this.start - x) * 3
-
+    
     this.scroll.target = this.scroll.position + distance
   }
 
@@ -114,8 +115,10 @@ export default class extends EventEmitter {
   }
 
   update () {
-    this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
+    const dist = Math.abs(this.scroll.position - this.scroll.current)
 
+    
+    this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
     let index = Math.floor(this.scroll.current + this.widthTotalHalf) % this.widthTotal
 
     index = Math.floor(index / this.widthTotal * this.length)
@@ -129,10 +132,17 @@ export default class extends EventEmitter {
 
       this.emit('change', index)
     }
-
-    each(this.elements.items, item => {
-      this.transform(item, -this.scroll.current)
-    })
+    console.log(dist)
+    if(dist > 10){
+      if(!this.scroll.started){
+        this.scroll.started = true
+        this.scroll.current = this.scroll.current - (this.scroll.current - this.scroll.position)
+      }
+      
+      each(this.elements.items, item => {
+        this.transform(item, -this.scroll.current)
+      })
+    }
 
     if (this.scroll.current < this.scroll.last) {
       this.direction = 'right'
