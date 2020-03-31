@@ -74,6 +74,7 @@ export default class extends EventEmitter {
     this.scroll.lockY = false
     this.scroll.lockX = false
 
+    console.log(this.scroll.lockX,this.scroll.lockY)
   }
 
   onMove (event) {
@@ -94,15 +95,18 @@ export default class extends EventEmitter {
 
     if(distY > distX && !this.scroll.lockY && distY > treshold && !this.scroll.lockX){
       this.scroll.lockY = true
+      console.log('lock y set to true')
     }
     if(distX > distY && !this.scroll.lockY && distX > treshold){
       if(!this.scroll.lockX){
         this.scroll.lockX = true
         document.body.style.overflow = 'hidden'
+        console.log('lock x set to true')
         this.scroll.position = this.scroll.current
       }
       this.scroll.target = this.scroll.position + distance
     }
+    console.log("scroll x : ",this.scroll.x," scroll y : ",this.scroll.y)
   }
 
   onUp (event) {
@@ -152,7 +156,6 @@ export default class extends EventEmitter {
   update () {
    
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
-
     let index = Math.floor(this.scroll.current + this.widthTotalHalf) % this.widthTotal
 
     index = Math.floor(index / this.widthTotal * this.length)
