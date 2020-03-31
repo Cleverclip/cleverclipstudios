@@ -99,7 +99,6 @@ export default class extends EventEmitter {
     
     const offset = ((parseInt(index) + 1) * -100)+"%"
     
-    console.log(offset)
     TweenMax.to(this.elements.mobile.content, 1, {
       ease: Power4.easeInOut,
       x: offset
