@@ -23,10 +23,11 @@ export default class extends EventEmitter {
       target: 0,
       last: 0,
       startY:0,
+      startX:0,
       y:0,
+      x:0,
       lockY: false,
       lockX: false,
-      started : false,
     }
 
     each(this.elements.buttons, button => {
@@ -66,13 +67,13 @@ export default class extends EventEmitter {
 
   onDown (event) {
     this.isDown = true
-    this.scroll.started = false
-    this.scroll.position = this.scroll.current
+    //this.scroll.position = this.scroll.current
     
-    this.start = event.touches ? event.touches[0].clientX : event.clientX
+    this.scroll.startX = event.touches ? event.touches[0].clientX : event.clientX
     this.scroll.startY = event.touches ? window.event.touches[0].screenY : window.event.screenY
     this.scroll.lockY = false
     this.scroll.lockX = false
+
   }
 
   onMove (event) {
@@ -80,22 +81,28 @@ export default class extends EventEmitter {
       return
     }
 
-    const x = event.touches ? event.touches[0].clientX : event.clientX
-    const distance = (this.start - x) * 3
+    this.scroll.x = event.touches ? event.touches[0].clientX : event.clientX
     this.scroll.y = event.touches ? window.event.touches[0].screenY : window.event.screenY
-    this.scroll.target = this.scroll.position + distance
+    
+    const distance = (this.scroll.startX - this.scroll.x) * 3
+    
 
-    const distX = Math.abs(this.scroll.position - this.scroll.current)
+    const distX = Math.abs(this.scroll.x - this.scroll.startX)
     const distY = Math.abs(this.scroll.y - this.scroll.startY)
 
-    if(distY > distX && !this.scroll.lockX){
+    const treshold = 10
+
+    if(distY > distX && !this.scroll.lockY && distY > treshold && !this.scroll.lockX){
       this.scroll.lockY = true
-      this.scroll.target = this.scroll.position
-    }else if(distX > distY && !this.scroll.lockY){
-      this.scroll.lockX = true
-      document.body.style.overflow = 'hidden'
     }
-    
+    if(distX > distY && !this.scroll.lockY && distX > treshold){
+      if(!this.scroll.lockX){
+        this.scroll.lockX = true
+        document.body.style.overflow = 'hidden'
+        this.scroll.position = this.scroll.current
+      }
+      this.scroll.target = this.scroll.position + distance
+    }
   }
 
   onUp (event) {
@@ -105,8 +112,10 @@ export default class extends EventEmitter {
     }else{
       document.body.style.removeProperty('overflow')
     }
-
+    this.onCheck()
     this.scroll.y = 0
+    this.scroll.startY = 0
+    this.scroll.x = 0
     this.scroll.startY = 0
   }
 
@@ -141,8 +150,9 @@ export default class extends EventEmitter {
   }
 
   update () {
-    
+   
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
+
     let index = Math.floor(this.scroll.current + this.widthTotalHalf) % this.widthTotal
 
     index = Math.floor(index / this.widthTotal * this.length)
