@@ -86,14 +86,18 @@ export default class extends EventEmitter {
     const distX = Math.abs(this.scroll.position - this.scroll.current)
     const distY = Math.abs(this.scroll.y - this.scroll.startY)
 
-    if(distY > distX)this.scroll.lock = true
+    if(distY > distX){
+      this.scroll.lock = true
+      this.scroll.target = this.scroll.position
+    }
     
   }
 
   onUp (event) {
     this.isDown = false
-
-    this.onCheck()
+    if(!this.scroll.lock){
+      this.onCheck()
+    }
     this.scroll.y = 0
     this.scroll.startY = 0
   }
@@ -129,10 +133,6 @@ export default class extends EventEmitter {
   }
 
   update () {
-
-    
-    
-
     
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
     let index = Math.floor(this.scroll.current + this.widthTotalHalf) % this.widthTotal
@@ -148,16 +148,9 @@ export default class extends EventEmitter {
 
       this.emit('change', index)
     }
-    
-    // if(!this.scroll.started){
-    //   this.scroll.started = true
-    //   this.scroll.current = this.scroll.current - (this.scroll.current - this.scroll.position)
-    // }
-    if(!this.scroll.lock){
-      each(this.elements.items, item => {
-        this.transform(item, -this.scroll.current)
-      })
-    }
+    each(this.elements.items, item => {
+      this.transform(item, -this.scroll.current)
+    })
     
 
     if (this.scroll.current < this.scroll.last) {
@@ -189,9 +182,10 @@ export default class extends EventEmitter {
       this.transform(element, element.position)
     })
 
-    this.scroll.last = this.scroll.current
 
     this.frame = requestAnimationFrame(this.update.bind(this))
+    this.scroll.last = this.scroll.current
+
   }
 
   onResize () {
