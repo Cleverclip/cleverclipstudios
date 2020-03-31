@@ -108,7 +108,9 @@ export default class extends EventEmitter {
 
         this.scroll.position = this.scroll.current
       }
-      this.scroll.target = this.scroll.position + distance
+      setTimeout(() => {
+        this.scroll.target = this.scroll.position + distance
+      }, 1);
     }
   }
 
@@ -117,12 +119,12 @@ export default class extends EventEmitter {
     if(!this.scroll.lockX){
       this.onCheck()
     }else{
-      // document.body.style.removeProperty('overflow')
-      // document.body.style.removeProperty('touch-action')
-      // if(this.wrapper){
-      //   this.wrapper.style.removeProperty('overflow')
-      //   this.wrapper.style.removeProperty('touch-action')
-      // }
+      document.body.style.removeProperty('overflow')
+      document.body.style.removeProperty('touch-action')
+      if(this.wrapper){
+        this.wrapper.style.removeProperty('overflow')
+        this.wrapper.style.removeProperty('touch-action')
+      }
       
     }
     this.onCheck()
