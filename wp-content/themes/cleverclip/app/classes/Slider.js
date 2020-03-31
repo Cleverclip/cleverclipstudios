@@ -30,14 +30,18 @@ export default class extends EventEmitter {
       lockX: false,
     }
 
+    this.wrapper = document.querySelector('.content')
+
+    console.log('slider query ',this.wrapper)
+
     each(this.elements.buttons, button => {
       button.offset = getOffset(button).left
       button.position = 0
       button.width = button.getBoundingClientRect().width
     })
-    this.content = document.querySelector('.content')
+    
     this.length = this.elements.buttons.length
-    console.log(this.content)
+
     this.width = this.elements.buttons[0].width
     this.widthTotal = this.element.getBoundingClientRect().width
     this.widthTotalHalf = this.widthTotal / 2
@@ -74,7 +78,6 @@ export default class extends EventEmitter {
     this.scroll.lockY = false
     this.scroll.lockX = false
 
-    console.log(this.scroll.lockX,this.scroll.lockY)
   }
 
   onMove (event) {
@@ -95,25 +98,22 @@ export default class extends EventEmitter {
 
     if(distY > distX && !this.scroll.lockY && distY > treshold && !this.scroll.lockX){
       this.scroll.lockY = true
-      console.log('lock y set to true')
     }
     if(distX > distY && !this.scroll.lockY && distX > treshold){
       if(!this.scroll.lockX){
         this.scroll.lockX = true
         document.body.style.overflow = 'hidden'
         document.body.style.touchAction = 'none'
-        if(this.content){
-          this.content.style.overflow = 'hidden'
-          this.content.style.touchAction = 'none'
+        if(this.wrapper){
+          this.wrapper.style.overflow = 'hidden'
+          this.wrapper.style.touchAction = 'none'
         }
         
 
-        console.log('lock x set to true')
         this.scroll.position = this.scroll.current
       }
       this.scroll.target = this.scroll.position + distance
     }
-    console.log("scroll x : ",this.scroll.x," scroll y : ",this.scroll.y)
   }
 
   onUp (event) {
@@ -123,9 +123,9 @@ export default class extends EventEmitter {
     }else{
       document.body.style.removeProperty('overflow')
       document.body.style.removeProperty('touch-action')
-      if(this.content){
-        this.content.style.removeProperty('overflow')
-        this.content.style.removeProperty('touch-action')
+      if(this.wrapper){
+        this.wrapper.style.removeProperty('overflow')
+        this.wrapper.style.removeProperty('touch-action')
       }
       
     }

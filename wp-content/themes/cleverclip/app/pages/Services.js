@@ -28,7 +28,8 @@ export default class extends Page {
       clients: document.querySelector('.services__clients'),
       clientsList: document.querySelector('.services__clients__list'),
       clientsItems: document.querySelectorAll('.services__clients__item'),
-      clientsButton: document.querySelector('.services__clients__more')
+      clientsButton: document.querySelector('.services__clients__more'),
+
     }
 
     this.createNewsletter()
@@ -56,7 +57,6 @@ export default class extends Page {
           buttons: this.elements.coreItemsWrappers
         }
       })
-
       this.coreSlider.enable()
     }
   }
