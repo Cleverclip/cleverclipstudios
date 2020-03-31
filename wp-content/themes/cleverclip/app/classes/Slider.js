@@ -24,7 +24,8 @@ export default class extends EventEmitter {
       last: 0,
       startY:0,
       y:0,
-      lock: false,
+      lockY: false,
+      lockX: false,
       started : false,
     }
 
@@ -70,7 +71,8 @@ export default class extends EventEmitter {
     
     this.start = event.touches ? event.touches[0].clientX : event.clientX
     this.scroll.startY = event.touches ? window.event.touches[0].screenY : window.event.screenY
-    this.scroll.lock = false
+    this.scroll.lockY = false
+    this.scroll.lockX = false
   }
 
   onMove (event) {
@@ -86,16 +88,20 @@ export default class extends EventEmitter {
     const distX = Math.abs(this.scroll.position - this.scroll.current)
     const distY = Math.abs(this.scroll.y - this.scroll.startY)
 
-    if(distY > distX){
-      this.scroll.lock = true
+    if(distY > distX && !this.scroll.lockX){
+      this.scroll.lockY = true
       this.scroll.target = this.scroll.position
+      document.body.removeProperty('overflow')
+    }else if(distX > distY && this.scroll.lockY){
+      this.scroll.lockX = true
+      document.body.style.overflow = 'hidden'
     }
     
   }
 
   onUp (event) {
     this.isDown = false
-    if(!this.scroll.lock){
+    if(!this.scroll.lockX){
       this.onCheck()
     }
     this.scroll.y = 0
