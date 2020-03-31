@@ -32,7 +32,6 @@ export default class extends EventEmitter {
 
     this.wrapper = document.querySelector('.content')
 
-    console.log('slider query ',this.wrapper)
 
     each(this.elements.buttons, button => {
       button.offset = getOffset(button).left
@@ -104,11 +103,8 @@ export default class extends EventEmitter {
         this.scroll.lockX = true
         document.body.style.overflow = 'hidden'
         document.body.style.touchAction = 'none'
-        if(this.wrapper){
           this.wrapper.style.overflow = 'hidden'
           this.wrapper.style.touchAction = 'none'
-        }
-        
 
         this.scroll.position = this.scroll.current
       }
@@ -121,12 +117,12 @@ export default class extends EventEmitter {
     if(!this.scroll.lockX){
       this.onCheck()
     }else{
-      document.body.style.removeProperty('overflow')
-      document.body.style.removeProperty('touch-action')
-      if(this.wrapper){
-        this.wrapper.style.removeProperty('overflow')
-        this.wrapper.style.removeProperty('touch-action')
-      }
+      // document.body.style.removeProperty('overflow')
+      // document.body.style.removeProperty('touch-action')
+      // if(this.wrapper){
+      //   this.wrapper.style.removeProperty('overflow')
+      //   this.wrapper.style.removeProperty('touch-action')
+      // }
       
     }
     this.onCheck()
