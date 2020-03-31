@@ -102,6 +102,9 @@ export default class extends EventEmitter {
         this.scroll.lockX = true
         document.body.style.overflow = 'hidden'
         document.body.style.touchAction = 'none'
+        this.element.style.overflow = 'hidden'
+        this.element.style.touchAction = 'none'
+
         console.log('lock x set to true')
         this.scroll.position = this.scroll.current
       }
@@ -117,6 +120,8 @@ export default class extends EventEmitter {
     }else{
       document.body.style.removeProperty('overflow')
       document.body.style.removeProperty('touch-action')
+      this.element.style.removeProperty('overflow')
+      this.element.style.removeProperty('touch-action')
     }
     this.onCheck()
     this.scroll.y = 0
