@@ -22,6 +22,9 @@ export default class extends EventEmitter {
       current: 0,
       target: 0,
       last: 0,
+      startY:0,
+      y:0,
+      lock: false,
       started : false,
     }
 
@@ -64,7 +67,10 @@ export default class extends EventEmitter {
     this.isDown = true
     this.scroll.started = false
     this.scroll.position = this.scroll.current
+    
     this.start = event.touches ? event.touches[0].clientX : event.clientX
+    this.scroll.startY = event.touches ? window.event.touches[0].screenY : window.event.screenY
+    this.scroll.lock = false
   }
 
   onMove (event) {
@@ -74,14 +80,22 @@ export default class extends EventEmitter {
 
     const x = event.touches ? event.touches[0].clientX : event.clientX
     const distance = (this.start - x) * 3
-    
+    this.scroll.y = event.touches ? window.event.touches[0].screenY : window.event.screenY
     this.scroll.target = this.scroll.position + distance
+
+    const distX = Math.abs(this.scroll.position - this.scroll.current)
+    const distY = Math.abs(this.scroll.y - this.scroll.startY)
+
+    if(distY > distX)this.scroll.lock = true
+    
   }
 
   onUp (event) {
     this.isDown = false
 
     this.onCheck()
+    this.scroll.y = 0
+    this.scroll.startY = 0
   }
 
   onWheel (event) {
@@ -115,7 +129,9 @@ export default class extends EventEmitter {
   }
 
   update () {
-    const dist = Math.abs(this.scroll.position - this.scroll.current)
+
+    
+    
 
     
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
@@ -133,16 +149,16 @@ export default class extends EventEmitter {
       this.emit('change', index)
     }
     
-    if(dist > 10){
-      if(!this.scroll.started){
-        this.scroll.started = true
-        this.scroll.current = this.scroll.current - (this.scroll.current - this.scroll.position)
-      }
-      
+    // if(!this.scroll.started){
+    //   this.scroll.started = true
+    //   this.scroll.current = this.scroll.current - (this.scroll.current - this.scroll.position)
+    // }
+    if(!this.scroll.lock){
       each(this.elements.items, item => {
         this.transform(item, -this.scroll.current)
       })
     }
+    
 
     if (this.scroll.current < this.scroll.last) {
       this.direction = 'right'
