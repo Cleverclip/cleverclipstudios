@@ -108,9 +108,7 @@ export default class extends EventEmitter {
 
         this.scroll.position = this.scroll.current
       }
-      setTimeout(() => {
-        this.scroll.target = this.scroll.position + distance
-      }, 1);
+      this.scroll.target = this.scroll.position + distance
     }
   }
 
