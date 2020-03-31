@@ -37,7 +37,7 @@ export default class extends EventEmitter {
     })
     this.content = document.querySelector('.content')
     this.length = this.elements.buttons.length
-
+    console.log(this.content)
     this.width = this.elements.buttons[0].width
     this.widthTotal = this.element.getBoundingClientRect().width
     this.widthTotalHalf = this.widthTotal / 2
