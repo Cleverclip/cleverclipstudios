@@ -91,8 +91,7 @@ export default class extends EventEmitter {
     if(distY > distX && !this.scroll.lockX){
       this.scroll.lockY = true
       this.scroll.target = this.scroll.position
-      document.body.removeProperty('overflow')
-    }else if(distX > distY && this.scroll.lockY){
+    }else if(distX > distY && !this.scroll.lockY){
       this.scroll.lockX = true
       document.body.style.overflow = 'hidden'
     }
@@ -103,7 +102,10 @@ export default class extends EventEmitter {
     this.isDown = false
     if(!this.scroll.lockX){
       this.onCheck()
+    }else{
+      document.body.style.removeProperty('overflow')
     }
+
     this.scroll.y = 0
     this.scroll.startY = 0
   }
