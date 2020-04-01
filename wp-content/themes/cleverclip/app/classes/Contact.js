@@ -13,6 +13,7 @@ export default class {
     this.subject = this.form.querySelector('[name="subject"]')
 
     this.addEventListeners()
+    console.log('form init okey')
   }
 
   onSubmit (event) {
