@@ -2,9 +2,13 @@ import EventEmitter from "events";
 import { TweenMax } from "gsap";
 import { each } from "lodash";
 
+import Contact from 'classes/Contact'
+
 export default class extends EventEmitter {
   constructor() {
     super();
+
+    
 
     this.element = document.querySelector(".menu");
 
@@ -16,9 +20,11 @@ export default class extends EventEmitter {
         form_button: document.getElementById("menu__form__button"),
         form_overlay: document.getElementById("menu__form__overlay"),
         form_container: document.getElementById("menu__form__container"),
-        form_close: document.getElementById("menu__form__close")
+        form_close: document.getElementById("menu__form__close"),
+        contact: document.querySelector('.menu__contact__form'),
+        contactButton: document.querySelector('.menu__contact__form__button')
       },
-
+      
       mobile: {
         root: document.querySelector(".menu__mobile"),
 
@@ -38,8 +44,20 @@ export default class extends EventEmitter {
         form_button: document.getElementById("menu__mobile__form__button")
       }
     };
+    this.createContact()
 
+    
     this.addEventListeners();
+  }
+
+  createContact () {
+    this.contact = new Contact({
+      button: this.elements.desktop.contactButton,
+      classes: {
+        error: 'menu__contact__form--error'
+      },
+      form: this.elements.desktop.contact,
+    })
   }
 
   close() {

@@ -13,15 +13,15 @@ export default class {
     this.subject = this.form.querySelector('[name="subject"]')
 
     this.addEventListeners()
-    
   }
 
   onSubmit (event) {
     event.preventDefault()
-    console.log('contact form submitted !')
+
     each(this.fields, field => {
       field.classList.remove(this.classes.error)
     })
+
     const data = new FormData(this.form)
 
     let params = new URLSearchParams(data).toString()
