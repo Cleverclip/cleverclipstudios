@@ -223,7 +223,7 @@
 </nav>
 <div id="menu__form__overlay">
   
-  <form class="about__contact__form"
+  <form class="menu__contact__form"
     data-id="{{ option['form_contact_header'] }}"
     data-success-title="{{ option[locale ~ '_form_contact_messages'].success_title }}"
     data-success-description="{{ option[locale ~ '_form_contact_messages'].success_description }}"
@@ -248,22 +248,22 @@
     <input name="smujarFirstVisitTime" type="hidden" value="">
     <input name="smujarHistory" type="hidden" value="">
 
-    <div class="about__contact__form__row">
-      <input class="about__contact__form__input" name="first-name" placeholder="{{ option[locale ~ '_contact_form'].first_name }}">
-      <input class="about__contact__form__input" name="last-name" placeholder="{{ option[locale ~ '_contact_form'].last_name }}">
+    <div class="menu__contact__form__row">
+      <input class="menu__contact__form__input" name="first-name" placeholder="{{ option[locale ~ '_contact_form'].first_name }}">
+      <input class="menu__contact__form__input" name="last-name" placeholder="{{ option[locale ~ '_contact_form'].last_name }}">
     </div>
 
-    <div class="about__contact__form__row">
-      <input class="about__contact__form__input" name="company" placeholder="{{ option[locale ~ '_contact_form'].company }}">
-      <input class="about__contact__form__input" name="phone" placeholder="{{ option[locale ~ '_contact_form'].phone }}">
+    <div class="menu__contact__form__row">
+      <input class="menu__contact__form__input" name="company" placeholder="{{ option[locale ~ '_contact_form'].company }}">
+      <input class="menu__contact__form__input" name="phone" placeholder="{{ option[locale ~ '_contact_form'].phone }}">
     </div>
 
-    <div class="about__contact__form__row">
-      <input class="about__contact__form__input about__contact__form__input--email" name="email" placeholder="{{ option[locale ~ '_contact_form'].email }}">
+    <div class="menu__contact__form__row">
+      <input class="menu__contact__form__input menu__contact__form__input--email" name="email" placeholder="{{ option[locale ~ '_contact_form'].email }}">
     </div>
 
-    <div class="about__contact__form__row">
-      <select class="about__contact__form__input about__contact__form__input--select" name="subject">
+    <div class="menu__contact__form__row">
+      <select class="menu__contact__form__input menu__contact__form__input--select" name="subject">
         <option value="{{ option[locale ~ '_contact_form'].subject}}">{{ option[locale ~ '_contact_form'].subject}}</option>
         {% for subject in option[locale ~ '_contact_form'].subjects %}
           <option>{{ subject.text }}</option>
@@ -271,25 +271,25 @@
       </select>
     </div>
 
-    <div class="about__contact__form__row">
-      <textarea class="about__contact__form__input about__contact__form__input--textarea" name="message" placeholder="{{ option[locale ~ '_contact_form'].message }}"></textarea>
+    <div class="menu__contact__form__row">
+      <textarea class="menu__contact__form__input menu__contact__form__input--textarea" name="message" placeholder="{{ option[locale ~ '_contact_form'].message }}"></textarea>
     </div>
 
-    <div class="about__contact__form__row">
-      <label class="about__contact__form__label">
-        <input class="about__contact__form__checkbox" name="newsletter" type="checkbox">
-        <span class="about__contact__form__checkbox__bullet"></span>
+    <div class="menu__contact__form__row">
+      <label class="menu__contact__form__label">
+        <input class="menu__contact__form__checkbox" name="newsletter" type="checkbox">
+        <span class="menu__contact__form__checkbox__bullet"></span>
 
-        <span class="about__contact__form__checkbox__text">
+        <span class="menu__contact__form__checkbox__text">
           {{ option[locale ~ '_contact_form'].newsletter }}
         </span>
       </label>
     </div>
 
-    <button class="about__contact__form__button">
-      <div class="about__contact__form__button__background"></div>
+    <button class="menu__contact__form__button">
+      <div class="menu__contact__form__button__background"></div>
 
-      <div class="about__contact__form__button__box">
+      <div class="menu__contact__form__button__box">
         {{ option[locale ~ '_contact_form'].submit }}
       </div>
     </button>
