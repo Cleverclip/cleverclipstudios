@@ -21,24 +21,15 @@ export default class extends EventEmitter {
       position: 0,
       current: 0,
       target: 0,
-      last: 0,
-      startY:0,
-      startX:0,
-      y:0,
-      x:0,
-      lockY: false,
-      lockX: false,
+      last: 0
     }
-
-    this.wrapper = document.querySelector('.content')
-
 
     each(this.elements.buttons, button => {
       button.offset = getOffset(button).left
       button.position = 0
       button.width = button.getBoundingClientRect().width
     })
-    
+
     this.length = this.elements.buttons.length
 
     this.width = this.elements.buttons[0].width
@@ -70,13 +61,9 @@ export default class extends EventEmitter {
 
   onDown (event) {
     this.isDown = true
-    //this.scroll.position = this.scroll.current
-    
-    this.scroll.startX = event.touches ? event.touches[0].clientX : event.clientX
-    this.scroll.startY = event.touches ? window.event.touches[0].screenY : window.event.screenY
-    this.scroll.lockY = false
-    this.scroll.lockX = false
 
+    this.scroll.position = this.scroll.current
+    this.start = event.touches ? event.touches[0].clientX : event.clientX
   }
 
   onMove (event) {
@@ -84,52 +71,16 @@ export default class extends EventEmitter {
       return
     }
 
-    this.scroll.x = event.touches ? event.touches[0].clientX : event.clientX
-    this.scroll.y = event.touches ? window.event.touches[0].screenY : window.event.screenY
-    
-    const distance = (this.scroll.startX - this.scroll.x) * 3
-    
+    const x = event.touches ? event.touches[0].clientX : event.clientX
+    const distance = (this.start - x) * 3
 
-    const distX = Math.abs(this.scroll.x - this.scroll.startX)
-    const distY = Math.abs(this.scroll.y - this.scroll.startY)
-
-    const treshold = 10
-
-    if(distY > distX && !this.scroll.lockY && distY > treshold && !this.scroll.lockX){
-      this.scroll.lockY = true
-    }
-    if(distX > distY && !this.scroll.lockY && distX > treshold){
-      if(!this.scroll.lockX){
-        this.scroll.lockX = true
-        document.body.style.overflow = 'hidden'
-        document.body.style.touchAction = 'none'
-          this.wrapper.style.overflow = 'hidden'
-          this.wrapper.style.touchAction = 'none'
-
-        this.scroll.position = this.scroll.current
-      }
-      this.scroll.target = this.scroll.position + distance
-    }
+    this.scroll.target = this.scroll.position + distance
   }
 
   onUp (event) {
     this.isDown = false
-    if(!this.scroll.lockX){
-      this.onCheck()
-    }else{
-      document.body.style.removeProperty('overflow')
-      document.body.style.removeProperty('touch-action')
-      if(this.wrapper){
-        this.wrapper.style.removeProperty('overflow')
-        this.wrapper.style.removeProperty('touch-action')
-      }
-      
-    }
+
     this.onCheck()
-    this.scroll.y = 0
-    this.scroll.startY = 0
-    this.scroll.x = 0
-    this.scroll.startY = 0
   }
 
   onWheel (event) {
@@ -163,8 +114,8 @@ export default class extends EventEmitter {
   }
 
   update () {
-   
     this.scroll.current += (this.scroll.target - this.scroll.current) * 0.1
+
     let index = Math.floor(this.scroll.current + this.widthTotalHalf) % this.widthTotal
 
     index = Math.floor(index / this.widthTotal * this.length)
@@ -178,10 +129,10 @@ export default class extends EventEmitter {
 
       this.emit('change', index)
     }
+
     each(this.elements.items, item => {
       this.transform(item, -this.scroll.current)
     })
-    
 
     if (this.scroll.current < this.scroll.last) {
       this.direction = 'right'
@@ -212,10 +163,9 @@ export default class extends EventEmitter {
       this.transform(element, element.position)
     })
 
-
-    this.frame = requestAnimationFrame(this.update.bind(this))
     this.scroll.last = this.scroll.current
 
+    this.frame = requestAnimationFrame(this.update.bind(this))
   }
 
   onResize () {
