@@ -12,7 +12,7 @@ export default class {
     this.fields = this.form.querySelectorAll('input, select, textarea')
     this.subject = this.form.querySelector('[name="subject"]')
 
-    this.addEventListeners()
+    //this.addEventListeners()
     console.log('form init okey')
   }
 
