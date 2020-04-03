@@ -8,7 +8,7 @@ import { calculate, split } from 'utils/text'
 export default class extends EventEmitter {
   constructor ({ classes, element, elements }) {
     super()
-
+    
     this.classes = classes
     this.element = element
 
@@ -116,7 +116,6 @@ export default class extends EventEmitter {
 
   onChange ({ target }) {
     const index = parseInt(target.dataset.index, 10)
-
     if (this.index === index) {
       return
     }
@@ -145,14 +144,14 @@ export default class extends EventEmitter {
   }
 
   addEventListeners () {
+    
     this.onPreviousEvent = this.onPrevious.bind(this)
     this.onNextEvent = this.onNext.bind(this)
 
-    this.elements.buttonNext.addEventListener('click', this.onNextEvent)
-    this.elements.buttonPrevious.addEventListener('click', this.onPreviousEvent)
+    if(this.elements.buttonNext)this.elements.buttonNext.addEventListener('click', this.onNextEvent)
+    if(this.elements.buttonPrevious)this.elements.buttonPrevious.addEventListener('click', this.onPreviousEvent)
 
     this.onChangeEvent = this.onChange.bind(this)
-
     each(this.elements.paginations, pagination => {
       pagination.addEventListener('click', this.onChangeEvent)
     })
