@@ -72,6 +72,14 @@
     .about__team__item__content__more{
       transform: scale(1);
       opacity: 1;
+      &:before{
+        transform: translate(-50%, -50%) scale(1);
+        opacity:1;
+      }
+      &:after{
+        transform: translate(-50%,-50%) rotate(90deg) scale(1);
+        opacity:1;
+      }
     }
   }
 }
@@ -203,6 +211,8 @@
 .about__team__article__member__content{
   overflow-y: auto;
   position: relative;
+  margin-right: -1rem;
+  padding-right: 1rem;
   /* width */
   &::-webkit-scrollbar {
     width: 5px;
@@ -371,7 +381,7 @@
   bottom:0px;
   margin: 2.5rem;
   opacity: 0;
-  transform: scale(0);
+  transform: scale(0.5);
   transition: 400ms cubic-bezier(.92,.01,.53,1.44);
   &:before, &:after{
     border-top: 2px solid $color-candlelight;
@@ -381,11 +391,13 @@
     position: absolute;
     top: 50%;
     width: 65%;
+    transition: 600ms cubic-bezier(.92,.01,.53,1.44);
+    opacity: 0;
   }
   &:before{
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
   }
   &:after{
-    transform: translate(-50%,-50%) rotate(90deg);
+    transform: translate(-50%,-50%) rotate(90deg) scale(0.5);
   }
 }
