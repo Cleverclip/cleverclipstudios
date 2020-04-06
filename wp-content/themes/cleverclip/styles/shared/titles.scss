@@ -14,7 +14,7 @@
   font-size: 4.8rem;
   font-weight: bold;
   line-height: 1.1;
-
+  
   @include media('<small') {
     font-size: 3.2rem;
   }

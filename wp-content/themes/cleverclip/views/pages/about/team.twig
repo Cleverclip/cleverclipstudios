@@ -1,4 +1,5 @@
 <section class="about__team">
+  
   <div class="about__team__wrapper">
     <header class="about__team__header">
       <h2 class="about__team__title">
@@ -18,46 +19,47 @@
           </figure>
 
           <div class="about__team__item__content">
-            <p class="about__team__item__title">
-              {{ member.title }}
-            </p>
-
             <p class="about__team__item__description">
               {{ member.description }}
             </p>
+            <p class="about__team__item__title">
+              {{ member.title }}
+            </p>
+            <div class="about__team__item__content__more"></div>
           </div>
+          <div class="about__team__article__wrapper">
+            <article class="about__team__article">
+              <button class="about__team__article__close">
+                Close
+              </button>
 
-          <article class="about__team__article">
-            <button class="about__team__article__close">
-              Close
-            </button>
+              <div class="about__team__article__columns">
+                <div class="about__team__article__column">
+                  <figure class="about__team__article__media">
+                    <img class="about__team__article__media" data-src="{{ member.image | resize(400) }}">
+                  </figure>
+                </div>
 
-            <div class="about__team__article__columns">
-              <div class="about__team__article__column">
-                <figure class="about__team__article__media">
-                  <img class="about__team__article__media" data-src="{{ member.image | resize(400) }}">
-                </figure>
+                
               </div>
 
-              <div class="about__team__article__column">
-                <h2 class="about__team__article__title">
-                  {{ member.title }}
-                </h2>
+              <div class="about__team__article__content">
+                <div class="about__team__article__column">
+                    <p class="about__team__article__description">
+                      {{ member.description }}
+                    </p>
+                    <h2 class="about__team__article__title">
+                      {{ member.title }}
+                    </h2>
 
-                <p class="about__team__article__description">
-                  {{ member.description }}
-                </p>
-
-                <p class="about__team__article__emojis">
-                  {{ member.emoji }}
-                </p>
+                    <p class="about__team__article__emojis">
+                      {{ member.emoji }}
+                    </p>
+                </div>
+                {{ member.content }}
               </div>
-            </div>
-
-            <div class="about__team__article__content">
-              {{ member.content }}
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       {% endfor %}
     </div>

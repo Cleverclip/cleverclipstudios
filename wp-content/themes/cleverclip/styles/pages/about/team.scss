@@ -36,42 +36,55 @@
   font-size: 0;
   margin-bottom: -5rem;
   margin-top: 10rem;
-  text-align: center;
-
+  text-align: left;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.25rem;
   @include media('<small') {
     margin-bottom: -2.5rem;
     margin-top: 3.5rem;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .about__team__item {
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
   position: relative;
   vertical-align: top;
-  width: 20%;
+  width: 100%;
   z-index: 1;
 
   &--active {
     z-index: 2;
+    .about__team__article__wrapper{
+      opacity: 1;
+      pointer-events: initial;
+    }
   }
 
   @include media('<small') {
-    margin-bottom: 2.5rem;
-    width: 50%;
+    // margin-bottom: 2.5rem;
+    width: 100%;
+  }
+  &:hover{
+    .about__team__item__content__more{
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
 
 .about__team__item__media {
-  border: 0.4rem solid $color-candlelight;
-  border-radius: 50%;
-  height: 14rem;
+  // border: 0.4rem solid $color-candlelight;
+  // border-radius: 50%;
+  height: 36rem;
   margin: auto;
   overflow: hidden;
   pointer-events: none;
   position: relative;
-  width: 14rem;
+  // width: 14rem;
 
   @include media('<small') {
     height: 10rem;
@@ -80,9 +93,10 @@
 }
 
 .about__team__item__image {
-  border-radius: 50%;
-  filter: grayscale(1);
+  // border-radius: 50%;
+  // filter: grayscale(1);
   height: 100%;
+  width: 100%;
   left: 0;
   object-fit: cover;
   position: absolute;
@@ -96,45 +110,66 @@
 }
 
 .about__team__item__content {
-  margin-top: 2rem;
   pointer-events: none;
+  background:$color-deep-koamaru;
+  color:$color-white;
+  padding: 2.5rem;
 
   @include media('<small') {
-    margin-top: 1rem;
   }
 }
 
 .about__team__item__title {
-  @extend %description__medium;
-
-  font-weight: 600;
+  @extend %title__32;
+  
+  // font-weight: 600;
 }
 
 .about__team__item__description {
   @extend %description__16;
-
-  margin-top: 1.25rem;
-
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   @include media('<small') {
     margin-top: 0;
   }
 }
+.about__team__article__wrapper{
+  
+  
+  position: fixed;
+  pointer-events: none;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  opacity: 0;
+  transition: 500ms ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
 
 .about__team__article {
+  position: relative;
   background: $color-spring-wood;
-  box-shadow: 0.4rem 0.4rem 0 $color-deep-koamaru;
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
   cursor: default;
   left: 0;
   opacity: 0;
-  padding: 4rem 0;
   pointer-events: none;
-  position: absolute;
   text-align: left;
-  top: 0;
   transition: opacity 0.4s ease, visibility 0.4s ease;
   visibility: hidden;
-  width: 200%;
-
+  display:grid;
+  grid-template-columns: 0.8fr 1fr;
+  max-width: 80%;
+  max-height: 70%;
+  min-width: 70%;
+  min-height: 50%;
   .about__team__item:nth-child(5n) & {
     left: auto;
     right: 0;
@@ -145,6 +180,7 @@
     opacity: 1;
     pointer-events: all;
     visibility: visible;
+    
   }
 
   @include media('<small') {
@@ -160,12 +196,14 @@
       top: 0;
     }
   }
+  
 }
 
 .about__team__article__columns {
-  display: table;
-  margin: auto;
-  width: 38rem;
+  display: flex;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
 
   @include media('<small') {
     padding: 0 2.5rem;
@@ -175,11 +213,11 @@
 }
 
 .about__team__article__column {
-  display: table-cell;
-  vertical-align: middle;
-
+  // display: table-cell;
+  // vertical-align: middle;
+  width: 100%;
   &:last-child {
-    padding-left: 2.5rem;
+    // padding-left: 2.5rem;
   }
 
   @include media('<small') {
@@ -193,12 +231,12 @@
 }
 
 .about__team__article__media {
-  border-radius: 50%;
-  height: 20rem;
+  // border-radius: 50%;
+  height: 100%;
   object-fit: cover;
   overflow: hidden;
   position: relative;
-  width: 20rem;
+  width: 100%;
 
   @include media('<small') {
     margin: auto;
@@ -215,9 +253,7 @@
 }
 
 .about__team__article__title {
-  @extend %description__medium;
-
-  font-weight: 600;
+  @extend %title__32;
 }
 
 .about__team__article__description {
@@ -225,6 +261,7 @@
   font-size: 1.5rem;
   line-height: 1.8;
   margin-top: 1rem;
+  font-weight: 600;
 }
 
 .about__team__article__emojis {
@@ -237,24 +274,41 @@
   @extend %description__medium;
 
   font-size: 1.6rem;
-  margin: 3rem auto 0;
-  width: 38rem;
+  padding:3rem 5rem 10rem 3rem;
+  width: 100%;
 
   @include media('<small') {
     padding: 0 2.5rem;
     width: 100%;
   }
+  &:before {
+    background-image: url('../images/team-article-illustration.svg');
+    background-size: 250px;
+    width: 250px;
+    height: 250px;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: 90px 100px;
+  }
+  .about__team__article__column,p{
+    z-index: 1;
+    position:relative;
+  }
 }
 
 .about__team__article__close {
   font-size: 0;
-  height: 2rem;
+  height: 6rem;
   pointer-events: all;
   position: absolute;
-  right: 2rem;
-  top: 2rem;
-  width: 2rem;
-
+  right: 0px;
+  top: 0px;
+  width: 6rem;
+  margin:1rem;
   &:before,
   &:after {
     border-top: 1px solid $color-black;
@@ -263,7 +317,7 @@
     left: 50%;
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: 50%;
   }
 
   &:before {
@@ -272,5 +326,33 @@
 
   &:after {
     transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+.about__team__item__content__more{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: $color-white;
+  position: absolute;
+  right:0px;
+  bottom:0px;
+  margin: 2.5rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 400ms cubic-bezier(.92,.01,.53,1.44);
+  &:before, &:after{
+    border-top: 2px solid $color-candlelight;
+    content: '';
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 65%;
+  }
+  &:before{
+    transform: translate(-50%, -50%);
+  }
+  &:after{
+    transform: translate(-50%,-50%) rotate(90deg);
   }
 }

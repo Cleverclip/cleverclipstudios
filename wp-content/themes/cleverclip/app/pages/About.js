@@ -20,6 +20,7 @@ export default class extends Page {
 
     this.elements = {
       teamItems: document.querySelectorAll('.about__team__item'),
+      teamItemsArticleOverlay: document.querySelectorAll('.about__team__article__wrapper'),
       teamItemsCloses: document.querySelectorAll('.about__team__article__close'),
 
       know: document.querySelector('.about__know'),
@@ -74,6 +75,7 @@ export default class extends Page {
   }
 
   onItemOpen ({ target }) {
+    
     each(this.elements.teamItems, item => {
       item.classList.remove('about__team__item--active')
     })
@@ -93,13 +95,24 @@ export default class extends Page {
   onItemClose (event) {
     event.preventDefault()
     event.stopPropagation()
-
-    const element = event.target.parentNode.parentNode
+    const element = event.target.parentNode.parentNode.parentNode
 
     if (element.classList.contains('about__team__item--active')) {
       element.classList.remove('about__team__item--active')
     }
   }
+
+  onItemOverlayCloseEvent (event) {
+    event.preventDefault()
+    event.stopPropagation()
+    const element = event.target.parentNode
+    
+    if (element.classList.contains('about__team__item--active')) {
+      element.classList.remove('about__team__item--active')
+    }
+  }
+
+  
 
   addEventListeners () {
     super.addEventListeners()
@@ -109,6 +122,9 @@ export default class extends Page {
 
     each(this.elements.teamItems, item => {
       item.addEventListener('click', this.onItemOpenEvent)
+    })
+    each(this.elements.teamItemsArticleOverlay, item => {
+      item.addEventListener('click', this.onItemOverlayCloseEvent)
     })
 
     each(this.elements.teamItemsCloses, item =>  {
