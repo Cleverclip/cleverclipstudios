@@ -75,7 +75,8 @@ export default class extends Page {
   }
 
   onItemOpen ({ target }) {
-    
+    document.body.style.overflow = "hidden"
+
     each(this.elements.teamItems, item => {
       item.classList.remove('about__team__item--active')
     })
@@ -95,8 +96,10 @@ export default class extends Page {
   onItemClose (event) {
     event.preventDefault()
     event.stopPropagation()
-    const element = event.target.parentNode.parentNode.parentNode
 
+    document.body.style.removeProperty("overflow")
+    const element = event.target.parentNode.parentNode.parentNode
+    
     if (element.classList.contains('about__team__item--active')) {
       element.classList.remove('about__team__item--active')
     }
@@ -105,6 +108,10 @@ export default class extends Page {
   onItemOverlayCloseEvent (event) {
     event.preventDefault()
     event.stopPropagation()
+
+    if(event.target != this) return
+
+    document.body.style.removeProperty("overflow")
     const element = event.target.parentNode
     
     if (element.classList.contains('about__team__item--active')) {

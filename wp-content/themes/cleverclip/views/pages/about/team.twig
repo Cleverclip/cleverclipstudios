@@ -44,19 +44,21 @@
               </div>
 
               <div class="about__team__article__content">
-                <div class="about__team__article__column">
-                    <p class="about__team__article__description">
-                      {{ member.description }}
-                    </p>
-                    <h2 class="about__team__article__title">
-                      {{ member.title }}
-                    </h2>
+                    <header class="about__team__article__header">
+                      <p class="about__team__article__description">
+                        {{ member.description }}
+                      </p>
+                      <h2 class="about__team__article__title">
+                        {{ member.title }}
+                      </h2>
 
-                    <p class="about__team__article__emojis">
-                      {{ member.emoji }}
-                    </p>
-                </div>
-                {{ member.content }}
+                      <p class="about__team__article__emojis">
+                        {{ member.emoji }}
+                      </p>
+                    </header>
+                    <div class="about__team__article__member__content">
+                      {{ member.content }}
+                    </div>
               </div>
             </article>
           </div>
