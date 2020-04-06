@@ -171,6 +171,8 @@ function add_to_context($data) {
     'raw' => 1
   ));
 
+  $data['isElementorEditPreview'] = (isset($_REQUEST['elementor-preview']) && !empty($_REQUEST['elementor-preview']));
+  
   return $data;
 }
 
