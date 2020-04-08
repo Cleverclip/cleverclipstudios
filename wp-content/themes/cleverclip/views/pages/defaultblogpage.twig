@@ -3,12 +3,12 @@
 {% block content %}
 
 	<div>
-      {% if (option.blog_template) %}
+      {% if (option.blog_template) and not isElementorEditPreview %}
       
         {% set translated_temp_id = function('pll_get_post', option.blog_template) %}
         {# Load Elementor archive template #}
         {{ function('do_shortcode', '[elementor-template id="' ~ translated_temp_id ~ '"]') }}
-        
+ 
       {% else %}
       
           {{ post.content }} 
