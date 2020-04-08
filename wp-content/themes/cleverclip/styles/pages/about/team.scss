@@ -95,8 +95,7 @@
   // width: 14rem;
 
   @include media('<small') {
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
   }
 }
 
@@ -124,12 +123,15 @@
   padding: 2.5rem;
 
   @include media('<small') {
+    padding:1rem;
   }
 }
 
 .about__team__item__title {
   @extend %title__32;
-  
+  @include media('<small') {
+    font-size: 1.6rem;
+  }
   // font-weight: 600;
 }
 
@@ -139,6 +141,7 @@
   margin-bottom: 0.5rem;
   @include media('<small') {
     margin-top: 0;
+    font-size: 1rem;
   }
 }
 .about__team__article__wrapper{
@@ -243,7 +246,7 @@
   height: 100%;
 
   @include media('<small') {
-    padding: 0 2.5rem;
+    // padding: 0 2.5rem;
     text-align: center;
     width: 100%;
   }
@@ -262,7 +265,7 @@
 
     &:last-child {
       padding-left: 0;
-      padding-top: 2.5rem;
+      // padding-top: 2.5rem;
     }
   }
 }
@@ -291,6 +294,10 @@
 
 .about__team__article__title {
   @extend %title__32;
+  @include media('<small') {
+   
+    font-size: 1.4rem;
+  }
 }
 
 .about__team__article__description {
@@ -299,12 +306,18 @@
   line-height: 1.8;
   margin-top: 1rem;
   font-weight: 600;
+  @include media('<small') {
+    font-size: 1.2rem;
+  }
 }
 
 .about__team__article__emojis {
   font-size: 3rem;
   margin-top: 1rem !important;
   margin-bottom: 1rem;
+  @include media('<small') {
+    font-size: 1.2rem;
+  }
 }
 
 .about__team__article__content {
@@ -319,6 +332,7 @@
   @include media('<small') {
     padding: 0 2.5rem;
     width: 100%;
+    font-size: 1rem;
   }
   &:before {
     background-image: url('../images/team-article-illustration.svg');
@@ -332,6 +346,12 @@
     right: 0;
     background-repeat: no-repeat;
     background-position: 90px 100px;
+    @include media('<small') {
+      background-size: 125px;
+      width: 125px;
+      height: 125px;
+      background-position: 45px 50px;
+    }
   }
   .about__team__article__column,p{
     z-index: 1;
@@ -352,6 +372,11 @@
   top: 0px;
   width: 6rem;
   margin:1rem;
+  z-index:1;
+  @include media('<small') {
+    width: 3rem;
+    height:3rem;
+  }
   &:before,
   &:after {
     border-top: 1px solid $color-black;
@@ -361,6 +386,10 @@
     position: absolute;
     top: 50%;
     width: 50%;
+    @include media('<small') {
+      border-width: 2px;
+      width:80%;
+    }
   }
 
   &:before {
@@ -399,5 +428,8 @@
   }
   &:after{
     transform: translate(-50%,-50%) rotate(90deg) scale(0.5);
+  }
+  @include media('<small') {
+    display:none;
   }
 }
