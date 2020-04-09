@@ -71,6 +71,10 @@ body.preload * {
   transition: none !important;
 }
 
+b {
+  font-weight: bold;
+}
+
 h1 {
   font-size: 1.8rem;
   font-weight: bold;
@@ -357,13 +361,18 @@ a:visited {
   letter-spacing: 0.03rem;
   hyphens: auto;
 }
-.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul {
-  list-style-type: circle;
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul, .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ol {
   margin-top: 1rem;
 }
-.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul li {
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul li, .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ol li {
   margin-bottom: 1rem;
   margin-left: 2rem;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ol {
+  list-style-type: decimal;
+}
+.guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer ul {
+  list-style-type: circle;
 }
 .guide__faq .guide__faq__content .guide__faq__categorie__answer__container .guide__faq__categorie__answer div {
   color: #394EFF;

@@ -27,6 +27,9 @@ body{
         }
     }
 }
+b{
+    font-weight: bold;
+}
 h1{
     font-size: 1.8rem;
     font-weight: bold;
@@ -313,13 +316,18 @@ a:visited{
                     letter-spacing: 0.03rem;
                     hyphens: auto;
                 }
-                ul{
-                    list-style-type: circle;
+                ul,ol{
                     margin-top: 1rem;
                     li{
                         margin-bottom: 1rem;
                         margin-left: 2rem;
                     }
+                }
+                ol{
+                    list-style-type: decimal;
+                }
+                ul{
+                    list-style-type: circle;
                 }
                 
                 div{
