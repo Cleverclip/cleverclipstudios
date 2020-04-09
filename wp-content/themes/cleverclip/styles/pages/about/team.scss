@@ -195,6 +195,8 @@
   }
 
   @include media('<small') {
+    min-height: 60%;
+    max-height: 75%;
     grid-template-columns: initial;
     grid-template-rows: 200px auto;
     .about__team__item:nth-child(2n) & {
@@ -237,6 +239,9 @@
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+  @include media('<small') {
+    padding-bottom: 2.5rem;
   }
 }
 .about__team__article__columns {
@@ -388,6 +393,7 @@
     width: 50%;
     @include media('<small') {
       border-width: 2px;
+      border-color: white;
       width:80%;
     }
   }
