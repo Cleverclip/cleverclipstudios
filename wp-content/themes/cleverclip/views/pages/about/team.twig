@@ -15,7 +15,7 @@
       {% for member in post.get_field('team_list') %}
         <div class="about__team__item">
           <figure class="about__team__item__media">
-            <img class="about__team__item__image" data-src="{{ member.image | resize(200) }}">
+            <img class="about__team__item__image" data-src="{{ member.image | resize(800)}}">
           </figure>
 
           <div class="about__team__item__content">
@@ -36,7 +36,7 @@
               <div class="about__team__article__columns">
                 <div class="about__team__article__column">
                   <figure class="about__team__article__media">
-                    <img class="about__team__article__media" data-src="{{ member.image | resize(400) }}">
+                    <img class="about__team__article__media" data-src="{{ member.image | resize(800)}}">
                   </figure>
                 </div>
 
