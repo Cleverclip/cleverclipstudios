@@ -328,16 +328,19 @@ add_filter( 'pll_rel_hreflang_attributes', 'filter_pll_rel_hreflang_attributes',
 function filter_pll_rel_hreflang_attributes( $hreflangs ) {
 
 	foreach ( $hreflangs as $lang => $url ) {
-		if ( $lang === 'en' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'en-CH' ) );
-    }
-    if ( $lang === 'de' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'de-CH' ) );
-    }
-    if ( $lang === 'fr' ) {
-			printf( '<link rel="alternate" href="%s" hreflang="%s" /><!-- custom hreflang -->' . "\n", esc_url( $url ), esc_attr( 'fr-CH' ) );
+	    
+        if ( $lang === 'en' ) {
+            $hreflangs['en-CH'] = $url;
+        }
+        
+        if ( $lang === 'de' ) {
+            $hreflangs['de-CH'] = $url;
+        }
+        
+        if ( $lang === 'fr' ) {
+            $hreflangs['fr-CH'] = $url;
 		}
-	}
+    }
 
     return $hreflangs; 
 };
@@ -360,55 +363,6 @@ function reading_time_cst() {
  * @author Umad Javed
  */
 if(in_array('accelerated-mobile-pages/accelerated-moblie-pages.php', apply_filters('active_plugins', get_option('active_plugins')))){
-    
-    /**
-     * Outputs references to translated pages ( if exists ) in the html head section
-     * wp_head() function copied and modified taken from plugins/polylang-pro/frontend/frontend-filters-links #155
-     *
-     * @author Umad Javed
-     */
-    add_action( 'amp_post_template_head', function () {
-        // Don't output anything on paged archives: see https://wordpress.org/support/topic/hreflang-on-page2
-        // Don't output anything on paged pages and paged posts
-        if ( is_paged() || ( is_singular() && ( $page = get_query_var( 'page' ) ) && $page > 1 ) ) {
-            return;
-        }
-        
-        // Google recommends to include self link https://support.google.com/webmasters/answer/189077?hl=en
-        foreach ( PLL()->model->get_languages_list() as $language ) {
-            if ( $url = PLL()->links->get_translation_url( $language )) {
-                $urls[ $language->get_locale( 'display' ) ] = $url;
-            }
-        }
-        
-        // Outputs the section only if there are translations ( $urls always contains self link )
-        if ( ! empty( $urls ) && count( $urls ) > 1 ) {
-            
-            // Prepare the list of languages to remove the country code
-            foreach ( array_keys( $urls ) as $locale ) {
-                $split = explode( '-', $locale );
-                $languages[ $locale ] = reset( $split );
-            }
-            
-            $count = array_count_values( $languages );
-            
-            foreach ( $urls as $locale => $url ) {
-                $lang = $count[ $languages[ $locale ] ] > 1 ? $locale : $languages[ $locale ]; // Output the country code only when necessary
-                $hreflangs[ $lang ] = $url;
-            }
-            
-            $hreflangs = apply_filters( 'pll_rel_hreflang_attributes', $hreflangs );
-            
-            foreach ( $hreflangs as $lang => $url ) {
-                
-                if ( function_exists('ampforwp_end_point_controller')) {
-                    $url = ampforwp_end_point_controller( $url );
-                }
-                
-                printf( '<link rel="alternate" href="%s" hreflang="%s" />' . "\n", esc_url( $url ), esc_attr( $lang ) );
-            }
-        }
-    });
     
     /**
      * Add missing social media profile option
