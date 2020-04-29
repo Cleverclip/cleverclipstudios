@@ -94,7 +94,7 @@ if (in_array('wpforms/wpforms.php', apply_filters('active_plugins', get_option('
             $value = '';
             
             if (! empty( $_GET[ $tag ] )) {
-                $value = wp_unslash( sanitize_text_field( $_GET[ $tag ] ) );
+                $value = wp_unslash( sanitize_text_field( $_GET[ $tag ] ));
             } else if (! empty( $_COOKIE[ $tag] )) {
                 $value = $_COOKIE[ $tag ];
             }
