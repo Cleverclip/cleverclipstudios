@@ -2,6 +2,7 @@ import "@babel/polyfill";
 
 import "./vendor/JAR";
 
+import WebFont from "webfontloader";
 import Cookies from "js-cookie";
 import FontFaceObserver from "fontfaceobserver";
 import QueryString from "query-string";
@@ -36,6 +37,7 @@ import { getOffset } from "utils/dom";
 
 class App {
   constructor() {
+	this.addWebFonts();
     this.createParameters();
     this.createResponsive();
 
@@ -49,6 +51,14 @@ class App {
 
       this.addEventListeners();
     });
+  }
+  
+  addWebFonts() {
+	  WebFont.load({
+		  google: {
+			  families: ['Work Sans:400,600,800&display=swap']
+	    }
+	  });
   }
 
   createParameters() {
