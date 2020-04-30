@@ -4,6 +4,7 @@
        url('../fonts/gt-eesti-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
        url('../fonts/gt-eesti-bold.woff') format('woff');
   font-weight: bold;
   font-style: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
        url('../fonts/gt-eesti-light.woff') format('woff');
   font-weight: 300;
   font-style: 300;
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
        url('../fonts/tiempos-headline-light.woff') format('woff');
   font-weight: 300;
   font-style: 300;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
        url('../fonts/tiempos-headline-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -44,4 +49,5 @@
        url('../fonts/tiempos-headline-semibold.woff') format('woff');
   font-weight: bold;
   font-style: bold;
+  font-display: swap;
 }
