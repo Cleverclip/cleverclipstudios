@@ -1055,3 +1055,17 @@ function override_main_query_for_blog_page($query_obj){
 }
 
 add_action('parse_query', 'override_main_query_for_blog_page');
+
+/**
+ * Fixed easy smooth scroll link render blocking script
+ */
+function fix_essl_enqueue_jquery() {
+    
+    wp_deregister_script('jquery-easing');
+    wp_dequeue_script('jquery-easing');
+    
+    wp_register_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js', array('jquery'), false, true);
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-easing', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'fix_essl_enqueue_jquery', 1000 );
