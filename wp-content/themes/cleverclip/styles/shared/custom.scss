@@ -1,0 +1,200 @@
+span.rt-reading-time{
+	font-weight: 600;
+	padding-left : 10px; 
+	font-family: "Work Sans", Sans-serif;
+	font-size: 16px;
+	line-height: 19px;
+	color: #4F4F4F;
+}
+
+.cst_read_time_postfix {
+	font-weight: 600;
+	font-family: "Work Sans", Sans-serif;
+	font-size: 16px;
+	line-height: 19px;
+	color: #4F4F4F;
+}
+
+.uael-listing__terms-link:hover {
+    color: #fff !important;
+}
+
+.ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-item-level-0.ubermenu-active > .ubermenu-submenu-drop, 
+.ubermenu.ubermenu-main.ubermenu-horizontal:not(.ubermenu-transition-shift) .ubermenu-item-level-0 > .ubermenu-submenu-drop { 
+	margin-top: 17px !important;
+}
+
+.ubermenu-item-level-2 {
+    font-size: 16px;
+    padding-bottom: 20px !important;
+    line-height: 19px !important; 
+    font-weight: 600;
+    color: #4F4F4F;
+}
+
+.ubermenu.ubermenu-disable-submenu-scroll .ubermenu-item>.ubermenu-submenu.ubermenu-submenu-type-mega {
+	position: fixed;
+	padding-left: 120px;
+}
+
+.ubermenu-skin-minimal.ubermenu-horizontal .ubermenu-item-level-0 > .ubermenu-submenu-drop {
+	border-top: 1px solid #17238F;
+}
+
+.cst_post_content_social {
+    position: absolute;
+    width: 10%;
+    margin-left: -170px;
+}
+
+@media only screen and (max-width: 768px) {
+	.cst_post_content_social { display : none; }
+}
+
+.uael-wpf-style .wpforms-form .wpforms-field input::placeholder {
+    opacity: 1;
+}
+
+.search_result_name { 
+    max-width: 115.7rem;
+    margin: auto; 
+   padding: 10px;
+    position: relative;
+    width: 91%;
+}
+
+.search_result_name  h3 { 
+	font-size: 26px; line-height: 30px; padding-top: 30px; font-family: "Work Sans";  
+}
+
+span.rt-time {
+    margin-right: 0 !important;
+}
+
+#cst_post_content { 
+	max-width: 68rem;
+	padding: 20px;
+
+}
+
+@media only screen and (max-width: 768px) {
+	#cst_post_content { 
+		padding: 0 !important; 
+	}
+}
+
+a.elementor-post-info__terms-list-item { 
+	text-decoration: underline; 
+}
+
+span.uael-post__terms-meta.uael-post__terms-meta-cat{ background: #17238f;
+    color: #fff;
+    padding: 7px 10px;
+}
+   
+.cst_search_class { 
+	padding: 80px 0 40px 0;
+}
+
+.bdt-grid-small>*, .bdt-grid-column-small>* { 
+	padding-left: 8px;
+}
+
+.uael-post__footer { 
+	margin-top: 0 !important; 
+}
+
+a.uael-post__load-more.elementor-button {
+    box-shadow: 5px 5px #facb10;
+}
+
+a.uael-post__load-more.elementor-button:hover {
+	box-shadow: 0 0;
+	transform: translate(.4rem,.4rem);
+}
+
+.wpforms-form button[type=submit] {
+	box-shadow: 5px 5px 0 0 #17238f !important;
+	transition: transform .4s ease;
+}
+
+.wpforms-form button[type=submit]:hover { 
+	box-shadow: 0 0 !important;
+	transform: translate(.4rem,.4rem);
+}
+
+.uael-post__load-more-wrap { 
+	padding-top: 70px; 
+}
+
+.uael-post__columns-3 .uael-post__title, .uael-post__columns-2 .uael-post__title {
+	min-height: 46px !important; 
+}
+
+.ubermenu-has-submenu-drop > .ubermenu-target:after {
+	border-color: currentcolor;
+    border-style: solid;
+    border-width: 0 0 .2rem .2rem;
+    content: "";
+    height: 1rem;
+    position: absolute;
+    right: -10.25px;
+    top: 50%;
+    transform: translateY(-75%) rotate(-45deg);
+    transition: transform .4s ease;
+    width: 1rem;
+}
+
+.ubermenu-has-submenu-drop.ubermenu-active > .ubermenu-target:after {
+	transform: translateY(-30%) rotate(135deg);
+}
+
+.ubermenu-has-submenu-drop > .ubermenu-target:focus {
+	outline : 0 !important; 
+}
+
+h2.elementor-heading-title.elementor-size-default {
+    font-family: "Tiempos Headline", Sans-serif;
+    font-weight: 700;
+}
+
+span.elementor-heading-title.elementor-size-default {
+    font-family: "Tiempos Headline", Sans-serif;
+    font-weight: 700;
+}
+
+.related_post_tax_time {
+    display: flex;
+    width: 100%;
+}
+
+.custom_read_time {
+    position: relative;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
+a.ubermenu-target.ubermenu-item-layout-default.ubermenu-item-layout-text_only {
+    font-size: 16px;
+    line-height: 19px;
+    font-family: "Work Sans";
+    color: #4f4f4f; 
+    font-weight: 600;
+}
+
+.ubermenu-skin-minimal .ubermenu-target-description { 
+	display : none !important; 
+}
+
+select#lang_choice_1 { 
+	background: #17238f;
+    border: 1px solid #fff;
+    border-radius: 0;
+    display: inline-block;
+    font-family: Work Sans;
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 3.3rem;
+    padding: 0 1.5rem;
+    vertical-align: middle;
+}
