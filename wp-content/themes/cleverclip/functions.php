@@ -1070,6 +1070,8 @@ function fix_essl_enqueue_jquery() {
 }
 add_action('wp_enqueue_scripts', 'fix_essl_enqueue_jquery', 1000 );
 
+pll_register_string( 'search-result-title', 'Showing Search Results for <strong>%s</strong>', 'cleverclip' );
+
 /**
  * Modify search query to show only the posts
  */
@@ -1086,13 +1088,13 @@ if (!is_admin()) {
 }
 
 /**
- * Search page Titlle
+ * Search page Title
  */
 function output_search_resutl_title($title) {
     
     if ( is_search() ) {
         /* translators: %s: Search term. */
-        $title = sprintf( __( 'Showing Search Results for <strong>%s</strong>', 'elementor-pro' ), get_search_query() );
+        $title = sprintf( __( '<strong>%s</strong>', 'elementor-pro' ), get_search_query() );
         
         if ( get_query_var( 'paged' ) ) {
             /* translators: %s is the page number. */
