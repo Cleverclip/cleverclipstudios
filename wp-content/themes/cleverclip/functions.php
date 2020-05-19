@@ -1070,8 +1070,6 @@ function fix_essl_enqueue_jquery() {
 }
 add_action('wp_enqueue_scripts', 'fix_essl_enqueue_jquery', 1000 );
 
-pll_register_string( 'search-result-title', 'Showing Search Results for <strong>%s</strong>', 'cleverclip' );
-
 /**
  * Modify search query to show only the posts
  */
@@ -1105,4 +1103,18 @@ function output_search_resutl_title($title) {
     return $title;
 }
 add_filter('elementor/utils/get_the_archive_title', 'output_search_resutl_title');
- 
+
+/**
+ * Replace search form action with translated URL
+ */
+function replace_search_form_action($output, $widget) {
+      
+    if ($widget->get_name() == 'bdt-search') {
+        $replace = '\1"'.pll_home_url().'"\2'; 
+        
+        $output = preg_replace('/(<form[^>]*action=)"[^>]+"([^>]*>)/', $replace, $output);
+    }
+    
+    return $output;
+}
+add_filter('elementor/widget/render_content', 'replace_search_form_action', 10, 2);
