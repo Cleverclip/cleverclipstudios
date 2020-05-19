@@ -1069,3 +1069,38 @@ function fix_essl_enqueue_jquery() {
     wp_enqueue_script('jquery-easing', array('jquery'));
 }
 add_action('wp_enqueue_scripts', 'fix_essl_enqueue_jquery', 1000 );
+
+/**
+ * Modify search query to show only the posts
+ */
+if (!is_admin()) {
+    function filter_search_resutls($query) {
+        if ($query->is_search) {
+            if ( !isset($query->query_vars['post_type']) ) {
+                $query->set('post_type', 'post');
+            }
+        }
+        return $query;
+    }
+    add_filter('pre_get_posts','filter_search_resutls');
+}
+
+/**
+ * Search page Titlle
+ */
+function output_search_resutl_title($title) {
+    
+    if ( is_search() ) {
+        /* translators: %s: Search term. */
+        $title = sprintf( __( 'Showing Search Results for <strong>%s</strong>', 'elementor-pro' ), get_search_query() );
+        
+        if ( get_query_var( 'paged' ) ) {
+            /* translators: %s is the page number. */
+            $title .= sprintf( __( '&nbsp;&ndash; Page %s', 'elementor-pro' ), get_query_var( 'paged' ) );
+        }
+    }
+    
+    return $title;
+}
+add_filter('elementor/utils/get_the_archive_title', 'output_search_resutl_title');
+ 
