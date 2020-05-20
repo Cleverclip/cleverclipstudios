@@ -2,8 +2,19 @@
 
 {% block content %}
   <div class="custompostarchive">
+     
+	{% if (option.author_template) and not isElementorEditPreview %}
+      
+        {% set translated_temp_id = function('pll_get_post', option.author_template) %}
 
-     {{ function('do_shortcode', '[elementor-template id="8153"]') }}
+        {# Load Elementor archive template #}
+        {{ function('do_shortcode', '[elementor-template id="' ~ translated_temp_id ~ '"]') }}
+ 
+    {% else %}
+      
+	    {{ post.content }} 
+          
+	{% endif %}
 
     {% include 'shared/footer.twig' %}
   </div>
