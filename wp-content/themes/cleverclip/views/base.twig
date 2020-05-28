@@ -13,12 +13,15 @@
     {% include 'shared/menu.twig' %}
 
     {% set slug = function('get_page_template_slug') | replace({ 'template-': '' }) | replace({ '.php': '' }) %}
+    
+    {% set is_blog = function('is_home') and not function('is_front_page') %}
 
     <div
       class="content"
       data-slug="{{
         post.post_type == 'post' ? 'post' :
         post.post_type == 'case' ? 'case' :
+        is_blog ? 'blog' :
         slug ? slug : 'home'
       }}"
     >
