@@ -7,8 +7,10 @@
 
   <div class="menu__wrapper">
     <a class="menu__logo" href="{{ site.link }}/{{ function('pll_current_language') }}/">
-      <img class="menu__logo__image menu__logo__image--desktop" data-src="{{ site.theme.link ~ '/images/cleverclip.svg' }}">
-      <img class="menu__logo__image menu__logo__image--phone" data-src="{{ site.theme.link ~ '/images/cleverclip-phone.svg' }}">
+      <img class="menu__logo__image menu__logo__image--desktop"
+           data-src="{{ site.theme.link ~ '/images/cleverclip.svg' }}">
+      <img class="menu__logo__image menu__logo__image--phone"
+           data-src="{{ site.theme.link ~ '/images/cleverclip-phone.svg' }}">
     </a>
 
     <ul class="menu__list">
@@ -31,11 +33,13 @@
                   <ul class="menu__dropdown__list">
                     {% for link in item.links %}
                       <li class="menu__dropdown__item">
-                        
+
                         <a class="menu__dropdown__link" href="{{ link.link.url }}">
                           <img class="menu__dropdown__link__image" data-src="{{ link.image }}">
-                          
-                          <div class="menu__dropdown__link__caption"><div>{{ link.link.title }}</div>{% if loop.index == 1 %} <div class="submenu__link__dropdown"></div> {% endif %}</div>
+
+                          <div class="menu__dropdown__link__caption">
+                            <div>{{ link.link.title }}</div>{% if loop.index == 1 %}
+                            <div class="submenu__link__dropdown"></div> {% endif %}</div>
                         </a>
 
                         {% if link.sublinks %}
@@ -64,7 +68,8 @@
           </li>
         {% elseif item.type == 'button' %}
           <li class="menu__item">
-            <a class="menu__button"  {% if item.link.url == "#contact" %}id="menu__form__button"{% else %}href="{{ item.link.url }}"{% endif %}> 
+            <a class="menu__button" {% if item.link.url == "#contact" %}id="menu__form__button"
+               {% else %}href="{{ item.link.url }}"{% endif %}>
               <div class="menu__button__background"></div>
 
               <div class="menu__button__box">
@@ -81,13 +86,21 @@
             {{ locale | upper }}
 
             <svg class="menu__link__globe__icon" viewBox="0 0 30 30">
-              <path d="M13.599 20.2L14.599 18.8L15.499 18.3L15.299 17.5L13.499 15.8C13.499 15.8 13.399 15.3 12.999 14.9C12.799 14.7 10.699 13.7 9.99902 13.4C9.89902 13.3 9.79902 13.3 9.59902 13.3L8.49902 13.2C8.29902 13.2 8.09902 13.1 7.99902 13L6.39902 11.8C6.29902 11.8 6.29902 11.7 6.19902 11.6L5.09902 10.3C4.79902 9.99998 4.79902 9.49998 5.09902 9.09998L5.39902 8.69998C5.59902 8.59998 5.99902 8.49998 6.39902 8.59998L7.69902 8.99998C7.89902 8.99998 7.99902 9.09998 8.19902 9.19998L9.19902 10.3L10.099 9.69998L10.599 8.19998C10.599 8.09998 10.699 7.99998 10.699 7.99998C10.999 7.59998 11.799 6.39998 12.099 5.79998C12.099 5.79998 13.299 3.69998 10.899 1.79998C10.699 1.59998 10.299 1.59998 9.99902 1.59998C5.59902 2.89998 2.09902 6.59998 1.19902 11.2C1.09902 11.7 1.49902 12.2 1.99902 12.3C2.39902 12.4 2.79902 12.4 2.89902 12.5C2.99902 12.5 2.99902 12.5 3.09902 12.6L4.69902 13.3C5.09902 13.5 5.29902 13.8 5.29902 14.2V15.2L4.29902 16.1L4.19902 18.5C4.19902 18.7 4.29902 18.9 4.39902 19.1L5.49902 20.6C5.59902 20.7 5.59902 20.8 5.69902 20.8L6.69902 21.4C6.99902 21.6 7.09902 21.9 7.09902 22.2C7.09902 22.6 7.09902 23.3 7.09902 23.7C7.09902 24.1 7.29902 24.4 7.59902 24.6C8.19902 24.9 8.79902 25.2 9.39902 25.4C9.79902 25.5 10.299 25.4 10.499 25C10.899 24.4 11.299 23.7 11.299 23.7L13.599 20.2Z" fill="currentColor" />
+              <path
+                  d="M13.599 20.2L14.599 18.8L15.499 18.3L15.299 17.5L13.499 15.8C13.499 15.8 13.399 15.3 12.999 14.9C12.799 14.7 10.699 13.7 9.99902 13.4C9.89902 13.3 9.79902 13.3 9.59902 13.3L8.49902 13.2C8.29902 13.2 8.09902 13.1 7.99902 13L6.39902 11.8C6.29902 11.8 6.29902 11.7 6.19902 11.6L5.09902 10.3C4.79902 9.99998 4.79902 9.49998 5.09902 9.09998L5.39902 8.69998C5.59902 8.59998 5.99902 8.49998 6.39902 8.59998L7.69902 8.99998C7.89902 8.99998 7.99902 9.09998 8.19902 9.19998L9.19902 10.3L10.099 9.69998L10.599 8.19998C10.599 8.09998 10.699 7.99998 10.699 7.99998C10.999 7.59998 11.799 6.39998 12.099 5.79998C12.099 5.79998 13.299 3.69998 10.899 1.79998C10.699 1.59998 10.299 1.59998 9.99902 1.59998C5.59902 2.89998 2.09902 6.59998 1.19902 11.2C1.09902 11.7 1.49902 12.2 1.99902 12.3C2.39902 12.4 2.79902 12.4 2.89902 12.5C2.99902 12.5 2.99902 12.5 3.09902 12.6L4.69902 13.3C5.09902 13.5 5.29902 13.8 5.29902 14.2V15.2L4.29902 16.1L4.19902 18.5C4.19902 18.7 4.29902 18.9 4.39902 19.1L5.49902 20.6C5.59902 20.7 5.59902 20.8 5.69902 20.8L6.69902 21.4C6.99902 21.6 7.09902 21.9 7.09902 22.2C7.09902 22.6 7.09902 23.3 7.09902 23.7C7.09902 24.1 7.29902 24.4 7.59902 24.6C8.19902 24.9 8.79902 25.2 9.39902 25.4C9.79902 25.5 10.299 25.4 10.499 25C10.899 24.4 11.299 23.7 11.299 23.7L13.599 20.2Z"
+                  fill="currentColor"/>
 
-              <path d="M20.9996 8.5L22.3996 7.1C22.4996 7 22.6996 6.9 22.8996 6.8C23.0996 6.7 23.4996 6.7 23.8996 6.6C24.6996 6.6 24.9996 5.6 24.3996 5C23.3996 4 22.2996 3.1 20.9996 2.5C20.8996 3 20.3996 3.8 20.3996 3.8L18.3996 5C18.1996 5.1 17.9996 5.3 17.9996 5.6L17.6996 6.6C17.5996 6.8 17.6996 7.1 17.7996 7.3L18.1996 8.1C18.2996 8.4 18.5996 8.6 18.8996 8.6L20.0996 8.8C20.4996 8.8 20.7996 8.7 20.9996 8.5Z" fill="currentColor" />
+              <path
+                  d="M20.9996 8.5L22.3996 7.1C22.4996 7 22.6996 6.9 22.8996 6.8C23.0996 6.7 23.4996 6.7 23.8996 6.6C24.6996 6.6 24.9996 5.6 24.3996 5C23.3996 4 22.2996 3.1 20.9996 2.5C20.8996 3 20.3996 3.8 20.3996 3.8L18.3996 5C18.1996 5.1 17.9996 5.3 17.9996 5.6L17.6996 6.6C17.5996 6.8 17.6996 7.1 17.7996 7.3L18.1996 8.1C18.2996 8.4 18.5996 8.6 18.8996 8.6L20.0996 8.8C20.4996 8.8 20.7996 8.7 20.9996 8.5Z"
+                  fill="currentColor"/>
 
-              <path d="M22.2 11.6L20.2 14.7C20.1 14.8 20.1 15 20.1 15.1L20 16.4C20 16.6 20 16.8 20.1 16.9L21.7 19.8C21.9 20.1 22.2 20.3 22.5 20.3L26.1 20.6C26.5 20.6 26.9 20.4 27.1 20C27.6 18.6 28.7 15.2 28.4 13.2C28.3 12.5 28.2 11.8 28 11.1C27.9 10.7 27.4 10.4 27 10.4C25.4 10.5 23.6 11 22.8 11.2C22.5 11.2 22.3 11.4 22.2 11.6Z" fill="currentColor" />
+              <path
+                  d="M22.2 11.6L20.2 14.7C20.1 14.8 20.1 15 20.1 15.1L20 16.4C20 16.6 20 16.8 20.1 16.9L21.7 19.8C21.9 20.1 22.2 20.3 22.5 20.3L26.1 20.6C26.5 20.6 26.9 20.4 27.1 20C27.6 18.6 28.7 15.2 28.4 13.2C28.3 12.5 28.2 11.8 28 11.1C27.9 10.7 27.4 10.4 27 10.4C25.4 10.5 23.6 11 22.8 11.2C22.5 11.2 22.3 11.4 22.2 11.6Z"
+                  fill="currentColor"/>
 
-              <path d="M14.4996 28.4C22.1764 28.4 28.3996 22.1767 28.3996 14.5C28.3996 6.82322 22.1764 0.599976 14.4996 0.599976C6.82285 0.599976 0.599609 6.82322 0.599609 14.5C0.599609 22.1767 6.82285 28.4 14.4996 28.4Z" fill="none" stroke="currentColor" stroke-width="1.3643" />
+              <path
+                  d="M14.4996 28.4C22.1764 28.4 28.3996 22.1767 28.3996 14.5C28.3996 6.82322 22.1764 0.599976 14.4996 0.599976C6.82285 0.599976 0.599609 6.82322 0.599609 14.5C0.599609 22.1767 6.82285 28.4 14.4996 28.4Z"
+                  fill="none" stroke="currentColor" stroke-width="1.3643"/>
             </svg>
           </div>
         </a>
@@ -115,10 +128,6 @@
     <button class="menu__mobile__header__button menu__mobile__header__button--back">
       Back
     </button>
-
-    <button class="menu__mobile__header__button menu__mobile__header__button--close">
-      Close
-    </button>
   </div>
 
   <div class="menu__mobile__content">
@@ -126,7 +135,12 @@
       {% for item in option[locale ~ '_menu_list'] %}
         <li class="menu__mobile__item">
           {% if item.links %}
-            <button class="menu__mobile__link menu__mobile__link__dropdown" data-index="{{ loop.index0 }}">
+            <button class="menu__mobile__link menu__mobile__link__dropdown" data-depth="1"
+                    data-index="{{ loop.index0 }}">
+              {{ item.link.title }}
+            </button>
+          {% elseif item.link.url == "#contact" %}
+            <button class="menu__mobile__link" id="menu__mobile__form__button">
               {{ item.link.title }}
             </button>
           {% else %}
@@ -138,29 +152,34 @@
       {% endfor %}
 
       <li class="menu__mobile__item">
-        <button class="menu__mobile__link menu__mobile__link__dropdown" data-index="100">
+        <button class="menu__mobile__link menu__mobile__link__dropdown" data-depth="1" data-index="100">
           Language & Country
 
           <svg class="menu__mobile__icon" viewBox="0 0 28 28">
-            <path d="M14 27.9991C6.27333 27.9991 0 21.7258 0 13.9991C0 6.40248 6.06 0.219157 13.6033 0.00915691C13.7333 -0.00417643 13.8667 -0.00085286 14 -0.00085286C14.1333 -0.00085286 14.2667 -0.00417643 14.3967 0.00915691C21.94 0.22249 28 6.40581 28 13.9991C28 21.7291 21.7267 27.9991 14 27.9991ZM13.6667 27.3125V20.6658H8.24C8.54667 21.7158 8.91333 22.6791 9.34333 23.5191C10.5033 25.7825 12.03 27.1492 13.6667 27.3125ZM14.3333 27.3125C15.97 27.1492 17.4967 25.7825 18.6567 23.5191C19.0867 22.6791 19.4567 21.7125 19.76 20.6658H14.3333V27.3125ZM11.3433 27.0725C10.3433 26.3425 9.46667 25.2192 8.75 23.8225C8.27333 22.8892 7.86667 21.8225 7.54333 20.6658H2.46C4.34 23.9125 7.54667 26.3058 11.3433 27.0725ZM16.6567 27.0725C20.4533 26.3058 23.66 23.9125 25.5433 20.6658H20.46C20.1333 21.8225 19.73 22.8892 19.2533 23.8225C18.5333 25.2192 17.6567 26.3425 16.6567 27.0725ZM2.09333 19.9991H7.36333C6.94 18.2725 6.69 16.3591 6.66667 14.3325H0.676667C0.726667 16.3691 1.23 18.2891 2.09333 19.9991ZM8.05333 19.9991H13.6667V14.3325H7.33333C7.36 16.3691 7.61667 18.2891 8.05333 19.9991ZM14.3333 19.9991H19.9467C20.38 18.2891 20.64 16.3658 20.6667 14.3325H14.3333V19.9991ZM20.6367 19.9991H25.9067C26.77 18.2891 27.2733 16.3658 27.3233 14.3325H21.3333C21.31 16.3591 21.06 18.2725 20.6367 19.9991ZM0.676667 13.6658H6.66667C6.69 11.6425 6.94 9.72248 7.36333 7.99915H2.08333C1.22333 9.70915 0.726667 11.6358 0.676667 13.6658ZM7.33333 13.6658H13.6667V7.99915H8.05333C7.61667 9.70915 7.36 11.6291 7.33333 13.6658ZM14.3333 13.6658H20.6667C20.64 11.6291 20.3833 9.70915 19.9467 7.99915H14.3333V13.6658ZM21.3333 13.6658H27.3233C27.2733 11.6325 26.7767 9.70581 25.9167 7.99915H20.6367C21.06 9.72248 21.31 11.6425 21.3333 13.6658ZM2.44667 7.33248H7.54C7.86667 6.17581 8.27 5.11915 8.74667 4.18581C9.46333 2.78915 10.34 1.65916 11.34 0.925824C7.54 1.69582 4.32667 4.07915 2.44667 7.33248ZM8.24 7.33248H13.6667V0.675824C12.03 0.839157 10.5033 2.22582 9.34333 4.48916C8.91333 5.32916 8.54333 6.28581 8.24 7.33248ZM14.3333 7.33248H19.76C19.4533 6.28581 19.0867 5.32916 18.6567 4.48916C17.5 2.22916 15.97 0.839157 14.3333 0.675824V7.33248ZM20.46 7.33248H25.5533C23.6733 4.07915 20.46 1.69249 16.6567 0.925824C17.6567 1.65916 18.5333 2.78915 19.25 4.18581C19.7267 5.11915 20.1333 6.17915 20.46 7.33248Z" fill="currentColor"/>
+            <path
+                d="M14 27.9991C6.27333 27.9991 0 21.7258 0 13.9991C0 6.40248 6.06 0.219157 13.6033 0.00915691C13.7333 -0.00417643 13.8667 -0.00085286 14 -0.00085286C14.1333 -0.00085286 14.2667 -0.00417643 14.3967 0.00915691C21.94 0.22249 28 6.40581 28 13.9991C28 21.7291 21.7267 27.9991 14 27.9991ZM13.6667 27.3125V20.6658H8.24C8.54667 21.7158 8.91333 22.6791 9.34333 23.5191C10.5033 25.7825 12.03 27.1492 13.6667 27.3125ZM14.3333 27.3125C15.97 27.1492 17.4967 25.7825 18.6567 23.5191C19.0867 22.6791 19.4567 21.7125 19.76 20.6658H14.3333V27.3125ZM11.3433 27.0725C10.3433 26.3425 9.46667 25.2192 8.75 23.8225C8.27333 22.8892 7.86667 21.8225 7.54333 20.6658H2.46C4.34 23.9125 7.54667 26.3058 11.3433 27.0725ZM16.6567 27.0725C20.4533 26.3058 23.66 23.9125 25.5433 20.6658H20.46C20.1333 21.8225 19.73 22.8892 19.2533 23.8225C18.5333 25.2192 17.6567 26.3425 16.6567 27.0725ZM2.09333 19.9991H7.36333C6.94 18.2725 6.69 16.3591 6.66667 14.3325H0.676667C0.726667 16.3691 1.23 18.2891 2.09333 19.9991ZM8.05333 19.9991H13.6667V14.3325H7.33333C7.36 16.3691 7.61667 18.2891 8.05333 19.9991ZM14.3333 19.9991H19.9467C20.38 18.2891 20.64 16.3658 20.6667 14.3325H14.3333V19.9991ZM20.6367 19.9991H25.9067C26.77 18.2891 27.2733 16.3658 27.3233 14.3325H21.3333C21.31 16.3591 21.06 18.2725 20.6367 19.9991ZM0.676667 13.6658H6.66667C6.69 11.6425 6.94 9.72248 7.36333 7.99915H2.08333C1.22333 9.70915 0.726667 11.6358 0.676667 13.6658ZM7.33333 13.6658H13.6667V7.99915H8.05333C7.61667 9.70915 7.36 11.6291 7.33333 13.6658ZM14.3333 13.6658H20.6667C20.64 11.6291 20.3833 9.70915 19.9467 7.99915H14.3333V13.6658ZM21.3333 13.6658H27.3233C27.2733 11.6325 26.7767 9.70581 25.9167 7.99915H20.6367C21.06 9.72248 21.31 11.6425 21.3333 13.6658ZM2.44667 7.33248H7.54C7.86667 6.17581 8.27 5.11915 8.74667 4.18581C9.46333 2.78915 10.34 1.65916 11.34 0.925824C7.54 1.69582 4.32667 4.07915 2.44667 7.33248ZM8.24 7.33248H13.6667V0.675824C12.03 0.839157 10.5033 2.22582 9.34333 4.48916C8.91333 5.32916 8.54333 6.28581 8.24 7.33248ZM14.3333 7.33248H19.76C19.4533 6.28581 19.0867 5.32916 18.6567 4.48916C17.5 2.22916 15.97 0.839157 14.3333 0.675824V7.33248ZM20.46 7.33248H25.5533C23.6733 4.07915 20.46 1.69249 16.6567 0.925824C17.6567 1.65916 18.5333 2.78915 19.25 4.18581C19.7267 5.11915 20.1333 6.17915 20.46 7.33248Z"
+                fill="currentColor"/>
           </svg>
 
           <svg class="menu__mobile__icon" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.9444 10.5778C13.0067 10.5778 13.0378 10.5778 13.1 10.5467C13.2556 10.4533 13.3178 10.2667 13.2244 10.1111L9.49111 3.26667C9.49111 3.26667 9.49111 3.26667 9.46 3.23556C9.46 3.20444 9.42889 3.20444 9.42889 3.17333C9.42889 3.17333 9.39778 3.14222 9.36667 3.14222C9.36667 3.14222 9.36667 3.14222 9.33556 3.11111H9.30444C9.27333 3.11111 9.27333 3.11111 9.24222 3.08C9.21111 3.08 9.21111 3.08 9.18 3.08C9.14889 3.08 9.14889 3.08 9.11778 3.08C9.08667 3.08 9.08667 3.08 9.05556 3.11111H9.02444C9.02444 3.11111 9.02444 3.11111 8.99333 3.14222L8.96222 3.17333C8.96222 3.17333 8.93111 3.20444 8.93111 3.23556C8.93111 3.23556 8.93111 3.23556 8.9 3.26667L5.16667 10.1111C5.07333 10.2667 5.13556 10.4533 5.29111 10.5467C5.38444 10.5778 5.41556 10.5778 5.47778 10.5778C5.57111 10.5778 5.69556 10.5156 5.75778 10.4222L7.18889 7.77778H11.2333L12.6644 10.4222C12.7267 10.5156 12.8511 10.5778 12.9444 10.5778ZM7.53111 7.15556L9.21111 4.07556L10.8911 7.15556H7.53111ZM26.9444 11.5111H17.9222V1.55556C17.9222 0.684444 17.2378 0 16.3667 0H2.05556C1.18444 0 0.5 0.684444 0.5 1.55556V12.1333C0.5 13.0044 1.18444 13.6889 2.05556 13.6889H3.92222V16.1778C3.92222 16.3022 3.98444 16.4267 4.10889 16.4578C4.14 16.4578 4.20222 16.4889 4.23333 16.4889C4.29556 16.4889 4.38889 16.4578 4.45111 16.3956L7.25111 13.6889H11.0778V23.6444C11.0778 24.5156 11.7622 25.2 12.6333 25.2H21.7489L24.5489 27.9067C24.6111 27.9689 24.7044 28 24.7667 28C24.7978 28 24.86 28 24.8911 27.9689C25.0156 27.9067 25.0778 27.8133 25.0778 27.6889V25.2H26.9444C27.8156 25.2 28.5 24.5156 28.5 23.6444V13.0667C28.5 12.1956 27.8156 11.5111 26.9444 11.5111ZM11.0778 13.0667H7.12667C7.03333 13.0667 6.97111 13.0978 6.90889 13.16L4.54444 15.4311V13.3778C4.54444 13.2222 4.38889 13.0667 4.23333 13.0667H2.05556C1.52667 13.0667 1.12222 12.6311 1.12222 12.1333V1.55556C1.12222 1.02667 1.52667 0.622222 2.05556 0.622222H16.3667C16.8956 0.622222 17.3 1.02667 17.3 1.55556V11.5111H12.6333C11.7622 11.5111 11.0778 12.1956 11.0778 13.0667ZM27.8778 23.6444C27.8778 24.1422 27.4733 24.5778 26.9444 24.5778H24.7667C24.6111 24.5778 24.4556 24.7333 24.4556 24.8889V26.9422L22.0911 24.64C22.0289 24.6089 21.9667 24.5778 21.8733 24.5778H12.6333C12.1044 24.5778 11.7 24.1422 11.7 23.6444V13.0667C11.7 12.5378 12.1044 12.1333 12.6333 12.1333H26.9444C27.4733 12.1333 27.8778 12.5378 27.8778 13.0667V23.6444ZM23.5222 16.1778H20.1V14.9333C20.1 14.7778 19.9444 14.6222 19.7889 14.6222C19.6333 14.6222 19.4778 14.7778 19.4778 14.9333V16.1778H16.0556C15.9 16.1778 15.7444 16.3333 15.7444 16.4889C15.7444 16.6444 15.9 16.8 16.0556 16.8H18.14C18.2333 17.3289 18.5444 18.48 19.3844 19.6311C18.7 20.3778 17.7044 21.0933 16.2733 21.4978C16.1178 21.5289 16.0244 21.7156 16.0556 21.8711C16.0867 21.9956 16.2111 22.0889 16.3667 22.0889C16.3978 22.0889 16.4289 22.0889 16.46 22.0889C17.9844 21.6533 19.0422 20.9067 19.7889 20.0978C20.5356 20.9067 21.5933 21.6533 23.1178 22.0889C23.1489 22.0889 23.18 22.0889 23.2111 22.0889C23.3356 22.0889 23.46 21.9956 23.5222 21.8711C23.5533 21.7156 23.46 21.5289 23.3044 21.4978C21.8422 21.0933 20.8778 20.3778 20.1933 19.6311C21.0333 18.48 21.3444 17.3289 21.4378 16.8H23.5222C23.6778 16.8 23.8333 16.6444 23.8333 16.4889C23.8333 16.3333 23.6778 16.1778 23.5222 16.1778ZM19.7889 19.1333C19.1356 18.2 18.8556 17.2978 18.7933 16.8H20.8156C20.7222 17.2667 20.4422 18.2 19.7889 19.1333Z" fill="currentColor" />
+            <path
+                d="M12.9444 10.5778C13.0067 10.5778 13.0378 10.5778 13.1 10.5467C13.2556 10.4533 13.3178 10.2667 13.2244 10.1111L9.49111 3.26667C9.49111 3.26667 9.49111 3.26667 9.46 3.23556C9.46 3.20444 9.42889 3.20444 9.42889 3.17333C9.42889 3.17333 9.39778 3.14222 9.36667 3.14222C9.36667 3.14222 9.36667 3.14222 9.33556 3.11111H9.30444C9.27333 3.11111 9.27333 3.11111 9.24222 3.08C9.21111 3.08 9.21111 3.08 9.18 3.08C9.14889 3.08 9.14889 3.08 9.11778 3.08C9.08667 3.08 9.08667 3.08 9.05556 3.11111H9.02444C9.02444 3.11111 9.02444 3.11111 8.99333 3.14222L8.96222 3.17333C8.96222 3.17333 8.93111 3.20444 8.93111 3.23556C8.93111 3.23556 8.93111 3.23556 8.9 3.26667L5.16667 10.1111C5.07333 10.2667 5.13556 10.4533 5.29111 10.5467C5.38444 10.5778 5.41556 10.5778 5.47778 10.5778C5.57111 10.5778 5.69556 10.5156 5.75778 10.4222L7.18889 7.77778H11.2333L12.6644 10.4222C12.7267 10.5156 12.8511 10.5778 12.9444 10.5778ZM7.53111 7.15556L9.21111 4.07556L10.8911 7.15556H7.53111ZM26.9444 11.5111H17.9222V1.55556C17.9222 0.684444 17.2378 0 16.3667 0H2.05556C1.18444 0 0.5 0.684444 0.5 1.55556V12.1333C0.5 13.0044 1.18444 13.6889 2.05556 13.6889H3.92222V16.1778C3.92222 16.3022 3.98444 16.4267 4.10889 16.4578C4.14 16.4578 4.20222 16.4889 4.23333 16.4889C4.29556 16.4889 4.38889 16.4578 4.45111 16.3956L7.25111 13.6889H11.0778V23.6444C11.0778 24.5156 11.7622 25.2 12.6333 25.2H21.7489L24.5489 27.9067C24.6111 27.9689 24.7044 28 24.7667 28C24.7978 28 24.86 28 24.8911 27.9689C25.0156 27.9067 25.0778 27.8133 25.0778 27.6889V25.2H26.9444C27.8156 25.2 28.5 24.5156 28.5 23.6444V13.0667C28.5 12.1956 27.8156 11.5111 26.9444 11.5111ZM11.0778 13.0667H7.12667C7.03333 13.0667 6.97111 13.0978 6.90889 13.16L4.54444 15.4311V13.3778C4.54444 13.2222 4.38889 13.0667 4.23333 13.0667H2.05556C1.52667 13.0667 1.12222 12.6311 1.12222 12.1333V1.55556C1.12222 1.02667 1.52667 0.622222 2.05556 0.622222H16.3667C16.8956 0.622222 17.3 1.02667 17.3 1.55556V11.5111H12.6333C11.7622 11.5111 11.0778 12.1956 11.0778 13.0667ZM27.8778 23.6444C27.8778 24.1422 27.4733 24.5778 26.9444 24.5778H24.7667C24.6111 24.5778 24.4556 24.7333 24.4556 24.8889V26.9422L22.0911 24.64C22.0289 24.6089 21.9667 24.5778 21.8733 24.5778H12.6333C12.1044 24.5778 11.7 24.1422 11.7 23.6444V13.0667C11.7 12.5378 12.1044 12.1333 12.6333 12.1333H26.9444C27.4733 12.1333 27.8778 12.5378 27.8778 13.0667V23.6444ZM23.5222 16.1778H20.1V14.9333C20.1 14.7778 19.9444 14.6222 19.7889 14.6222C19.6333 14.6222 19.4778 14.7778 19.4778 14.9333V16.1778H16.0556C15.9 16.1778 15.7444 16.3333 15.7444 16.4889C15.7444 16.6444 15.9 16.8 16.0556 16.8H18.14C18.2333 17.3289 18.5444 18.48 19.3844 19.6311C18.7 20.3778 17.7044 21.0933 16.2733 21.4978C16.1178 21.5289 16.0244 21.7156 16.0556 21.8711C16.0867 21.9956 16.2111 22.0889 16.3667 22.0889C16.3978 22.0889 16.4289 22.0889 16.46 22.0889C17.9844 21.6533 19.0422 20.9067 19.7889 20.0978C20.5356 20.9067 21.5933 21.6533 23.1178 22.0889C23.1489 22.0889 23.18 22.0889 23.2111 22.0889C23.3356 22.0889 23.46 21.9956 23.5222 21.8711C23.5533 21.7156 23.46 21.5289 23.3044 21.4978C21.8422 21.0933 20.8778 20.3778 20.1933 19.6311C21.0333 18.48 21.3444 17.3289 21.4378 16.8H23.5222C23.6778 16.8 23.8333 16.6444 23.8333 16.4889C23.8333 16.3333 23.6778 16.1778 23.5222 16.1778ZM19.7889 19.1333C19.1356 18.2 18.8556 17.2978 18.7933 16.8H20.8156C20.7222 17.2667 20.4422 18.2 19.7889 19.1333Z"
+                fill="currentColor"/>
           </svg>
         </button>
       </li>
     </ul>
 
     {% for item in option[locale ~ '_menu_list'] %}
+      {% set itemIndex = loop.index0 %}
       {% if item.links %}
-        <ul class="menu__mobile__list menu__mobile__list__secondary" data-index="{{ loop.index0 }}">
+        <ul class="menu__mobile__list menu__mobile__list__secondary" data-depth="1" data-index="{{ loop.index0 }}">
           {% for link in item.links %}
-
             <li class="menu__mobile__item">
               {% if link.sublinks %}
-                <button class="menu__mobile__link menu__mobile__link__dropdown" data-index="{{ 1 }}">
-                    {{ link.link.title }}
+                <button class="menu__mobile__link menu__mobile__link__dropdown" data-depth="2"
+                        data-index="{{ itemIndex }}">
+                  {{ link.link.title }}
                 </button>
               {% else %}
                 <a class="menu__mobile__link" href="{{ link.link.url }}">
@@ -175,26 +194,26 @@
     {% endfor %}
 
     {% for item in option[locale ~ '_menu_list'] %}
+      {% set itemIndex = loop.index0 %}
       {% if item.links %}
-          {% for link in item.links %}
-              {% if link.sublinks %}
-                <ul class="menu__mobile__list menu__mobile__list__secondary" data-index="{{ 1 }}">
-                  {% for sublink in link.sublinks %}
-                  <li class="menu__mobile__item">
-                    <a class="menu__mobile__link" href="{{ sublink.link.url }}">
-                      {{ sublink.link.title }}
-                    </a>
-                  </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-          {% endfor %}
+        {% for link in item.links %}
+          {% if link.sublinks %}
+            <ul class="menu__mobile__list menu__mobile__list__secondary" data-depth="2" data-index="{{ itemIndex }}">
+              {% for sublink in link.sublinks %}
+                <li class="menu__mobile__item">
+                  <a class="menu__mobile__link" href="{{ sublink.link.url }}">
+                    {{ sublink.link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
       {% endif %}
     {% endfor %}
 
-    
 
-    <div class="menu__mobile__list menu__mobile__list__secondary" data-index="100">
+      <div class="menu__mobile__list menu__mobile__list__secondary" data-depth="1" data-index="100">
       <div class="menu__mobile__group">
         <select class="menu__mobile__select menu__mobile__select--country">
           <option>Switzerland</option>
@@ -204,7 +223,8 @@
       <div class="menu__mobile__group">
         <select class="menu__mobile__select menu__mobile__select--locales">
           {% for locale in locales %}
-            <option value="{{ locale.url }}" {{ function('pll_current_language', 'name') == locale.name ? 'selected' : '' }}>{{ locale.name }}</option>
+            <option
+                value="{{ locale.url }}" {{ function('pll_current_language', 'name') == locale.name ? 'selected' : '' }}>{{ locale.name }}</option>
           {% endfor %}
         </select>
       </div>
@@ -222,20 +242,21 @@
   </ul>
 </nav>
 <div id="menu__form__overlay">
-  
+
   <form class="menu__contact__form"
-    method="post"
-    data-id="{{ option['form_contact_header'] }}"
-    data-success-title="{{ option[locale ~ '_form_contact_messages'].success_title }}"
-    data-success-description="{{ option[locale ~ '_form_contact_messages'].success_description }}"
-    data-error-title="{{ option[locale ~ '_form_contact_messages'].error_title }}"
-    data-error-description="{{ option[locale ~ '_form_contact_messages'].error_description }}"
-    id="menu__form__container">
+        method="post"
+        data-id="{{ option['form_contact_header'] }}"
+        data-success-title="{{ option[locale ~ '_form_contact_messages'].success_title }}"
+        data-success-description="{{ option[locale ~ '_form_contact_messages'].success_description }}"
+        data-error-title="{{ option[locale ~ '_form_contact_messages'].error_title }}"
+        data-error-description="{{ option[locale ~ '_form_contact_messages'].error_description }}"
+        id="menu__form__container">
 
     <h1 class="menu__form__title">{{ option[locale ~ '_contact_title'] }}</h1>
-    <button id="menu__form__close"></button>
+    <div id="menu__form__close"></div>
     <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') }}">
-    <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
+    <input name="country" type="hidden"
+           value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
 
     <input name="utm_source" type="hidden" value="">
     <input name="utm_medium" type="hidden" value="">
@@ -250,22 +271,27 @@
     <input name="smujarHistory" type="hidden" value="">
 
     <div class="menu__contact__form__row">
-      <input class="menu__contact__form__input" name="first-name" placeholder="{{ option[locale ~ '_contact_form'].first_name }}">
-      <input class="menu__contact__form__input" name="last-name" placeholder="{{ option[locale ~ '_contact_form'].last_name }}">
+      <input class="menu__contact__form__input" name="first-name"
+             placeholder="{{ option[locale ~ '_contact_form'].first_name }}">
+      <input class="menu__contact__form__input" name="last-name"
+             placeholder="{{ option[locale ~ '_contact_form'].last_name }}">
     </div>
 
     <div class="menu__contact__form__row">
-      <input class="menu__contact__form__input" name="company" placeholder="{{ option[locale ~ '_contact_form'].company }}">
+      <input class="menu__contact__form__input" name="company"
+             placeholder="{{ option[locale ~ '_contact_form'].company }}">
       <input class="menu__contact__form__input" name="phone" placeholder="{{ option[locale ~ '_contact_form'].phone }}">
     </div>
 
     <div class="menu__contact__form__row">
-      <input class="menu__contact__form__input menu__contact__form__input--email" name="email" placeholder="{{ option[locale ~ '_contact_form'].email }}">
+      <input class="menu__contact__form__input menu__contact__form__input--email" name="email"
+             placeholder="{{ option[locale ~ '_contact_form'].email }}">
     </div>
 
     <div class="menu__contact__form__row">
       <select class="menu__contact__form__input menu__contact__form__input--select" name="subject">
-        <option value="{{ option[locale ~ '_contact_form'].subject}}">{{ option[locale ~ '_contact_form'].subject}}</option>
+        <option
+            value="{{ option[locale ~ '_contact_form'].subject }}">{{ option[locale ~ '_contact_form'].subject }}</option>
         {% for subject in option[locale ~ '_contact_form'].subjects %}
           <option>{{ subject.text }}</option>
         {% endfor %}
@@ -273,7 +299,8 @@
     </div>
 
     <div class="menu__contact__form__row">
-      <textarea class="menu__contact__form__input menu__contact__form__input--textarea" name="message" placeholder="{{ option[locale ~ '_contact_form'].message }}"></textarea>
+      <textarea class="menu__contact__form__input menu__contact__form__input--textarea" name="message"
+                placeholder="{{ option[locale ~ '_contact_form'].message }}"></textarea>
     </div>
 
     <div class="menu__contact__form__row">
@@ -287,7 +314,7 @@
       </label>
     </div>
 
-    <button class="menu__contact__form__button">
+    <button type="submit" class="menu__contact__form__button">
       <div class="menu__contact__form__button__background"></div>
 
       <div class="menu__contact__form__button__box">

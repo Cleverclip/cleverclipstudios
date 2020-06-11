@@ -14,10 +14,6 @@
 
         <span class="home__header__title">
           {% for lines in post.get_field('header_title') %}
-            {% if loop.index0 == 2 %}
-              <br>
-            {% endif %}
-
             {% for line in lines %}
               <span class="home__header__title__line {{ line | length > 1 ? 'home__header__title__line--multiple' : 'home__header__title__line--single' }}">
                 {% for text in line %}

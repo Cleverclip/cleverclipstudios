@@ -88,6 +88,10 @@
   vertical-align: top;
   white-space: nowrap;
 
+  &:nth-child(2) {
+    display: block;
+  }
+
   &--multiple {
     font-weight: bold;
   }
@@ -99,6 +103,7 @@
 
   @include media('<small') {
     height: 3.5rem;
+    display: block;
   }
 }
 

@@ -32,7 +32,7 @@
 
 .service__fields__list {
   @extend %list;
-
+  max-width: none;
   margin-top: 10rem;
   @include media(">small") {
     display: flex;

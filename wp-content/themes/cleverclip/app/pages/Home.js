@@ -105,9 +105,17 @@ export default class extends Page {
     this.initializeInlineVideos();
   }
 
-  createHeader() {
-    this.elements.headerTitle.classList.add("home__header__title--active");
+  onResize() {
+    super.onResize();
+    this.setHeaderLineWidths();
+  }
 
+  /**
+   * Sets the widths of the animated lines in the header
+   * @param doSplit - splits the content of animated lines into separate spans,
+   * should only do on first render, not resize
+   */
+  setHeaderLineWidths(doSplit = false) {
     each(this.elements.headerLines, line => {
       const texts = line.querySelectorAll("span");
 
@@ -116,11 +124,12 @@ export default class extends Page {
       each(texts, text => {
         const { clientWidth } = text;
 
-        split({
-          append: false,
-          element: text,
-          expression: ""
-        });
+        if (doSplit)
+          split({
+            append: false,
+            element: text,
+            expression: ""
+          });
 
         if (width < clientWidth) {
           width = clientWidth;
@@ -129,6 +138,12 @@ export default class extends Page {
 
       TweenMax.set(line, { width });
     });
+  }
+
+  createHeader() {
+    this.elements.headerTitle.classList.add("home__header__title--active");
+
+    this.setHeaderLineWidths(true);
 
     each(this.elements.headerLinesMultiple, line => {
       const text = line.querySelector(".home__header__title__text");

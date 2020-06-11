@@ -397,9 +397,28 @@
   pointer-events: none;
   left: 100%;
   transition:1000ms ease-out;
-  &:nth-child(3){
+
+  &[data-depth="1"] {
+     left: 100%;
+   }
+
+  &[data-depth="2"] {
     left: 200%;
   }
+
+  &--active {
+    display: block;
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.menu__mobile__list__tertiary {
+  opacity: 0;
+  pointer-events: none;
+  left: 200%;
+  transition:1000ms ease-out;
+
   &--active {
     display: block;
     opacity: 1;
@@ -523,13 +542,14 @@
 }
 #menu__form__close{
   
-  top: 0%;
-  right: 0%;
+  top: 0;
+  right: 0;
   padding:2rem;
   font-size: 0;
   height: 5rem;
   position: absolute;
   width: 5rem;
+  cursor: pointer;
 
   &:before,
   &:after {

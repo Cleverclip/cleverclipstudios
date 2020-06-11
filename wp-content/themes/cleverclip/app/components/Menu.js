@@ -8,8 +8,6 @@ export default class extends EventEmitter {
   constructor() {
     super();
 
-    
-
     this.element = document.querySelector(".menu");
 
     this.elements = {
@@ -29,7 +27,6 @@ export default class extends EventEmitter {
         root: document.querySelector(".menu__mobile"),
 
         open: document.querySelector(".menu__toggle"),
-        close: document.querySelector(".menu__mobile__header__button--close"),
         back: document.querySelector(".menu__mobile__header__button--back"),
 
         links: document.querySelectorAll(".menu__mobile__link"),
@@ -38,15 +35,14 @@ export default class extends EventEmitter {
         ),
 
         content: document.querySelector(".menu__mobile__content"),
-        lists: document.querySelectorAll(".menu__mobile__list__secondary"),
+        listsSecondary: document.querySelectorAll(".menu__mobile__list__secondary"),
 
         locales: document.querySelector(".menu__mobile__select--locales"),
         form_button: document.getElementById("menu__mobile__form__button")
       }
     };
-    this.createContact()
+    this.createContact();
 
-    
     this.addEventListeners();
   }
 
@@ -73,7 +69,7 @@ export default class extends EventEmitter {
     TweenMax.to(this.elements.mobile.content, 1, {
       ease: Power4.easeInOut,
       onComplete: () => {
-        each(this.elements.mobile.lists, list => {
+        each(this.elements.mobile.listsSecondary, list => {
           list.classList.remove("menu__mobile__list__secondary--active");
         });
       },
@@ -101,31 +97,23 @@ export default class extends EventEmitter {
     });
   }
 
-  onMobileClose(isForced = false) {
-    if (!isForced) {
-      this.onMobileListClose();
-    }
-
-    TweenMax.to(this.elements.mobile.root, 1, {
-      ease: Power4.easeInOut,
-      x: "100%"
-    });
-  }
-
   onMobileListOpen({ target }) {
-    const { index } = target.dataset;
+    let { index, depth } = target.dataset;
+    index = parseInt(index);
+    depth = parseInt(depth);
     
-    const offset = ((parseInt(index) + 1) * -100)+"%"
+    const offset = (depth * -100)+"%";
     
     TweenMax.to(this.elements.mobile.content, 1, {
       ease: Power4.easeInOut,
       x: offset
     });
 
-    each(this.elements.mobile.lists, list => {
-      const listIndex = parseInt(list.dataset.index, 10);
-      if (parseInt(index, 10) === listIndex) {
-        list.classList.add("menu__mobile__list__secondary--active");
+    each(this.elements.mobile.listsSecondary, list => {
+      const listIndex = parseInt(list.dataset.index);
+      const listDepth = parseInt(list.dataset.depth);
+      if (index === listIndex && listDepth === depth) {
+        list.classList.add(`menu__mobile__list__secondary--active`);
       } else {
         list.classList.remove("menu__mobile__list__secondary--active");
       }
@@ -137,18 +125,25 @@ export default class extends EventEmitter {
       ".menu__mobile__list__secondary--active"
     );
 
-    if (!list) {
-      return this.onMobileClose(true);
-    }
+    if (!list)
+      return TweenMax.to(this.elements.mobile.root, 1, {
+        ease: Power4.easeInOut,
+        x: "100%"
+      });
+
+    let {depth, index} = list.dataset;
+    depth = parseInt(depth);
+
+    each(this.elements.mobile.listsSecondary, list => {
+      if (parseInt(list.dataset.depth) === depth)
+        list.classList.remove("menu__mobile__list__secondary--active");
+      else if (parseInt(list.dataset.depth) === (depth-1) && list.dataset.index === index)
+        list.classList.add("menu__mobile__list__secondary--active");
+    });
 
     TweenMax.to(this.elements.mobile.content, 1, {
       ease: Power4.easeInOut,
-      onComplete: () => {
-        each(this.elements.mobile.lists, list => {
-          list.classList.remove("menu__mobile__list__secondary--active");
-        });
-      },
-      x: "0%"
+      x: ((depth-1) * -100)+"%"
     });
   }
 
@@ -198,13 +193,8 @@ export default class extends EventEmitter {
     }
 
     this.onMobileOpenEvent = this.onMobileOpen.bind(this);
-    this.onMobileCloseEvent = this.onMobileClose.bind(this);
 
     this.elements.mobile.open.addEventListener("click", this.onMobileOpenEvent);
-    this.elements.mobile.close.addEventListener(
-      "click",
-      this.onMobileCloseEvent
-    );
 
     this.onMobileListOpenEvent = this.onMobileListOpen.bind(this);
     this.onMobileListCloseEvent = this.onMobileListClose.bind(this);

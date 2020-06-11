@@ -37,7 +37,7 @@
 
   @include media(">small") {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   @include media("<small") {
     margin-top: 3.5rem;
