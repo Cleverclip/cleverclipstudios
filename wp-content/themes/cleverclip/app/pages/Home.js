@@ -95,7 +95,7 @@ export default class extends Page {
     };
 
     this.createHeader();
-    
+    this.createHeaderAnimation();
     this.createBrands();
     this.createPartners();
     this.createServices();

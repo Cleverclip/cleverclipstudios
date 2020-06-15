@@ -20,6 +20,10 @@
   position: absolute;
   top: 0;
   width: 100%;
+
+  @include media('<small') {
+    display: none;
+  }
 }
 
 .home__header__wrapper {
