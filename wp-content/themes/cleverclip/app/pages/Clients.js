@@ -33,11 +33,16 @@ export default class extends Page {
       highlightsList: document.querySelector('.clients__highlights__list'),
       highlightsItems: document.querySelectorAll('.clients__highlights__item'),
       highlightsItemsWrappers: document.querySelectorAll('.clients__highlights__item__wrapper'),
-      highlightsCloses: document.querySelectorAll('.clients__highlights__item__close')
-    }
+      highlightsCloses: document.querySelectorAll('.clients__highlights__item__close'),
+      clientLogos: document.querySelectorAll(".clients__clients__item"),
+      clientsShowMoreButton: document.querySelector(".clients__clients__button")
+    };
 
-    this.createTestimonials()
-    this.createHighlights()
+    this.visibleClientLogos = 0;
+
+    this.createTestimonials();
+    this.createHighlights();
+    this.createClients();
   }
 
   createTestimonials () {
@@ -96,6 +101,21 @@ export default class extends Page {
     }
   }
 
+  createClients() {
+    const visibleClientLogosNext = Math.min(this.visibleClientLogos + 25, this.elements.clientLogos.length);
+
+    for (let i = this.visibleClientLogos; i < visibleClientLogosNext; i++) {
+      this.elements.clientLogos[i].classList.add("clients__clients__item--active");
+    }
+
+    if (visibleClientLogosNext === this.elements.clientLogos.length) {
+      this.elements.clientsShowMoreButton.classList.add("clients__clients__button--hide");
+      return;
+    }
+
+    this.visibleClientLogos = visibleClientLogosNext;
+  }
+
   show () {
     this.create()
 
@@ -138,8 +158,11 @@ export default class extends Page {
   addEventListeners () {
     super.addEventListeners()
 
-    this.onHighlightOpenEvent = this.onHighlightOpen.bind(this)
-    this.onHighlightCloseEvent = this.onHighlightClose.bind(this)
+    this.onHighlightOpenEvent = this.onHighlightOpen.bind(this);
+    this.onHighlightCloseEvent = this.onHighlightClose.bind(this);
+    this.onShowMoreClientsEvent = this.createClients.bind(this);
+
+    this.elements.clientsShowMoreButton.addEventListener("click", this.onShowMoreClientsEvent);
 
     each(this.elements.highlightsItemsWrappers, item => {
       item.addEventListener('click', this.onHighlightOpenEvent)

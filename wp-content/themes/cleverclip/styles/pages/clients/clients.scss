@@ -24,4 +24,42 @@
 
 .clients__clients__item {
   @extend %clients__item;
+  display: none;
+
+  &--active {
+    display: inline-block;
+  }
+}
+
+.clients__clients__button__wrapper {
+  text-align: center;
+}
+
+.clients__clients__button {
+  @extend %button;
+  cursor: pointer;
+  margin: 3rem;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.clients__clients__button__box {
+  @extend %button__box;
+
+  background: $color-deep-koamaru;
+  border-color: $color-candlelight;
+  color: $color-candlelight;
+
+  .clients__clients__button:hover & {
+    @extend %button__box--hover;
+  }
+
+}
+
+.clients__clients__button__background {
+  @extend %button__background;
+
+  box-shadow: 0.4rem 0.4rem 0 $color-candlelight;
 }

@@ -1,6 +1,7 @@
 import EventEmitter from 'events'
 import { each } from 'lodash'
 import prefix from 'prefix'
+import {TweenMax} from "gsap";
 
 import { getOffset } from 'utils/dom'
 
