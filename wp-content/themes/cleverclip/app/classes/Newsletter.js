@@ -2,6 +2,7 @@ import Alert from "classes/Alert";
 import Loader from "classes/Loader";
 
 import { post } from "utils/ajax";
+import {newsletterSignup} from "../utils/events";
 
 export default class {
   constructor({ button, classes, form, input }) {
@@ -43,6 +44,7 @@ export default class {
           title: successTitle
         });
 
+        document.dispatchEvent(newsletterSignup);
         ga("send", "event", "Newsletter", "Signup");
       } else if (status === "mail_failed") {
         const { errorDescription, errorTitle } = this.form.dataset;

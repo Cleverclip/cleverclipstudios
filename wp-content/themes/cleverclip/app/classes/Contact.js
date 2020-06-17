@@ -3,6 +3,7 @@ import { each, last } from 'lodash'
 import Alert from 'classes/Alert'
 
 import { post } from 'utils/ajax'
+import {websiteLead} from "../utils/events";
 
 export default class {
   constructor({ button, classes, form }) {
@@ -50,6 +51,7 @@ export default class {
           title: successTitle
         })
 
+        document.dispatchEvent(websiteLead);
         ga('send', 'event', 'Website Contact', this.subject.value)
       } else if (status === 'mail_failed') {
         const { errorDescription, errorTitle } = this.form.dataset

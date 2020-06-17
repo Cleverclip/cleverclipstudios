@@ -1,8 +1,4 @@
 <?php
-/**
- * Include wpform functions
- */
-include get_template_directory() . '/includes/wpforms.php';
 
 /**
  * Cleanup.
