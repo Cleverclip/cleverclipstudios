@@ -23,7 +23,10 @@
 
 {{ function('render_style', 'cleverclip', '/build/main.css') }}
 
-
+<!-- Info for form submissions -->
+{% set lang = function("pll_current_language", "name") %}
+<meta name="language" content="{{ lang == "Deutsch" ? "German" : lang }}">
+<meta name="country" content="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
 
 <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -1,16 +1,13 @@
 import "@babel/polyfill";
 
-import "./vendor/JAR";
-
 import WebFont from "webfontloader";
-import Cookies from "js-cookie";
 import FontFaceObserver from "fontfaceobserver";
-import QueryString from "query-string";
-import { each } from "lodash";
+import {each} from "lodash";
 import Scroll from "scroll-to";
 
 import Loader from "classes/Loader";
 import Responsive from "classes/Responsive";
+import FormFiller from "classes/FormFiller";
 
 import Cookie from "components/Cookies";
 import Footer from "components/Footer";
@@ -32,13 +29,12 @@ import Service from "pages/Service";
 import Services from "pages/Services";
 import Question from "pages/Question";
 
-import { get } from "utils/ajax";
-import { getOffset } from "utils/dom";
+import {get} from "utils/ajax";
+import {getOffset} from "utils/dom";
 
 class App {
   constructor() {
-	this.addWebFonts();
-    this.createParameters();
+    this.addWebFonts();
     this.createResponsive();
 
     const fontTiemposHeadline = new FontFaceObserver("Tiempos Headline");
@@ -52,29 +48,13 @@ class App {
       this.addEventListeners();
     });
   }
-  
+
   addWebFonts() {
-	  WebFont.load({
-		  google: {
-			  families: ['Work Sans:400,600,800&display=swap']
-	    }
-	  });
-  }
-
-  createParameters() {
-    this.query = QueryString.parse(window.location.search);
-
-    each(this.query, (value, key) => {
-      if (key.indexOf("utm") > -1) {
-        Cookies.set(key, value, {
-          expires: 30
-        });
+    WebFont.load({
+      google: {
+        families: ['Work Sans:400,600,800&display=swap']
       }
     });
-
-    if (!document.referrer.includes("cleverclipstudios.com")) {
-      Cookies.set("referrer", document.referrer);
-    }
   }
 
   createResponsive() {
@@ -107,6 +87,8 @@ class App {
     for (const page of this.pages.values()) {
     }
 
+    FormFiller.create();
+
     this.onNavigate();
 
     this.addLinksEventListeners();
@@ -131,7 +113,7 @@ class App {
     });
   }
 
-  async onChange({ push = true, url = null }) {
+  async onChange({push = true, url = null}) {
     if (this.isLoading) {
       return;
     }
@@ -161,7 +143,7 @@ class App {
       });
   }
 
-  async onRequest({ push, response, url }) {
+  async onRequest({push, response, url}) {
     this.isLoading = false;
 
     this.loader.hide();
@@ -203,6 +185,7 @@ class App {
     }
 
     this.createFooter();
+    FormFiller.fillFormFields();
   }
 
   onResize() {

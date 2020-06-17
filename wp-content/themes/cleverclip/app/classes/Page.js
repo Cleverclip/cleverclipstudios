@@ -18,11 +18,9 @@ export default class extends EventEmitter {
 
   create () {
     this.element = document.querySelector(this.selector)
-
     this.createHeights()
     this.createLazyLoad()
     this.createProducts()
-    this.createUTM()
     this.createVideos()
   }
 
@@ -57,24 +55,6 @@ export default class extends EventEmitter {
 
       return product
     })
-  }
-
-  createUTM () {
-    this.utms = document.querySelectorAll('input[name*="utm_"]')
-
-    each(this.utms, utm => {
-      const cookie = Cookies.get(utm.name)
-
-      if (cookie) {
-        utm.value = cookie
-      }
-    })
-
-    this.refererer = document.querySelector('input[name="referrer"]')
-
-    if (this.refererer) {
-      this.refererer.value = Cookies.get('referrer')
-    }
   }
 
   createScroll () {
