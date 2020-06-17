@@ -21,20 +21,15 @@
           data-error-title="{{ option[locale ~ '_form_newsletter_messages'].error_title }}"
           data-error-description="{{ option[locale ~ '_form_newsletter_messages'].error_description }}"
         >
-          <input name="language" type="hidden" value="{{ function('pll_current_language', 'name') == 'Deutsch' ? 'German' : function('pll_current_language', 'name') }}">
-          <input name="country" type="hidden" value="{% filter shortcodes %}[geoip_detect2 property='country.name' default='Not Detected' lang='en']{% endfilter %}">
-
-          <input name="utm_source" type="hidden" value="">
-          <input name="utm_medium" type="hidden" value="">
-          <input name="utm_campaign" type="hidden" value="">
-          <input name="utm_content" type="hidden" value="">
-          <input name="utm_term" type="hidden" value="">
-
-          <input name="referrer" type="hidden" value="">
-
-          <input name="smujarFirstVisit" type="hidden" value="">
-          <input name="smujarFirstVisitTime" type="hidden" value="">
-          <input name="smujarHistory" type="hidden" value="">
+          <!-- Fields filled by FormFiller.js class -->
+          <input class="submission-value__language" name="language" type="hidden" value="">
+          <input class="submission-value__country" name="country" type="hidden" value="">
+          <input class="submission-value__referrer" name="referrer" type="hidden" value="">
+          <input class="submission-value__utm_source" name="utm_source" type="hidden" value="">
+          <input class="submission-value__utm_medium" name="utm_medium" type="hidden" value="">
+          <input class="submission-value__utm_campaign" name="utm_campaign" type="hidden" value="">
+          <input class="submission-value__utm_content" name="utm_content" type="hidden" value="">
+          <input class="submission-value__utm_term" name="utm_term" type="hidden" value="">
 
           <input class="service__aside__newsletter__input" name="first-name" placeholder="{{ post.get_field('aside_newsletter_first-name') }}">
           <input class="service__aside__newsletter__input" name="last-name" placeholder="{{ post.get_field('aside_newsletter_last-name') }}">
