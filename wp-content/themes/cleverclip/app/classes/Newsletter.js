@@ -44,7 +44,7 @@ export default class {
           title: successTitle
         });
 
-        document.dispatchEvent(newsletterSignup);
+        newsletterSignup();
         ga("send", "event", "Newsletter", "Signup");
       } else if (status === "mail_failed") {
         const { errorDescription, errorTitle } = this.form.dataset;

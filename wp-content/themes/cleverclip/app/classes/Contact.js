@@ -51,7 +51,7 @@ export default class {
           title: successTitle
         })
 
-        document.dispatchEvent(websiteLead);
+        websiteLead();
         ga('send', 'event', 'Website Contact', this.subject.value)
       } else if (status === 'mail_failed') {
         const { errorDescription, errorTitle } = this.form.dataset

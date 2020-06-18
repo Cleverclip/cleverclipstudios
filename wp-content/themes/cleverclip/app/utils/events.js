@@ -1,2 +1,2 @@
-export const websiteLead = new CustomEvent("website-lead");
-export const newsletterSignup = new CustomEvent("newsletter-signup");
+export const websiteLead = () => dataLayer.push({"event": "website-lead"});
+export const newsletterSignup = () => dataLayer.push({"event": "newsletter-signup"});
