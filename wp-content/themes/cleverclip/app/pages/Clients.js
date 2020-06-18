@@ -28,6 +28,9 @@ export default class extends Page {
       testimonialsButtonNext: document.querySelector('.clients__testimonials__navigation__button--next'),
       testimonialsButtonPrevious: document.querySelector('.clients__testimonials__navigation__button--previous'),
       testimonialsPaginations: document.querySelectorAll('.clients__testimonials__pagination__button'),
+      collaborationsList: document.querySelector(".clients__collaboration__list"),
+      collaborationsItems: document.querySelectorAll(".clients__collaboration__item"),
+      collaborationsItemsWrappers: document.querySelectorAll(".clients__collaboration__item__wrapper"),
 
       highlights: document.querySelector('.clients__highlights'),
       highlightsList: document.querySelector('.clients__highlights__list'),
@@ -43,6 +46,21 @@ export default class extends Page {
     this.createTestimonials();
     this.createHighlights();
     this.createClients();
+    this.createCollaboration();
+  }
+
+  createCollaboration() {
+    if (Detection.isPhone) {
+      this.collaborationsSlider = new Slider({
+        element: this.elements.collaborationsList,
+        elements: {
+          items: this.elements.collaborationsItems,
+          buttons: this.elements.collaborationsItemsWrappers
+        }
+      });
+
+      this.collaborationsSlider.enable();
+    }
   }
 
   createTestimonials () {
