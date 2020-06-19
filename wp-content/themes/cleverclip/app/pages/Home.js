@@ -13,6 +13,12 @@ import { Detection } from "classes/Detection";
 
 import { split } from "utils/text";
 
+function getRandomInRange(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export default class extends Page {
   constructor() {
     super({ selector: ".home" });
@@ -39,6 +45,9 @@ export default class extends Page {
       partnersButtons: document.querySelectorAll(
         ".home__partners__item__wrapper"
       ),
+
+      industriesItems: document.querySelectorAll(".home__industries__article"),
+      industryIconContainerSelector: ".home__industries__article__image",
 
       testimonials: document.querySelector(".home__partners__testimonials"),
       testimonialsWrapper: document.querySelector(
@@ -103,6 +112,8 @@ export default class extends Page {
     this.createTestimonials();
     this.createNewsletter();
     this.initializeInlineVideos();
+
+    this.createIndustries();
   }
 
   onResize() {
@@ -238,6 +249,26 @@ export default class extends Page {
         path: this.elements.headerAnimation.dataset.animation
       });
     }
+  }
+
+  createIndustries() {
+    this.animatedIndustryIcons = [];
+    if (!Detection.isPhone) {
+      this.elements.industriesItems.forEach(item => {
+        this.animatedIndustryIcons.push(Lottie.loadAnimation({
+          container: item.querySelector(this.elements.industryIconContainerSelector),
+          renderer: "svg",
+          loop: false,
+          autoplay: false,
+          path: item.dataset.animation
+        }))
+      })
+    }
+
+    this.industryAnimationInterval = setInterval(() => {
+      const toAnimate = this.animatedIndustryIcons[Math.floor(getRandomInRange(0, this.animatedIndustryIcons.length-1))];
+      toAnimate.goToAndPlay(0);
+    }, 2000)
   }
   
 
@@ -388,6 +419,11 @@ export default class extends Page {
   destroy() {
     if (this.testimonials) {
       this.testimonials.destroy();
+    }
+
+    if (this.industryAnimationInterval) {
+      clearInterval(this.industryAnimationInterval);
+      this.animatedIndustryIcons = [];
     }
   }
 }
