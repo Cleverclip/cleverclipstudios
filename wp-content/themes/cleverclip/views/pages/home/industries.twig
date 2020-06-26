@@ -9,8 +9,8 @@
         {% for industry in post.get_field('industries_list') %}
           <article class="home__industries__article" data-animation='{{ industry.animated_icon_json }}'>
             <a class="home__industries__link" href="{{ industry.link }}">
-              <!--<img class="home__industries__article__image" data-src="{{ industry.image }}">-->
-              <div class="home__industries__article__image"></div>
+              <img class="home__industries__article__image" data-src="{{ industry.image }}">
+              <!--<div class="home__industries__article__image"></div>-->
 
               <div class="home__industries__article__box">
                 <h3 class="home__industries__article__title">
