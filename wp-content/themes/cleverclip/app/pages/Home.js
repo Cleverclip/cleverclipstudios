@@ -113,7 +113,7 @@ export default class extends Page {
     this.createNewsletter();
     this.initializeInlineVideos();
 
-    this.createIndustries();
+    //this.createIndustries();
   }
 
   onResize() {
