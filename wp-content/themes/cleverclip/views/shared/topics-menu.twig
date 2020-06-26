@@ -1,0 +1,30 @@
+<nav class="topics_menu__mobile">
+  <div class="topics_menu__mobile__header">
+    <button class="topics_menu__mobile__header__button topics_menu__mobile__header__button--back">
+      Back
+    </button>
+  </div>
+
+  <div class="topics_menu__mobile__content">
+    <ul class="topics_menu__mobile__list">
+ 
+ 		{% set topics = function('get_categories') %}
+		
+		{% if (topics) %}
+		
+             {% for topic in topics %}
+             
+             {% set cat_url = function('get_category_link', topic.term_id) %}
+              <li class="topics_menu__mobile__item">
+                  <a class="topics_menu__mobile__link" href="{{ cat_url }}">
+                    {{ topic.name }}
+                  </a>    
+              </li>
+
+              {% endfor %}
+              
+		{% endif %}
+		
+    </ul>   
+  </div>
+</nav>

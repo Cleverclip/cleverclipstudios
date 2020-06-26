@@ -16,6 +16,10 @@
     
     {% set is_blog = function('is_home') and not function('is_front_page') %}
 
+	{% if is_blog == 'blog' %}
+		{% include 'shared/topics-menu.twig' %}
+	{% endif %}
+	
     <div
       class="content"
       data-slug="{{
