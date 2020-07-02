@@ -59,6 +59,8 @@
 
 .clients__testimonials__pagination {
   @extend %testimonials__pagination;
+
+  bottom: -2.5rem;
 }
 
 .clients__testimonials__pagination__button {

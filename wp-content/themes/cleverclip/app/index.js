@@ -12,6 +12,7 @@ import FormFiller from "classes/FormFiller";
 import Cookie from "components/Cookies";
 import Footer from "components/Footer";
 import Menu from "components/Menu";
+import TopicsMenu from "components/TopicsMenu";
 
 import About from "pages/About";
 import Blog from "pages/Blog";
@@ -44,6 +45,7 @@ class App {
       this.createApp();
       this.createCookies();
       this.createMenu();
+      this.createTopicsMenu();
 
       this.addEventListeners();
     });
@@ -104,6 +106,10 @@ class App {
 
   createMenu() {
     this.menu = new Menu();
+  }
+  
+  createTopicsMenu() {
+    this.topicsmenu = new TopicsMenu();
   }
 
   onPopState(event) {

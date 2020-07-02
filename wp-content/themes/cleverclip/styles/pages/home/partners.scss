@@ -178,10 +178,6 @@
 
 .home__partners__testimonial__author__image {
   @extend %testimonial__author__image;
-
-  @include media('<small') {
-    width: 10rem;
-  }
 }
 
 .home__partners__testimonials__pagination {
